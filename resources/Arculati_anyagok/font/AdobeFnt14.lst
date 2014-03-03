@@ -1,0 +1,193 @@
+%!Adobe-FontList 1.14
+%Locale:0x40e
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-BoldOblique
+FamilyName:Univers 45 Light
+StyleName:Bold Italic
+FullName:Univers 45 Light Bold Italic
+MenuName:Univers 45 Light
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\Univers 45 Light Bold Italic.ttf
+DataFormat:sfntData
+FileLength:82669
+FileModTime:1373457034
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Bold
+FamilyName:Univers 45 Light
+StyleName:Bold
+FullName:Univers 45 Light Bold
+MenuName:Univers 45 Light
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\Univers 45 Light Bold.ttf
+DataFormat:sfntData
+FileLength:75611
+FileModTime:1373465880
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Condensed-BoldItalic
+FamilyName:Univers Condensed
+StyleName:Bold Italic
+FullName:Univers Condensed Bold Italic
+MenuName:Univers Condensed
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr68w.ttf
+DataFormat:sfntData
+FileLength:78144
+FileModTime:1055863072
+WeightClass:700
+WidthClass:3
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Medium
+FamilyName:Univers
+StyleName:Medium
+FullName:Univers Medium
+MenuName:Univers
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr55w.ttf
+DataFormat:sfntData
+FileLength:81712
+FileModTime:1055863070
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-MediumItalic
+FamilyName:Univers
+StyleName:Medium Italic
+FullName:Univers Medium Italic
+MenuName:Univers
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr56w.ttf
+DataFormat:sfntData
+FileLength:76812
+FileModTime:1055863070
+WeightClass:400
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Condensed-Medium
+FamilyName:Univers Condensed
+StyleName:Medium
+FullName:Univers Condensed Medium
+MenuName:Univers Condensed
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr57w.ttf
+DataFormat:sfntData
+FileLength:82728
+FileModTime:1055863070
+WeightClass:400
+WidthClass:3
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Condensed-MediumItalic
+FamilyName:Univers Condensed
+StyleName:Medium Italic
+FullName:Univers Condensed Medium Italic
+MenuName:Univers Condensed
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr58w.ttf
+DataFormat:sfntData
+FileLength:78072
+FileModTime:1055863072
+WeightClass:400
+WidthClass:3
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Bold
+FamilyName:Univers
+StyleName:Bold
+FullName:Univers Bold
+MenuName:Univers
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr65w.ttf
+DataFormat:sfntData
+FileLength:81836
+FileModTime:1055863072
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-BoldItalic
+FamilyName:Univers
+StyleName:Bold Italic
+FullName:Univers Bold Italic
+MenuName:Univers
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr66w.ttf
+DataFormat:sfntData
+FileLength:76884
+FileModTime:1055863072
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Univers-Condensed-Bold
+FamilyName:Univers Condensed
+StyleName:Bold
+FullName:Univers Condensed Bold
+MenuName:Univers Condensed
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:F:\Munka\_NET'54\Marketing\Arculati_anyagok\Font\unvr67w.ttf
+DataFormat:sfntData
+FileLength:82876
+FileModTime:1055863072
+WeightClass:700
+WidthClass:3
+AngleClass:0
+%EndFont
+

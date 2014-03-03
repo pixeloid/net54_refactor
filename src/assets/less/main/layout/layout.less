@@ -1,0 +1,89 @@
+/*********************************************************/
+/*                 Template Layout                       */
+/*********************************************************/
+
+
+body.padTop53 {
+    padding-top: 95px;
+    overflow: visible;
+    @media (min-width: 802px) {
+        padding-top: 54px;
+    }
+}
+
+
+#wrap, #top, .head, #footer {
+    .clearfix();
+}
+
+#wrap {background-color: #333;}
+
+#right {
+    display: none;
+}
+
+#left {
+  position: absolute;
+  width: @SidebarWidth;
+  .transition(left .3s ease-in-out 0s);
+  z-index: 1;
+  background: #333;
+  left: -@SidebarWidth;
+}
+.side-right #left {
+    left: auto;
+    right: -@SidebarWidth;
+    
+  .transition(right .3s ease-in-out 0s);
+}
+#left.opened {
+    left:0;
+}
+.side-right #left.opened {
+    left: auto;
+    right:0;
+}
+
+@media (min-width: @screen-md-min) {
+  #left {
+        position: relative;
+    float: left;
+    
+  left: auto;
+    
+    .side-right & {float:right;}
+    body.padTop53 & {top:53px;}
+
+  }
+    #content {
+      .text-overflow();
+    }
+    #left {
+        margin-bottom: -10px;
+    }
+    .side-right #left {
+    right: 0;
+}
+}
+
+@media (min-width: @screen-tablet) {
+    .hide-sidebar {
+        #left, #right {display: none;}
+    }
+}
+
+@media (min-width: 1200px) {
+  body.fixed {
+    #wrap, #footer, #top .navbar.navbar-fixed-top {
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+.mini-sidebar #left {
+    width: @miniSidebarWidth;
+    
+}
+
+/* ================== END Template Layout ============== */
