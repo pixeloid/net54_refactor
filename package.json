@@ -1,19 +1,18 @@
 {
-  "name": "Bootstrap-Admin-Template",
-  "version": "2.2.0",
+  "name": "NET54-Refactor-Template",
+  "version": "1.0.0",
   "author": {
-    "name": "Osman Nuri Okumuş",
-    "email": "onokumus@gmail.com",
-    "url": "https://github.com/onokumus"
+    "name": "Gergely Olah",
+    "email": "olah.gergely@pixeloid.hu"
   },
-  "description": "Twitter Bootstrap Admin Template",
-  "license": "MIT",
+  "description": "Net54 UI refactoring template",
+  //"license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/onokumus/Bootstrap-Admin-Template"
+    "url": "https://https://github.com/pixeloid/net54_refactor/"
   },
   "bugs": {
-    "url": "https://github.com/onokumus/Bootstrap-Admin-Template/issues"
+    "url": "https://https://github.com/pixeloid/net54_refactor//issues"
   },
   "licenses": "MIT",
   "devDependencies": {
@@ -33,6 +32,6 @@
     "pretty": "~0.1.2"
   },
   "dependencies": {
-    "screenfull": "~1.1.1"
+   // "screenfull": "~1.1.1"
   }
 }
