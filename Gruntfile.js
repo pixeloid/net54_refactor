@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         // Metadata
         pkg: grunt.file.readJSON('package.json'),
         banner: '/**\n' +
-        '* Metis - <%=pkg.name %> v<%= pkg.version %>\n' +
+        '* <%=pkg.name %> v<%= pkg.version %>\n' +
         '* Author : <%= pkg.author.name %> \n' +
         '* Copyright <%= grunt.template.today("yyyy") %>\n' +
         '* Licensed under <%= pkg.licenses %>\n' +
@@ -17,28 +17,24 @@ module.exports = function (grunt) {
         	options: {
         		banner: '<%= banner %>',
         		metadata: 'src/*.{json,yml}',
-// 		sourceMap: true,
-//              sourceMapFilename: "dist/assets/css/style.css.map",
-//              sourceMapURL: 'style.css.map',
+				paths: 'bower_components/bootstrap/less',
+				imports: {
+					reference: ['mixins.less', 'variables.less']
+				}
 			},
-			paths: 'bower_components/bootstrap/less',
-			imports: {
-				reference: ['mixins.less', 'variables.less']
-			}
-		},
-		development: {
-			files: {
-				'dist/assets/css/main.css': ['src/assets/less/style.less']
-			}
-		},
-		production: {
-			options: {
-				compress: true
+			development: {
+				files: {
+					'dist/assets/css/main.css': ['src/assets/less/style.less']
+				}
 			},
-			files: {
-				'dist/assets/css/main.min.css': ['src/assets/less/style.less']
+			production: {
+				options: {
+					compress: true
+				},
+				files: {
+					'dist/assets/css/main.min.css': ['src/assets/less/style.less']
+				}
 			}
-		}
 		},
 		concat: {
 			options: {
@@ -46,21 +42,26 @@ module.exports = function (grunt) {
 				stripBanners: false
 			},
 			main: {
-				src: ['src/assets/js/app/*.js'],
+				src: [
+					'src/assets/js/app/base.js', 
+					'src/assets/js/app/formGeneral.js',
+					'src/assets/js/app/chart.js',
+				],
 				dest: 'dist/assets/js/main.js'
-			},
-			countdown: {
-				src: ['src/assets/js/countdown.js'],
-				dest: 'dist/assets/js/countdown.js'
-			},
-			styleSwitcher: {
-				src: ['src/assets/js/style-switcher.js'],
-				dest: 'dist/assets/js/style-switcher.js'
-			},
-			emberApp: {
-				src: ['src/assets/js/app.js'],
-				dest: 'dist/assets/js/app.js'
 			}
+			//,
+			// countdown: {
+			// 	src: ['src/assets/js/countdown.js'],
+			// 	dest: 'dist/assets/js/countdown.js'
+			// },
+			// styleSwitcher: {
+			// 	src: ['src/assets/js/style-switcher.js'],
+			// 	dest: 'dist/assets/js/style-switcher.js'
+			// },
+			// emberApp: {
+			// 	src: ['src/assets/js/app.js'],
+			// 	dest: 'dist/assets/js/app.js'
+			// }
 		},
 		uglify: {
 			options: {
@@ -81,170 +82,206 @@ module.exports = function (grunt) {
 		},
 		assemble: {
 	            // Task-level options
-	            options: {
-	            	flatten: true,
-	            	postprocess: require('pretty'),
-	            	assets: 'dist/assets',
-	            	data: 'src/data/*.{json,yml}',
-	            	partials: ['src/templates/partials/**/*.hbs'],
-	            	helpers: 'src/helper/**/*.js',
-	            	layoutdir: 'src/templates/layouts'
-	            },
-	            pages: {
-	                // Target-level options
-	                options: {
-	                	layout: 'default.hbs'
-	                },
-	                files: [
-	                {expand: true, cwd: 'src/templates/pages', src: ['*.hbs'], dest: 'dist/'}
-	                ]
-	            },
-	            login: {
-	            	options: {
-	            		layout: 'login.hbs'
-	            	},
-	            	files: [
-	            	{expand: true, cwd: 'src/templates/login', src: ['login.hbs'], dest: 'dist/'}
-	            	]
-	            },
-	            errors: {
-	            	options: {
-	            		layout: 'errors.hbs'
-	            	},
-	            	files: [
-	            	{expand: true, cwd: 'src/templates/errors', src: ['*.hbs'], dest: 'dist/'}
-	            	]
-	            },
-	            countdown: {
-	            	options: {
-	            		layout: 'countdown.hbs'
-	            	},
-	            	files: [
-	            	{expand: true, cwd: 'src/templates/countdown', src: ['*.hbs'], dest: 'dist/'}
-	            	]
-	            }
-	        },
-	        copy: {
-	        	main: {
-	        		files: [
-	        		{
-	        			expand: true,
-	        			cwd: 'src/assets/css',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/css'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'src/assets/lib',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/lib'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'src/assets/img',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/img'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'src/assets/submodule',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/lib'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'src/ember',
-	        			src: ['*.html'],
-	        			dest: 'dist'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'node_modules/assemble-less/node_modules/less/dist/',
-	        			src: ['less-1.7.0.min.js'],
-	        			dest: 'dist/assets/lib'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'bower_components/jquery/dist',
-	        			src: ['./**/jquery*.min.*'],
-	        			dest: 'dist/assets/lib'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'bower_components/bootstrap/dist/',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/lib/bootstrap'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'bower_components/font-awesome/',
-	        			src: ['./css/*.*', './fonts/*.*'],
-	        			dest: 'dist/assets/lib/Font-Awesome'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'bower_components/gmaps/',
-	        			src: ['./**/gmaps.js'],
-	        			dest: 'dist/assets/lib/gmaps'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'bower_components/html5shiv/dist',
-	        			src: ['./html5shiv.js'],
-	        			dest: 'dist/assets/lib/html5shiv'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'bower_components/respond/dest',
-	        			src: ['./respond.min.js'],
-	        			dest: 'dist/assets/lib/respond'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'src/assets/less',
-	        			src: ['./**/theme.less'],
-	        			dest: 'dist/assets/less'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'node_modules/epiceditor/epiceditor',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/lib/epiceditor'
-	        		},
-	        		{
-	        			expand: true,
-	        			cwd: 'node_modules/screenfull/dist/',
-	        			src: ['./**/*.*'],
-	        			dest: 'dist/assets/lib/screenfull/'
-	        		}
-	        		]
-	        	}
-	        },
+            options: {
+            	flatten: true,
+            	postprocess: require('pretty'),
+            	assets: 'dist/assets',
+            	data: 'src/data/*.{json,yml}',
+            	partials: ['src/templates/partials/**/*.hbs'],
+            	helpers: 'src/helper/**/*.js',
+            	layoutdir: 'src/templates/layouts'
+            },
+            pages: {
+                // Target-level options
+                options: {
+                	layout: 'default.hbs'
+                },
+                files: [
+                {expand: true, cwd: 'src/templates/pages', src: ['*.hbs'], dest: 'dist/'}
+                ]
+            },
+            theme: {
+            	options: {
+            		layout: 'theme.hbs'
+            	},
+            	files: [
+            	{expand: true, cwd: 'src/templates/elements', src: ['*.hbs'], dest: 'dist/'}
+            	]
+            },
+            login: {
+            	options: {
+            		layout: 'login.hbs'
+            	},
+            	files: [
+            	{expand: true, cwd: 'src/templates/login', src: ['login.hbs'], dest: 'dist/'}
+            	]
+            },
+            errors: {
+            	options: {
+            		layout: 'errors.hbs'
+            	},
+            	files: [
+            	{expand: true, cwd: 'src/templates/errors', src: ['*.hbs'], dest: 'dist/'}
+            	]
+            },
+            countdown: {
+            	options: {
+            		layout: 'countdown.hbs'
+            	},
+            	files: [
+            		{expand: true, cwd: 'src/templates/countdown', src: ['*.hbs'], dest: 'dist/'}
+            	]
+            }
+        },
+        copy: {
+        	main: {
+        		files: [
+        		{
+        			expand: true,
+        			cwd: 'src/assets/css',
+        			src: ['./**/*.*'],
+        			dest: 'dist/assets/css'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'src/assets/lib',
+        			src: ['./**/*.*'],
+        			dest: 'dist/assets/lib'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'src/assets/fonts',
+        			src: ['./**/*.*'],
+        			dest: 'dist/assets/fonts'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'src/assets/img',
+        			src: ['./**/*.*'],
+        			dest: 'dist/assets/img'
+        		},
+        		// {
+        		// 	expand: true,
+        		// 	cwd: 'src/assets/submodule',
+        		// 	src: ['./**/*.*'],
+        		// 	dest: 'dist/assets/lib'
+        		// },
+        		// {
+        		// 	expand: true,
+        		// 	cwd: 'src/ember',
+        		// 	src: ['*.html'],
+        		// 	dest: 'dist'
+        		// },
+        		// {
+        		// 	expand: true,
+        		// 	cwd: 'node_modules/assemble-less/node_modules/less/dist/',
+        		// 	src: ['less-1.7.0.min.js'],
+        		// 	dest: 'dist/assets/lib'
+        		// },
+        		{
+        			expand: true,
+        			cwd: 'bower_components/jquery/',
+        			src: ['./jquery*.*'],
+        			dest: 'dist/assets/lib/jquery'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/bootstrap/dist/',
+        			src: ['./**/*.*'],
+        			dest: 'dist/assets/lib/bootstrap'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/font-awesome/',
+        			src: ['./css/*.*', './fonts/*.*'],
+        			dest: 'dist/assets/lib/Font-Awesome'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/iCheck/',
+        			src: ['./**'],
+        			dest: 'dist/assets/lib/icheck'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/flot/',
+        			src: ['./jquery.*.js'],
+        			dest: 'dist/assets/lib/flot'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/html5shiv/dist',
+        			src: ['./html5shiv.js'],
+        			dest: 'dist/assets/lib/html5shiv'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/respond/dest',
+        			src: ['./respond.min.js'],
+        			dest: 'dist/assets/lib/respond'
+        		},
+        		{
+        			expand: true,
+        			cwd: 'bower_components/modernizr',
+        			src: ['./modernizr.js'],
+        			dest: 'dist/assets/lib/modernizr'
+        		},
+        		// {
+        		// 	expand: true,
+        		// 	cwd: 'src/assets/less',
+        		// 	src: ['./**/theme.less'],
+        		// 	dest: 'dist/assets/less'
+        		// },
+        		// {
+        		// 	expand: true,
+        		// 	cwd: 'node_modules/epiceditor/epiceditor',
+        		// 	src: ['./**/*.*'],
+        		// 	dest: 'dist/assets/lib/epiceditor'
+        		// },
+        		// {
+        		// 	expand: true,
+        		// 	cwd: 'node_modules/screenfull/dist/',
+        		// 	src: ['./**/*.*'],
+        		// 	dest: 'dist/assets/lib/screenfull/'
+        		// }
+        		]
+        	}
+        },
 
-	        watch: {
-	        	scripts: {
-	        		files: ['**/*.js'],
-	        		tasks: ['dist-js']
-	        	},
-	        	css: {
-	        		files: ['**/*.css'],
-	        		tasks: ['copy']
-	        	},
-	        	assemble: {
-	        		files: ['**/*.hbs', '**/*.html'],
-	        		tasks: ['assemble']
-	        	}
-	        },
-	        connect: {
-	        	all: {
-	        		options:{
-	        			port: 9000,
-	        			hostname: "0.0.0.0",
-	        			base:'dist',
-			         	keepalive: true
-		     	 }
-		  	}
-		}
+        watch: {
+		   	
+			scripts: {
+        		files: ['src/assets/**/*.js'],
+        		tasks: ['dist-js']
+        	},
+        	less: {
+				files: ['src/assets/**/*.less'],
+        		tasks: ['less'],
+   	       	    options: { livereload: true },
+			},
+        	assemble: {
+        		files: ['src/templates/**/*.hbs'],
+        		tasks: ['assemble:theme']
+        	}
+        },
+
+
+        connect: {
+        	all: {
+        		options:{
+        			port: 8000,
+        			hostname: "0.0.0.0",
+        			path: 'dist'
+        		}
+        	}
+        },
+
+        open: {
+        	all: {
+        	    // Gets the port from the connect configuration
+        	    path: 'http://<%= connect.all.options.hostname%>:<%= connect.all.options.port%>'
+        	}
+        },
 
 
 	});
@@ -252,21 +289,22 @@ module.exports = function (grunt) {
 
 
     // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('assemble-less');
     //grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('assemble-less');
 
 
     //grunt.loadNpmTasks('grunt-recess');
     // remove grunt-recess modules. because not supported my code
 
     grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-open');
 
     // Test task.
     //grunt.registerTask('test', ['jshint', 'qunit']);
@@ -281,9 +319,9 @@ module.exports = function (grunt) {
     // Default task.
     //grunt.registerTask('default', ['test', 'dist']);
 
-    grunt.registerTask('default', ['dist', 'assemble']);
+    grunt.registerTask('default', ['dist', 'assemble:theme']);
 
-    grunt.registerTask('server',['connect']);
+    grunt.registerTask('server',['connect','open', 'watch']);
 
 
 };

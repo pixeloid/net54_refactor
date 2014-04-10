@@ -1,15 +1,20 @@
 /* BEGIN FOOTER */
 
-#footer {
-  background-image: url("../img/pattern/px_by_Gre3g.png");
-  background-repeat: repeat;
-  color: #f9f9f9;
-  margin: 0 auto;
+footer {
 
-  p {
-    padding: 12px 0 0;
-    text-align: center;
+  ul.list-inline{
+  	margin: 0px;
+  	 li{
+  	  	padding: 0;
+  		color: @link-color;
+  		display: inline-block;
+  		&:before{
+  			content:"|"
+  		}
+  	  }
   }
+  padding: 16px 0;
+  background: @brand-secondary;
 }
 
 /** END FOOTER */

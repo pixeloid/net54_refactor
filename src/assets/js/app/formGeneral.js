@@ -1,6 +1,15 @@
 function formGeneral() {
     "use strict";
 
+
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_minimal',
+      radioClass: 'iradio_minimal',
+      // increaseArea: '20%' // optional
+    });
+
+    return;
+
     $('.with-tooltip').tooltip({
         selector: ".input-tooltip"
     });
@@ -45,10 +54,6 @@ function formGeneral() {
 //         numberFormat: "C"
 //     });
     /*----------- END spinner CODE -------------------------*/
-
-    /*----------- BEGIN uniform CODE -------------------------*/
-    $('.uniform').uniform();
-    /*----------- END uniform CODE -------------------------*/
 
     /*----------- BEGIN validVal CODE -------------------------*/
     $('#validVal').validVal();

@@ -64,3 +64,6 @@
 [submodule "src/assets/submodule/validVal"]
 	path = src/assets/submodule/validVal
 	url = https://github.com/BeSite/jQuery.validVal.git
+[submodule "jquery-mousewheel"]
+	path = jquery-mousewheel
+	url = https://github.com/brandonaaron/jquery-mousewheel.git

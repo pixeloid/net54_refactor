@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+{{!-- 	<!--Mobile first-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ --}}	<!--IE Compatibility modes-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="stylesheet" href="{{assets}}/css/main.min.css">
+
+        {{#if stylesheets}}
+        {{css stylesheets}}
+        {{/if}}
+
+
+        {{#if cdncss}}
+        {{cdn cdncss}}
+        {{/if}}
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="{{assets}}/lib/html5shiv/html5shiv.js"></script>
+	  <script src="{{assets}}/lib/html5shiv/respond.js"></script>
+	<![endif]-->
+
+	<!--Modernizr 3.0-->
+        <script src="{{assets}}/lib/modernizr/modernizr.js"></script>
+    </head>
+    <body>
+    	<div id="wrap">
+   			{{> nav }}
+   		    <div class="container">
+    			{{> body }}
+   			</div>
+    	</div>
+
+    	{{> footer}}
+
+        <script src="{{assets}}/lib/jquery/jquery.min.js"></script>
+        <script src="{{assets}}/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+        {{#if cdnjs}}
+        {{cdn cdnjs}}
+        {{/if}}
+
+        {{#if javascripts}}
+        {{js javascripts}}
+        {{/if}}
+
+        {{#if scripts}}
+        <script>
+            {{scripts}}
+        </script>
+        {{/if}}
+        
+        <script src="{{assets}}/js/main.min.js"></script>
+
+       </body>
+</html>

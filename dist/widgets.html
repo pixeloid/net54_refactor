@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>NET54 Basic HTML Elements</title>
+
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="assets/lib/icheck/skins/minimal/_all.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+      <script src="assets/lib/html5shiv/html5shiv.js"></script>
+	      <script src="assets/lib/html5shiv/respond.js"></script>
+	    <![endif]-->
+
+    <!--Modernizr 3.0-->
+    <script src="assets/lib/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand">
+              <img src="assets/img/logo.png" alt="">
+            </a> 
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#"> <span class="icon-entypo-gauge"></span> Dashboard </a> 
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><span class="icon-entypo-cog"></span>  Administration  <span class="caret"></span>  </a> 
+                <ul class="dropdown-menu" aria-labelledby="themes">
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Extension </a>  </li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Recording channels </a>  </li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Users </a>  </li>
+                  <li class="divider"></li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Groups </a>  </li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Recording programs </a>  </li>
+                </ul>
+              </li>
+              <li> <a href="#"> <span class="icon-entypo-book"></span> Dictionaries </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-search"></span> Search </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-area-graph"></span> System </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-numbered-list"></span> Settings </a>  </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li> <a href="#"> <span class="icon-entypo-user"></span> Kovács Béla </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-logout"></span> Exit </a>  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+
+        <!-- Widgets
+        ================================================== -->
+        <div class="bs-docs-section">
+          <div class="page-header">
+            <div class="row">
+              <div class="col-lg-12">
+                <h1 id="buttons">Widgets</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-9">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div id="w1" style="height: 160px;"></div>
+                    </div>
+                    <div class="panel-footer">
+                      Last 7 days average:
+                      <b>243</b>calls
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div id="w2" style="height: 160px;"></div>
+                    </div>
+                    <div class="panel-footer">
+                      Today hourly average:
+                      <b>33</b>calls
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-2">
+                          <div id="w3" style="height: 40px;width: 40px;"></div>
+                        </div>
+                        <div class="col-xs-7">
+                          Storage usage
+                          <br>Total:
+                          <b>25 000</b>hours
+                        </div>
+                        <div class="col-xs-2">
+                          <span class="total">87%</span> 
+                        </div>
+                        <div class="col-xs-1">
+                          <div class="btn btn-default"><span class="icon-entypo-chevron-up"></span> 
+                          </div>
+                          <div class="btn btn-default"><span class="icon-entypo-chevron-down"></span> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-2">
+                          <div id="w4" style="height: 40px;width: 40px;"></div>
+                        </div>
+                        <div class="col-xs-7">
+                          Extension
+                          <b>2008</b>
+                          <br>Longest call today
+                        </div>
+                        <div class="col-xs-2">
+                          <span class="total">87%</span> 
+                        </div>
+                        <div class="col-xs-1">
+                          <div class="btn btn-default"><span class="icon-entypo-chevron-up"></span> 
+                          </div>
+                          <div class="btn btn-default"><span class="icon-entypo-chevron-down"></span> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  System messages
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <span class="badge">14</span>  Cras justo odio
+                  </li>
+                  <li class="list-group-item">
+                    <span class="badge">2</span>  Dapibus ac facilisis in
+                  </li>
+                  <li class="list-group-item">
+                    <span class="badge">1</span>  Morbi leo risus
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-inline">
+              <li> <a href="#">NET'54 Üzleti Kommunikáció Kft.</a>  </li>
+              <li> <a href="#">Helpdesk: +36 1 270 9575</a>  </li>
+              <li> <a href="#">helpdesk@net54.hu</a>  </li>
+              <li>© 2014.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/lib/jquery/jquery.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/lib/flot/jquery.flot.js"></script>
+    <script src="assets/lib/flot/jquery.flot.pie.js"></script>
+    <script src="assets/lib/flot/jquery.flot.threshold.js"></script>
+    <script src="assets/lib/flot/jquery.flot.selection.js"></script>
+    <script src="assets/lib/flot/jquery.flot.resize.js"></script>
+    <script src="assets/lib/flot/jquery.flot.stack.js"></script>
+    <script>
+      $(function() {
+        metisChart();
+      });
+    </script>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

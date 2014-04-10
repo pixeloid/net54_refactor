@@ -1,4 +1,5 @@
 // Core variables and mixins
+@import "bootstrap"; // Modify this for custom value
 @import "variables"; // Modify this for custom value
 @import "main/variable";
 @import "mixins";
@@ -36,14 +37,23 @@
 /*********************************************************/
 /*                 Component Styles                      */
 /*********************************************************/
+// entypo icon styles
+@import "main/components/entypo";
+
+// panel styles
+@import "main/components/panel";
+
+// table styles
+@import "main/components/table";
+
 // box styles
 @import "main/components/box";
 
 // custom button styles
 @import "main/components/button";
 
-// Animated Checkbox
-@import "main/components/checkbox";
+// Radio / Checkbox
+@import "main/components/checkboxradio";
 
 // Pricing Table
 @import "main/components/pricing";
