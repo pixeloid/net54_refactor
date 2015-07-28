@@ -184,12 +184,18 @@ module.exports = function (grunt) {
         			src: ['./jquery*.*'],
         			dest: 'dist/assets/lib/jquery'
         		},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/bootstrap/dist/',
-        			src: ['./**/*.*'],
-        			dest: 'dist/assets/lib/bootstrap'
-        		},
+                {
+                    expand: true,
+                    cwd: 'bower_components/bootstrap/fonts/',
+                    src: ['./**/*.*'],
+                    dest: 'dist/assets/fonts'
+                },
+                {
+                    expand: true,
+                    cwd: 'bower_components/bootstrap/dist/',
+                    src: ['./**/*.*'],
+                    dest: 'dist/assets/lib/bootstrap'
+                },
         		{
         			expand: true,
         			cwd: 'bower_components/font-awesome/',
@@ -249,7 +255,8 @@ module.exports = function (grunt) {
         },
 
         watch: {
-		   	
+		   	options: { livereload: true },
+
 			scripts: {
         		files: ['src/assets/**/*.js'],
         		tasks: ['dist-js']
@@ -257,7 +264,6 @@ module.exports = function (grunt) {
         	less: {
 				files: ['src/assets/**/*.less'],
         		tasks: ['less'],
-   	       	    options: { livereload: true },
 			},
         	assemble: {
         		files: ['src/templates/**/*.hbs'],
@@ -279,7 +285,7 @@ module.exports = function (grunt) {
         open: {
         	all: {
         	    // Gets the port from the connect configuration
-        	    path: 'http://<%= connect.all.options.hostname%>:<%= connect.all.options.port%>'
+        	    path: 'http://<%= connect.all.options.hostname%>:<%= connect.all.options.port%>/dist/elements.html'
         	}
         },
 
@@ -314,7 +320,7 @@ module.exports = function (grunt) {
 
     
     // Full distribution task.
-    grunt.registerTask('dist', ['clean', 'copy', 'less', 'dist-js']);
+    grunt.registerTask('dist', ['clean', 'copy', 'less:production', 'dist-js']);
 
     // Default task.
     //grunt.registerTask('default', ['test', 'dist']);

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>NET54 Basic HTML Elements</title>
 
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--IE Compatibility modes-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="assets/css/main.min.css">
@@ -22,7 +25,7 @@
     <script src="assets/lib/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <div id="wrap">
+    <div class="wrapper">
       <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -413,6 +416,73 @@
                   </div>
                   <div class="panel-body">
                     Panel content
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>Spin Panels</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="panel panel-default net54-spinpanel storage-spinpanel" id="storagePanel">
+                <div class="panel-body">
+                  <div class="left-part">
+                    <div class="content">
+                      <div class="spinner" style="bottom: 15px;"></div>
+                    </div>
+                    <div class="percentage" id="storagePercentage"></div>
+                  </div>
+                  <div class="spin-buttons">
+                    <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                      <span class="glyphicon glyphicon-chevron-up"></span> 
+                    </button>
+                    <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                      <span class="glyphicon glyphicon-chevron-down"></span> 
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-primary net54-spinpanel storage-spinpanel" id="storagePanel">
+                <div class="panel-body">
+                  <div class="left-part">
+                    <div class="content">
+                      <div class="spinner" style="bottom: 15px;"></div>
+                    </div>
+                    <div class="percentage" id="storagePercentage"></div>
+                  </div>
+                  <div class="spin-buttons">
+                    <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                      <span class="glyphicon glyphicon-chevron-up"></span> 
+                    </button>
+                    <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                      <span class="glyphicon glyphicon-chevron-down"></span> 
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-warning net54-spinpanel storage-spinpanel" id="storagePanel">
+                <div class="panel-body">
+                  <div class="left-part">
+                    <div class="content">
+                      <div class="spinner" style="bottom: 15px;"></div>
+                    </div>
+                    <div class="percentage" id="storagePercentage"></div>
+                  </div>
+                  <div class="spin-buttons">
+                    <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                      <span class="glyphicon glyphicon-chevron-up"></span> 
+                    </button>
+                    <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                      <span class="glyphicon glyphicon-chevron-down"></span> 
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1001,21 +1071,12 @@
           </div>
         </div>
       </div>
+      <div class="push"></div>
     </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="list-inline">
-              <li> <a href="#">NET'54 Üzleti Kommunikáció Kft.</a>  </li>
-              <li> <a href="#">Helpdesk: +36 1 270 9575</a>  </li>
-              <li> <a href="#">helpdesk@net54.hu</a>  </li>
-              <li>© 2014.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer class="net54-footer">
+      NET&#39;54 Business Communications Ltd. | 1138 Budapest, Váci út 168. | Helpdesk: +36 1 270 9575 |
+      <a href="mailto: helpdesk@net54.hu">helpdesk@net54.hu</a> | Web:
+      <a target="_blank" href="http://www.net54.hu">www.net54.hu</a> | &copy; 2004&ndash;2015.</footer>
     <script src="assets/lib/jquery/jquery.min.js"></script>
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/lib/icheck/icheck.min.js"></script>
@@ -1025,5 +1086,8 @@
       });
     </script>
     <script src="assets/js/main.min.js"></script>
+    <script>
+      document.write('<script src="http://' + location.host.split(':')[0] + ':35729/livereload.js"></' + 'script>')
+    </script>
   </body>
 </html>

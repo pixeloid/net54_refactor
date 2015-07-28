@@ -1,7 +1,7 @@
 /**
 * NET54-Refactor-Template v1.0.0
 * Author : Gergely Olah 
-* Copyright 2014
+* Copyright 2015
 * Licensed under MIT
 */
 $(function () {

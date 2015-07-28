@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{{ title }}</title>
-{{!-- 	<!--Mobile first-->
+	<!--Mobile first-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
- --}}	<!--IE Compatibility modes-->
+	<!--IE Compatibility modes-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <link rel="stylesheet" href="{{assets}}/css/main.min.css">
@@ -29,12 +29,14 @@
         <script src="{{assets}}/lib/modernizr/modernizr.js"></script>
     </head>
     <body>
-    	<div id="wrap">
+    	<div class="wrapper">
    			{{> nav }}
    		    <div class="container">
     			{{> body }}
    			</div>
+            <div class="push"></div>
     	</div>
+
 
     	{{> footer}}
 
@@ -58,6 +60,10 @@
         {{/if}}
         
         <script src="{{assets}}/js/main.min.js"></script>
+<script>document.write('<script src="http://'
+    + location.host.split(':')[0]
+    + ':35729/livereload.js"></'
+    + 'script>')</script>
 
        </body>
 </html>
