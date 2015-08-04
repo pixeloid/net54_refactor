@@ -1,161 +1,128 @@
+@import "../variables.less";
 
-.net54-widget .panel-footer {
-	font-size: 18px;
-	color: #ba4247
+.net54-dashboard {
+	margin-top: 40px;
+	padding-top: 10px;
+	max-width: 1400px;
+	.net54-widget .panel-footer {
+		font-size: 18px;
+		color: @color-primary;
+		b {
+			font-size: 20px;
+			color: black;
+		}
+	}
+
+	.net54-time-widget {
+		overflow: hidden;
+		padding: 0;
+		.net54-clock {
+			font-size: 34px;
+			text-align: center;
+			overflow: hidden;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			color: @color-primary;
+			letter-spacing: 2px;
+		}
+
+		.net54-date {
+			float: right;
+			font-size: 20px;
+			text-align: center;
+			width: 75px;
+			padding: 7px 10px 0 7px;
+			line-height: 22px;
+			color: @gray;
+		}
+	}
+
+	.net54-system-messages {
+		.list-group-item {
+			padding-left: 5px;
+			&.added {
+				opacity: 0;
+				animation: fadein 2s ease-in forwards;
+			}
+		}
+
+		div {
+			display: inline-block;
+		}
+
+		.net54-system-message-level {
+			float: left;
+			width: 30px;
+			text-align: center;
+			vertical-align: middle;
+			&-info {
+				color: @color-info;
+			}
+
+			&-warn {
+				color: @color-warning;
+			}
+
+			&-error {
+				color: @color-danger;
+			}
+
+			&-timestamp {
+				color: @gray;
+			}
+		}
+
+		.net54-system-message {
+			width: calc(100% - 30px);
+		}
+	}
+
+	.net54-recording {
+		text-align: center;
+		font-size: 18px;
+		padding: 1px 0 0 5px;
+		color: @color-primary;
+		.pending {
+			opacity: 0.4;
+		}
+
+		.ok {
+			color: @color-success;
+		}
+
+		.info {
+			color: @color-info;
+		}
+
+		.net54-dashboard-loader {
+			width: 100%;
+		}
+	}
+
+	.spinner {
+		min-width: 16px;
+		min-height: 16px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 48px;
+			height: 48px;
+			margin-top: -24px;
+			margin-left: -24px;
+			border-radius: 50%;
+			border: 4px solid transparent;
+			border-top-color: @color-primary;
+			border-bottom-color: @color-warning;
+			animation: spinner 1.5s ease infinite;
+		}
+	}
 }
 
-.net54-widget .panel-footer b {
-	font-size: 20px;
-	color: #000
-}
-
-.net54-time-widget {
-	overflow: hidden;
-	padding: 0
-}
-
-.net54-time-widget .net54-clock {
-	font-size: 34px;
-	text-align: center;
-	overflow: hidden;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	color: #ba4247;
-	letter-spacing: 2px
-}
-
-.net54-time-widget .net54-date {
-	float: right;
-	font-size: 20px;
-	text-align: center;
-	width: 75px;
-	padding: 7px 10px 0 7px;
-	line-height: 22px;
-	color: #555
-}
-
-.net54-system-messages .list-group-item {
-	padding-left: 5px
-}
-
-.net54-system-messages .list-group-item.added {
-	opacity: 0;
-	animation: fadein 2s ease-in forwards
-}
-
-.net54-system-messages div {
-	display: inline-block
-}
-
-.net54-system-messages .net54-system-message-level {
-	float: left;
-	width: 30px;
-	text-align: center;
-	vertical-align: middle
-}
-
-.net54-system-messages .net54-system-message-level-info {
-	color: #5bc0de
-}
-
-.net54-system-messages .net54-system-message-level-warn {
-	color: #f0ad4e
-}
-
-.net54-system-messages .net54-system-message-level-error {
-	color: #d9534f
-}
-
-.net54-system-messages .net54-system-message-level-timestamp {
-	color: #555
-}
-
-.net54-system-messages .net54-system-message {
-	width: calc(70%)
-}
-
-.net54-recording {
-	text-align: center;
-	font-size: 18px;
-	padding: 1px 0 0 5px;
-	color: #ba4247
-}
-
-.net54-dashboard .net54-recording .pending {
-	opacity: .4
-}
-
-.net54-dashboard .net54-recording .ok {
-	color: #5cb85c
-}
-
-.net54-dashboard .net54-recording .info {
-	color: #5bc0de
-}
-
-.net54-dashboard .net54-recording .net54-dashboard-loader {
-	width: 100%
-}
-
-.net54-dashboard .spinner {
-	min-width: 16px;
-	min-height: 16px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto
-}
-
-.net54-dashboard .spinner:before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 48px;
-	height: 48px;
-	margin-top: -24px;
-	margin-left: -24px;
-	border-radius: 50%;
-	border: 4px solid transparent;
-	border-top-color: #ba4247;
-	border-bottom-color: #f0ad4e;
-	animation: spinner 1.5s ease infinite
-}
-
-
-
-// Licence panel
-
-
-.net54-invalid-licence a {
-	paddding: 6px
-}
-
-.net54-invalid-licence a .glyphicon {
-	color: #f0ad4e;
-	font-size: 32px
-}
-
-.net54-invalid-licence a:hover .glyphicon {
-	color: #ffe9c9
-}
-
-.net54-licence-information {
-	padding: 5px
-}
-
-.net54-licence-information .full-width {
-	width: 100%;
-	padding: 1px 2px 1px 2px
-}
-
-.net54-licence-information div>span:first-child {
-	font-weight: bold
-}
-
-.net54-licence-information div>span:last-child {
-	float: right;
-	text-align: right
-}

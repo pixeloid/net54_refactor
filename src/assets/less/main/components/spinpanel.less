@@ -1,132 +1,144 @@
-.net54-spinpanel .panel-body {
-    padding: 0
+@import "../variables.less";
+
+@widget-height: 80px;
+@spinbuttons-width: 30px;
+@net54-red-10: rgba(186, 66, 71, .1);
+@spinbutton-border: 1px solid @net54-red-10;
+@percentage-width: 100px;
+@length-width: 160px;
+
+.oneliner () {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
-.net54-spinpanel .left-part {
-    width: calc(100% - 30px)
-}
+.net54-spinpanel {
+	.panel-body {
+		padding: 0;
+	}
 
-.net54-spinpanel .left-part .no-data {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    float: left;
-    padding: 30px 0;
-    height: 80px;
-    font-size: 18px;
-    text-align: center;
-    width: 100%
-}
+	.left-part {
+		width: calc(100% ~"-" @spinbuttons-width);
 
-.net54-spinpanel .spin-buttons {
-    white-space: nowrap;
-    vertical-align: middle;
-    display: table-cell;
-    float: right;
-    width: 30px;
-    height: 80px
-}
+		.no-data {
+			.oneliner ();
+			float: left;
+			padding: ((@widget-height - @font-Large) / 2 - 1) 0;
+			height: @widget-height;
+			font-size: @font-Large;
+			text-align: center;
+			width: 100%;
+		}
+	}
 
-.net54-spinpanel .spin-buttons>.btn {
-    display: block;
-    height: 50%;
-    width: 100%;
-    max-width: 100%;
-    padding: 8px;
-    border-radius: 0;
-    border: 0;
-    border-left: 1px solid rgba(186, 66, 71, 0.1)
-}
+	.spin-buttons {
+		white-space: nowrap;
+		vertical-align: middle;
+		display: table-cell;
+		float: right;
+		width: @spinbuttons-width;
+		height: @widget-height;
+		> .btn {
+			display: block;
+			height: 50%;
+			width: 100%;
+			max-width: 100%;
+			padding: 8px;
+			border-radius: 0;
+			border: 0;
+			border-left: @spinbutton-border;
 
-.net54-spinpanel .spin-buttons>.btn .glyphicon-chevron-up {
-    padding-left: 1px
-}
+			.glyphicon-chevron-up {
+				padding-left: 1px;
+			}
+		}
 
-.net54-spinpanel .spin-buttons>.btn:first-child {
-    border-bottom: 1px solid rgba(186, 66, 71, 0.1)
-}
+		> .btn:first-child {
+			border-bottom: @spinbutton-border;
+		}
+	}
 
-.net54-spinpanel.storage-spinpanel .left-part .content {
-    width: calc(100% - 100px);
-    float: left;
-    padding: 6px;
-    height: 80px
-}
+	&.storage-spinpanel {
+		.left-part {
+			.content {
+				width: calc(100% ~"-" @percentage-width);
+				float: left;
+				padding: 6px;
+				height: @widget-height;
+				.description {
+					.oneliner ();
+					width: 100%;
+					margin-top: 3px;
+					font-size: @font-Large;
+				}
 
-.net54-spinpanel.storage-spinpanel .left-part .content .description {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
-    margin-top: 3px;
-    font-size: 18px
-}
+				.progress {
+					margin: 0;
+					margin-bottom: 5px;
 
-.net54-spinpanel.storage-spinpanel .left-part .content .progress {
-    margin: 0;
-    margin-bottom: 5px
-}
+					.progress-bar {
+						min-width: 10%;
+					}
+				}
 
-.net54-spinpanel.storage-spinpanel .left-part .content .progress .progress-bar {
-    min-width: 10%
-}
+				.free-space {
+					.oneliner ();
+					text-align: center;
+					width: 100%;
+					font-size: @font-large;
+				}
+			}
 
-.net54-spinpanel.storage-spinpanel .left-part .content .free-space {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
-    width: 100%;
-    font-size: 14px
-}
+			.percentage {
+				display: inline-block;
+				font-size: @font-HUGE;
+				line-height: @font-HUGE;
+				padding: ((@widget-height - @font-HUGE) / 2) 0;
+				width: @percentage-width;
+				float: left;
+				text-align: center;
+				overflow: hidden;
+			}
+		}
+	}
 
-.net54-spinpanel.storage-spinpanel .left-part .percentage {
-    display: inline-block;
-    font-size: 32px;
-    line-height: 32px;
-    padding: 24px 0;
-    width: 100px;
-    float: left;
-    text-align: center;
-    overflow: hidden
-}
+	&.longest-calls-spinpanel {
+		.left-part {
+			.content {
+				width: calc(100% ~"-" @length-width);
+				float: left;
+				padding: 6px;
+				height: @widget-height;
 
-.net54-spinpanel.longest-calls-spinpanel .left-part .content {
-    width: calc(100% - 160px);
-    float: left;
-    padding: 6px;
-    height: 80px
-}
+				.station {
+					.oneliner ();
+					font-size: @font-huge;
+				}
 
-.net54-spinpanel.longest-calls-spinpanel .left-part .content .station {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 24px
-}
+				.description {
+					.oneliner ();
+					font-size: @font-Large;
+					padding: ((@font-huge - @font-Large) / 2) 0;
+					color: @color-primary;
+				}
+			}
 
-.net54-spinpanel.longest-calls-spinpanel .left-part .content .description {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 18px;
-    padding: 3px 0;
-    color: #ba4247
-}
+			.length {
+				display: inline-block;
+				font-size: @font-HUGE;
+				line-height: @font-HUGE;
+				padding: ((@widget-height - @font-HUGE) / 2) 0;
+				width: @length-width;
+				float: left;
+				text-align: center;
+				overflow: hidden;
 
-.net54-spinpanel.longest-calls-spinpanel .left-part .length {
-    display: inline-block;
-    font-size: 32px;
-    line-height: 32px;
-    padding: 24px 0;
-    width: 160px;
-    float: left;
-    text-align: center;
-    overflow: hidden
+				&.twoline {
+					padding: ((@widget-height - @font-HUGE * 2) / 2) 0;
+				}
+			}
+		}
+	}
 }
-
-.net54-spinpanel.longest-calls-spinpanel .left-part .length.twoline {
-    padding: 8px 0
-}
-
 

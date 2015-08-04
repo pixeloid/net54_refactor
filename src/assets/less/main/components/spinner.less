@@ -1,27 +1,32 @@
+@class-name: net54-spinner;
 
-.has-net54-spinner .net54-spinner {
-	display: inline-block;
-	opacity: 0;
-	width: 0;
-	transition: opacity .25s, width .25s;
-	animation: spinner 1.5s linear infinite
-}
-.has-net54-spinner.active {
-	cursor: progress
-}
-.has-net54-spinner.active .net54-spinner {
-	opacity: 1;
-	width: auto
-}
-.has-net54-spinner.btn-mini.active .net54-spinner {
-	width: 10px
-}
-.has-net54-spinner.btn-small.active .net54-spinner {
-	width: 13px
-}
-.has-net54-spinner.btn.active .net54-spinner {
-	width: 16px
-}
-.has-net54-spinner.btn-large.active .net54-spinner {
-	width: 19px
+.has-@{class-name} {
+	.@{class-name} {
+		display: inline-block;
+		opacity: 0;
+		width: 0;
+		transition: opacity 0.25s, width 0.25s;
+		animation: spinner 1.5s linear infinite;
+	}
+
+	&.active {
+		cursor: progress;
+	}
+
+	&.active .@{class-name} {
+		opacity: 1;
+		width: auto;
+	}
+	&.btn-mini.active .@{class-name} {
+		width: 10px;
+	}
+	&.btn-small.active .@{class-name} {
+		width: 13px;
+	}
+	&.btn.active .@{class-name} {
+		width: 16px;
+	}
+	&.btn-large.active .@{class-name} {
+		width: 19px;
+	}
 }
