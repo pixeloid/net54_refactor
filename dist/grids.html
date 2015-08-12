@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>NET54 jqGrid</title>
+
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+      <script src="assets/lib/html5shiv/html5shiv.js"></script>
+	      <script src="assets/lib/html5shiv/respond.js"></script>
+	    <![endif]-->
+
+    <!--Modernizr 3.0-->
+    <script src="assets/lib/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand">
+              <img src="assets/img/logo.png" alt="">
+            </a> 
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#"> <span class="icon-entypo-gauge"></span> Dashboard </a> 
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><span class="icon-entypo-cog"></span>  Administration  <span class="caret"></span>  </a> 
+                <ul class="dropdown-menu" aria-labelledby="themes">
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Extension </a>  </li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Recording channels </a>  </li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Users </a>  </li>
+                  <li class="divider"></li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Groups </a>  </li>
+                  <li> <a href="#"> <span class="icon-entypo-chevron-small-right"></span>  Recording programs </a>  </li>
+                </ul>
+              </li>
+              <li> <a href="#"> <span class="icon-entypo-book"></span> Dictionaries </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-search"></span> Search </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-area-graph"></span> System </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-numbered-list"></span> Settings </a>  </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li> <a href="#"> <span class="icon-entypo-user"></span> Kovács Béla </a>  </li>
+              <li> <a href="#"> <span class="icon-entypo-logout"></span> Exit </a>  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+
+        <!-- Widgets
+        ================================================== -->
+        <div class="bs-docs-section">
+          <div class="page-header">
+            <h1 id="buttons">Widgets</h1>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel panel-default">
+                <table id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer class="net54-footer">
+      NET&#39;54 Business Communications Ltd. | 1138 Budapest, Váci út 168. | Helpdesk: +36 1 270 9575 |
+      <a href="mailto: helpdesk@net54.hu">helpdesk@net54.hu</a> | Web:
+      <a target="_blank" href="http://www.net54.hu">www.net54.hu</a> | &copy; 2004&ndash;2015.</footer>
+    <script src="assets/lib/jquery/jquery.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/lib/jqgrid/i18n/grid.locale-hu.js"></script>
+    <script src="assets/lib/jqgrid/jquery.jqGrid.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+    <script>
+      document.write('<script src="http://' + location.host.split(':')[0] + ':35729/livereload.js"></' + 'script>')
+    </script>
+  </body>
+</html>

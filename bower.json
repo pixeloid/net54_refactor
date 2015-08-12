@@ -29,8 +29,11 @@
     "modernizr": "~2.7.2",
     "jquery": "~1.9.1",
     "jquery-mousewheel": "~3.1.9",
-    "jqgrid": "~4.6.0",
+    "jqgrid": "~5.0.0",
     "prettify": "*",
     "iCheck": "~1.0.2"
+  },
+  "resolutions": {
+    "jqgrid": "~5.0.0"
   }
 }

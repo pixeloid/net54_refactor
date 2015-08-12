@@ -45,7 +45,8 @@ module.exports = function (grunt) {
 				src: [
 					'src/assets/js/app/base.js', 
 					'src/assets/js/app/formGeneral.js',
-					'src/assets/js/app/chart.js',
+                    'src/assets/js/app/chart.js',
+                    'src/assets/js/app/jqGrid.js',
 				],
 				dest: 'dist/assets/js/main.js'
 			}
@@ -226,12 +227,18 @@ module.exports = function (grunt) {
         			src: ['./respond.min.js'],
         			dest: 'dist/assets/lib/respond'
         		},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/modernizr',
-        			src: ['./modernizr.js'],
-        			dest: 'dist/assets/lib/modernizr'
-        		},
+                {
+                    expand: true,
+                    cwd: 'bower_components/modernizr',
+                    src: ['./modernizr.js'],
+                    dest: 'dist/assets/lib/modernizr'
+                },
+                {
+                    expand: true,
+                    cwd: 'bower_components/jqgrid/js/minified',
+                    src: ['./**/*'],
+                    dest: 'dist/assets/lib/jqgrid'
+                },
         		// {
         		// 	expand: true,
         		// 	cwd: 'src/assets/less',

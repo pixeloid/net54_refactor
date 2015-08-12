@@ -265,159 +265,163 @@ function metisChart() {
     var data = [];
 
     for (var i = 0; i <= 7; i += 1) {
- 
-    	var val = parseInt(Math.random() * 300);
 
-    	sum += val;
-    	data.push([i, val]);  
+        var val = parseInt(Math.random() * 300);
+
+        sum += val;
+        data.push([i, val]);
     }
-   		var avg = sum/data.length;
+    var avg = sum / data.length;
 
-    	$.plot("#w1", [{color: "#ba4247", data: data}], {	
-    			series: {
-		    		// ,
-		    		// threshold: {
-		    		// 	below: avg,
-		    		// 	//color: "red"
-		    		// },
-		    		bars: {
-		    			show: true,
-					   	barWidth: 0.9,
-						lineWidth: 0,
-						fill:1
-		    		}
-    				    		
-    			},
+    $.plot("#w1", [{
+            color: "#ba4247",
+            data: data
+        }], {
+            series: {
+                // ,
+                // threshold: {
+                //  below: avg,
+                //  //color: "red"
+                // },
+                bars: {
+                    show: true,
+                    barWidth: 0.9,
+                    lineWidth: 0,
+                    fill: 1
+                }
 
-    			tooltip: true,
+            },
 
-    			xaxis:{
-    				show: false
-    			},
-    			grid: {
-    			    borderWidth: 0,
-    			    hoverable: true, 
-    			    clickable: true 
-    			}
+            tooltip: true,
 
-    		}
+            xaxis: {
+                show: false
+            },
+            grid: {
+                borderWidth: 0,
+                hoverable: true,
+                clickable: true
+            }
 
-    	);
+        }
 
-    	var previousPoint = null;
+    );
 
-
-
-    	//$('#w1').tooltip({title: 'tooltip'});
-
-		$("#w1").bind("plothover", function (event, pos, item) {
-
-    	        if (item) {
-    	            if (!previousPoint || previousPoint[0] != item.datapoint[0]) {
-    	                previousPoint = item.datapoint;
-    	                var x = item.datapoint[0].toFixed(2), y = item.datapoint[1].toFixed(2);
-    	                showTooltip(item.pageX, item.pageY, item.datapoint[1]);
-    	            }
-    	        }
-    	        else {
-
-					$('#w1').tooltip('destroy');
-					previousPoint = null;            
-    	        }
-
-    	});
-
-    	// show the tooltip
-    	function showTooltip(x, y, contents) {
-    		    	$('#w1').tooltip({
-    		       		title: contents
-    			    })
-    			    .tooltip('show')
-    	}
+    var previousPoint = null;
 
 
 
- var 	data1 = [],
- 		data2 = [];
+    //$('#w1').tooltip({title: 'tooltip'});
 
-for (var i = 0; i < 24; i++) {
-	data1.push([i, Math.floor(Math.random() * 100) + 1])
-}
-for (var i = 0; i < 13; i++) {
-	data2.push([i, Math.floor(Math.random() * 100) + 1])
-}
+    $("#w1").bind("plothover", function(event, pos, item) {
 
-var dataset = [{
-		color: "#ba4247",
-		data: data1,
-		bars:{fill: 0.3}
-	},{
-		color: "#ba4247",
-		data: data2,
-		bars:{fill: 1}
-}];
+        if (item) {
+            if (!previousPoint || previousPoint[0] != item.datapoint[0]) {
+                previousPoint = item.datapoint;
+                var x = item.datapoint[0].toFixed(2),
+                    y = item.datapoint[1].toFixed(2);
+                showTooltip(item.pageX, item.pageY, item.datapoint[1]);
+            }
+        } else {
 
- 
- $.plot('#w2', dataset, {
-     series: {
-         bars: {
-  			barWidth: 0.8,
-			lineWidth: 0,
-			show: true
-       }
-     },
-     xaxis:{
-     	show: false
-     },
-     grid: {
-         borderWidth: 0
-     }
+            $('#w1').tooltip('destroy');
+            previousPoint = null;
+        }
 
- });
+    });
+
+    // show the tooltip
+    function showTooltip(x, y, contents) {
+        $('#w1').tooltip({
+                title: contents
+            })
+            .tooltip('show')
+    }
 
 
 
+    var data1 = [],
+        data2 = [];
+
+    for (var i = 0; i < 24; i++) {
+        data1.push([i, Math.floor(Math.random() * 100) + 1])
+    }
+    for (var i = 0; i < 13; i++) {
+        data2.push([i, Math.floor(Math.random() * 100) + 1])
+    }
+
+    var dataset = [{
+        color: "#ba4247",
+        data: data1,
+        bars: {
+            fill: 0.3
+        }
+    }, {
+        color: "#ba4247",
+        data: data2,
+        bars: {
+            fill: 1
+        }
+    }];
 
 
-	var dataset = [
-	{
-	    data: [
-    		[0,32],
-    		[1,23],
-    		[2,45],
-    		[3,12]
-		],
-		color: '#ba4247'
+    $.plot('#w2', dataset, {
+        series: {
+            bars: {
+                barWidth: 0.8,
+                lineWidth: 0,
+                show: true
+            }
+        },
+        xaxis: {
+            show: false
+        },
+        grid: {
+            borderWidth: 0
+        }
 
-	},
-	{
-	    data: [
-    	    [0,68],
-    	    [1,77],
-    	    [2,55],
-    	    [3,88]
-	    ],
-	    color: '#eeeeee'
+    });
 
-	}
-	];
+
+
+
+
+    var dataset = [{
+        data: [
+            [0, 32],
+            [1, 23],
+            [2, 45],
+            [3, 12]
+        ],
+        color: '#ba4247'
+
+    }, {
+        data: [
+            [0, 68],
+            [1, 77],
+            [2, 55],
+            [3, 88]
+        ],
+        color: '#eeeeee'
+
+    }];
 
     $.plot($("#w3"), dataset, {
         series: {
-        	stack: true,
+            stack: true,
             bars: {
-            	fill: 1,
-      		    barWidth: 0.7,
-  				show: true
-           	}
+                fill: 1,
+                barWidth: 0.7,
+                show: true
+            }
         },
-    	xaxis:{
-    		show: false
-    	},
-   	 	yaxis:{
-    		show: false
-    	},
-	    grid: {
+        xaxis: {
+            show: false
+        },
+        yaxis: {
+            show: false
+        },
+        grid: {
             show: false,
         },
 
@@ -426,38 +430,60 @@ var dataset = [{
 
 
 
-    	var dataset = [
-    	{
-    	    data: [
-        		[0,12],
-        		[1,43],
-        		[2,105],
-        		[3,45]
-    		],
-    		color: '#ba4247'
-    	}
-    	];
+    var dataset = [{
+        data: [
+            [0, 12],
+            [1, 43],
+            [2, 105],
+            [3, 45]
+        ],
+        color: '#ba4247'
+    }];
 
-        $.plot($("#w4"), dataset, {
-            series: {
-                bars: {
-                	fill: 1,
-          		    barWidth: 0.7,
-      				show: true
-               	}
-            },
-        	xaxis:{
-        		show: false
-        	},
-       	 	yaxis:{
-        		show: false
-        	},
-    	    grid: {
-                show: false,
-            },
-           
+    $.plot($("#w4"), dataset, {
+        series: {
+            bars: {
+                fill: 1,
+                barWidth: 0.7,
+                show: true
+            }
+        },
+        xaxis: {
+            show: false
+        },
+        yaxis: {
+            show: false
+        },
+        grid: {
+            show: false,
+        },
 
-        });
+
+    });
 
 
 }
+$.jgrid.styleUI.Bootstrap.base.headerTable = "table table-bordered table-condensed";
+$.jgrid.styleUI.Bootstrap.base.rowTable = "table table-bordered table-condensed";
+$.jgrid.styleUI.Bootstrap.base.footerTable = "table table-bordered table-condensed";
+$.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
+
+$("#jqGrid").jqGrid({
+    url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+    mtype: "GET",
+    datatype: "jsonp",
+    styleUI : 'Bootstrap',
+    colModel: [
+        { label: 'OrderID', name: 'OrderID', key: true, sorttype:'number'},
+        { label: 'Customer ID', name: 'CustomerID' },
+        { label: 'Order Date', name: 'OrderDate' },
+        { label: 'Freight', name: 'Freight' },
+        { label:'Ship Name', name: 'ShipName' }
+    ],
+    multiselect: true,
+    height: 200,
+    autowidth: true,
+	viewrecords: true,
+    rowNum: 10,
+    pager: "#jqGridPager"
+});
