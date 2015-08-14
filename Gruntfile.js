@@ -20,7 +20,8 @@ module.exports = function (grunt) {
 				paths: [
 					'bower_components/bootstrap/less', 
 					'bower_components/eonasdan-bootstrap-datetimepicker/src/less',
-					'bower_components/bootstrap-dialog/src/less'],
+					'bower_components/bootstrap-dialog/src/less',
+					'bower_components/fuelux/less'],
 				imports: {
 					reference: ['mixins.less', 'variables.less']
 				}
@@ -211,6 +212,12 @@ module.exports = function (grunt) {
 					cwd: 'bower_components/eonasdan-bootstrap-datetimepicker/build/js',
 					src: ['./**/*.*'],
 					dest: 'dist/assets/lib/eonasdan-bootstrap-datetimepicker'
+				},
+				{
+					expand: true,
+					cwd: 'bower_components/fuelux/dist',
+					src: ['./**/*.*'],
+					dest: 'dist/assets/lib/fuelux'
 				},
         		{
         			expand: true,
