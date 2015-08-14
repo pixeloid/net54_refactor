@@ -271,7 +271,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Univers", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #150303;
@@ -360,7 +360,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Univers Condensed', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -5778,6 +5778,484 @@ button.close {
     display: none !important;
   }
 }
+.bootstrap-dialog {
+  /* dialog types */
+  /**
+     * Icon animation
+     * Copied from font-awesome: http://fontawesome.io/
+     **/
+  /** End of icon animation **/
+}
+.bootstrap-dialog .modal-header {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.bootstrap-dialog .bootstrap-dialog-title {
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+}
+.bootstrap-dialog .bootstrap-dialog-message {
+  font-size: 14px;
+}
+.bootstrap-dialog .bootstrap-dialog-button-icon {
+  margin-right: 3px;
+}
+.bootstrap-dialog .bootstrap-dialog-close-button {
+  font-size: 20px;
+  float: right;
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+}
+.bootstrap-dialog .bootstrap-dialog-close-button:hover {
+  cursor: pointer;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+.bootstrap-dialog.type-default .modal-header {
+  background-color: #fff;
+}
+.bootstrap-dialog.type-default .bootstrap-dialog-title {
+  color: #333;
+}
+.bootstrap-dialog.type-info .modal-header {
+  background-color: #5bc0de;
+}
+.bootstrap-dialog.type-primary .modal-header {
+  background-color: #428bca;
+}
+.bootstrap-dialog.type-success .modal-header {
+  background-color: #5cb85c;
+}
+.bootstrap-dialog.type-warning .modal-header {
+  background-color: #f0ad4e;
+}
+.bootstrap-dialog.type-danger .modal-header {
+  background-color: #d9534f;
+}
+.bootstrap-dialog.size-large .bootstrap-dialog-title {
+  font-size: 24px;
+}
+.bootstrap-dialog.size-large .bootstrap-dialog-close-button {
+  font-size: 30px;
+}
+.bootstrap-dialog.size-large .bootstrap-dialog-message {
+  font-size: 18px;
+}
+.bootstrap-dialog .icon-spin {
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/*!
+ * Datetimepicker for Bootstrap 3
+ * version : 4.15.35
+ * https://github.com/Eonasdan/bootstrap-datetimepicker/
+ */
+.bootstrap-datetimepicker-widget {
+  list-style: none;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  margin: 2px 0;
+  padding: 4px;
+  width: 19em;
+}
+@media (min-width: 768px) {
+  .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 38em;
+  }
+}
+@media (min-width: 992px) {
+  .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 38em;
+  }
+}
+@media (min-width: 1200px) {
+  .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 38em;
+  }
+}
+.bootstrap-datetimepicker-widget.dropdown-menu:before,
+.bootstrap-datetimepicker-widget.dropdown-menu:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #cccccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  top: -7px;
+  left: 7px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  top: -6px;
+  left: 8px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.top:before {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #cccccc;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  bottom: -7px;
+  left: 6px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.top:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ffffff;
+  bottom: -6px;
+  left: 7px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.pull-right:before {
+  left: auto;
+  right: 6px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.pull-right:after {
+  left: auto;
+  right: 7px;
+}
+.bootstrap-datetimepicker-widget .list-unstyled {
+  margin: 0;
+}
+.bootstrap-datetimepicker-widget a[data-action] {
+  padding: 6px 0;
+}
+.bootstrap-datetimepicker-widget a[data-action]:active {
+  box-shadow: none;
+}
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute,
+.bootstrap-datetimepicker-widget .timepicker-second {
+  width: 54px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+.bootstrap-datetimepicker-widget button[data-action] {
+  padding: 6px;
+}
+.bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Increment Hours";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Increment Minutes";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="decrementHours"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Decrement Hours";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="decrementMinutes"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Decrement Minutes";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="showHours"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Show Hours";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="showMinutes"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Show Minutes";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="togglePeriod"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Toggle AM/PM";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="clear"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Clear the picker";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="today"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Set the date to today";
+}
+.bootstrap-datetimepicker-widget .picker-switch {
+  text-align: center;
+}
+.bootstrap-datetimepicker-widget .picker-switch::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Toggle Date and Time Screens";
+}
+.bootstrap-datetimepicker-widget .picker-switch td {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  width: auto;
+  line-height: inherit;
+}
+.bootstrap-datetimepicker-widget .picker-switch td span {
+  line-height: 2.5;
+  height: 2.5em;
+  width: 100%;
+}
+.bootstrap-datetimepicker-widget table {
+  width: 100%;
+  margin: 0;
+}
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table th {
+  text-align: center;
+  border-radius: 0px;
+}
+.bootstrap-datetimepicker-widget table th {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+.bootstrap-datetimepicker-widget table th.picker-switch {
+  width: 145px;
+}
+.bootstrap-datetimepicker-widget table th.disabled,
+.bootstrap-datetimepicker-widget table th.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: not-allowed;
+}
+.bootstrap-datetimepicker-widget table th.prev::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Previous Month";
+}
+.bootstrap-datetimepicker-widget table th.next::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Next Month";
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th {
+  cursor: pointer;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+  background: #eeeeee;
+}
+.bootstrap-datetimepicker-widget table td {
+  height: 54px;
+  line-height: 54px;
+  width: 54px;
+}
+.bootstrap-datetimepicker-widget table td.cw {
+  font-size: .8em;
+  height: 20px;
+  line-height: 20px;
+  color: #999999;
+}
+.bootstrap-datetimepicker-widget table td.day {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+.bootstrap-datetimepicker-widget table td.day:hover,
+.bootstrap-datetimepicker-widget table td.hour:hover,
+.bootstrap-datetimepicker-widget table td.minute:hover,
+.bootstrap-datetimepicker-widget table td.second:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.bootstrap-datetimepicker-widget table td.old,
+.bootstrap-datetimepicker-widget table td.new {
+  color: #999999;
+}
+.bootstrap-datetimepicker-widget table td.today {
+  position: relative;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+  content: '';
+  display: inline-block;
+  border: solid transparent;
+  border-width: 0 0 7px 7px;
+  border-bottom-color: #ba4247;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: #ba4247;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.bootstrap-datetimepicker-widget table td.active.today:before {
+  border-bottom-color: #fff;
+}
+.bootstrap-datetimepicker-widget table td.disabled,
+.bootstrap-datetimepicker-widget table td.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: not-allowed;
+}
+.bootstrap-datetimepicker-widget table td span {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  margin: 2px 1.5px;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.bootstrap-datetimepicker-widget table td span:hover {
+  background: #eeeeee;
+}
+.bootstrap-datetimepicker-widget table td span.active {
+  background-color: #ba4247;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.bootstrap-datetimepicker-widget table td span.old {
+  color: #999999;
+}
+.bootstrap-datetimepicker-widget table td span.disabled,
+.bootstrap-datetimepicker-widget table td span.disabled:hover {
+  background: none;
+  color: #999999;
+  cursor: not-allowed;
+}
+.bootstrap-datetimepicker-widget.usetwentyfour td.hour {
+  height: 27px;
+  line-height: 27px;
+}
+.bootstrap-datetimepicker-widget.wider {
+  width: 21em;
+}
+.bootstrap-datetimepicker-widget .datepicker-decades .decade {
+  line-height: 1.8em !important;
+}
+.input-group.date .input-group-addon {
+  cursor: pointer;
+}
 @keyframes fadein {
   from {
     opacity: 0;
@@ -5790,86 +6268,6 @@ button.close {
   to {
     transform: rotate(360deg);
   }
-}
-@font-face {
-  font-family: 'Univers';
-  src: url('../fonts/unvr55w.eot');
-  src: url('../fonts/unvr55w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr55w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr55w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr55w.svg#eded561bebdb284895656bed6df50806') format('svg');
-  font-style: normal;
-  font-weight: 400;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers';
-  src: url('../fonts/unvr56w.eot');
-  src: url('../fonts/unvr56w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr56w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr56w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr56w.svg#971454544b065150f4ea33eea1eccd47') format('svg');
-  font-style: italic;
-  font-weight: 400;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers Condensed';
-  src: url('../fonts/unvr57w.eot');
-  src: url('../fonts/unvr57w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr57w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr57w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr57w.svg#fffef28542375bcbc7734beee881431a') format('svg');
-  font-style: normal;
-  font-weight: 400;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers Condensed';
-  src: url('../fonts/unvr58w.eot');
-  src: url('../fonts/unvr58w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr58w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr58w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr58w.svg#670ad4da042d9e7fa25a5205a19db1e2') format('svg');
-  font-style: italic;
-  font-weight: 400;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers';
-  src: url('../fonts/unvr65w.eot');
-  src: url('../fonts/unvr65w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr65w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr65w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr65w.svg#aac145b1a34d1639eaacc742e519df97') format('svg');
-  font-style: normal;
-  font-weight: 700;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers';
-  src: url('../fonts/unvr66w.eot');
-  src: url('../fonts/unvr66w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr66w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr66w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr66w.svg#41044afd99d171fb347bf2580b59668a') format('svg');
-  font-style: italic;
-  font-weight: 700;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers Condensed';
-  src: url('../fonts/unvr67w.eot');
-  src: url('../fonts/unvr67w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr67w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr67w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr67w.svg#52e80f32d93b6aa874aa52ad12f6cc3e') format('svg');
-  font-style: normal;
-  font-weight: 700;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
-}
-@font-face {
-  font-family: 'Univers Condensed';
-  src: url('../fonts/unvr68w.eot');
-  src: url('../fonts/unvr68w.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/unvr68w.woff') format('woff'), /* Modern Browsers */ url('../fonts/unvr68w.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/unvr68w.svg#a84a5f08c34018e04c44df95375766ea') format('svg');
-  font-style: italic;
-  font-weight: 700;
-  
-  /* IE9 Compat Modes */
-  /* Legacy iOS */
 }
 /*********************************************************/
 /*                 Layout Styles                         */
@@ -8134,6 +8532,34 @@ ul.ui-nav-menu li {
   border-top-color: #ba4247;
   border-bottom-color: #f0ad4e;
   animation: spinner 1.5s ease infinite;
+}
+.bootstrap-dialog .modal-header {
+  border-radius: 0;
+}
+.bootstrap-dialog-close-button .close {
+  opacity: 0.9;
+  color: #eeeeee;
+}
+.bootstrap-dialog.type-default .modal-header {
+  background-color: #eeeeee;
+}
+.bootstrap-dialog.type-default .bootstrap-dialog-title {
+  color: #333333;
+}
+.bootstrap-dialog.type-info .modal-header {
+  background-color: #5bc0de;
+}
+.bootstrap-dialog.type-primary .modal-header {
+  background-color: #ba4247;
+}
+.bootstrap-dialog.type-success .modal-header {
+  background-color: #5cb85c;
+}
+.bootstrap-dialog.type-warning .modal-header {
+  background-color: #f0ad4e;
+}
+.bootstrap-dialog.type-danger .modal-header {
+  background-color: #d9534f;
 }
 .draggable {
   cursor: move;

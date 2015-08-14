@@ -17,7 +17,10 @@ module.exports = function (grunt) {
         	options: {
         		banner: '<%= banner %>',
         		metadata: 'src/*.{json,yml}',
-				paths: 'bower_components/bootstrap/less',
+				paths: [
+					'bower_components/bootstrap/less', 
+					'bower_components/eonasdan-bootstrap-datetimepicker/src/less',
+					'bower_components/bootstrap-dialog/src/less'],
 				imports: {
 					reference: ['mixins.less', 'variables.less']
 				}
@@ -197,6 +200,18 @@ module.exports = function (grunt) {
                     src: ['./**/*.*'],
                     dest: 'dist/assets/lib/bootstrap'
                 },
+				{
+					expand: true,
+					cwd: 'bower_components/bootstrap-dialog/dist/js',
+					src: ['./**/*.*'],
+					dest: 'dist/assets/lib/bootstrap-dialog/'
+				},
+				{
+					expand: true,
+					cwd: 'bower_components/eonasdan-bootstrap-datetimepicker/build/js',
+					src: ['./**/*.*'],
+					dest: 'dist/assets/lib/eonasdan-bootstrap-datetimepicker'
+				},
         		{
         			expand: true,
         			cwd: 'bower_components/font-awesome/',
@@ -327,7 +342,7 @@ module.exports = function (grunt) {
 
     
     // Full distribution task.
-    grunt.registerTask('dist', ['clean', 'copy', 'less:production', 'dist-js']);
+    grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js']);
 
     // Default task.
     //grunt.registerTask('default', ['test', 'dist']);
