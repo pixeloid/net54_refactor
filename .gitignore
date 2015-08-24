@@ -1,4 +1,6 @@
 node_modules/
 nbproject/
 .idea/
+dist
 bower_components/
+resources

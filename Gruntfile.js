@@ -185,8 +185,8 @@ module.exports = function (grunt) {
         		// },
         		{
         			expand: true,
-        			cwd: 'bower_components/jquery/',
-        			src: ['./jquery*.*'],
+        			cwd: 'bower_components/jquery/dist',
+        			src: ['./*.*'],
         			dest: 'dist/assets/lib/jquery'
         		},
                 {
@@ -304,7 +304,7 @@ module.exports = function (grunt) {
         connect: {
         	all: {
         		options:{
-        			port: 8000,
+        			port: 8001,
         			hostname: "0.0.0.0",
         			path: 'dist'
         		}
@@ -349,12 +349,12 @@ module.exports = function (grunt) {
 
     
     // Full distribution task.
-    grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js']);
+    grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js', 'assemble:theme']);
 
     // Default task.
     //grunt.registerTask('default', ['test', 'dist']);
 
-    grunt.registerTask('default', ['dist', 'assemble:theme']);
+    grunt.registerTask('default', ['dist']);
 
     grunt.registerTask('server',['connect','open', 'watch']);
 
