@@ -7430,109 +7430,6 @@ button.close {
 .fuelux .fueluxicon-bullet:before {
   content: "\e009";
 }
-.fuelux .checkbox {
-  /* for keyboard tabbing */
-}
-.fuelux .checkbox.highlight + .checkbox.highlight {
-  margin-top: -5px;
-}
-.fuelux .checkbox.highlight label.checkbox-custom {
-  padding: 4px 4px 4px 24px;
-}
-.fuelux .checkbox.highlight.checked label.checkbox-custom,
-.fuelux .checkbox.highlight label.checked.checkbox-custom {
-  background: #e6e6e6;
-  border-radius: 4px;
-}
-.fuelux .checkbox input[type="checkbox"]:focus + .checkbox-label,
-.fuelux .checkbox input[type="checkbox"]:hover + .checkbox-label,
-.fuelux .checkbox .checkbox-label:hover {
-  color: #999999;
-}
-.fuelux .checkbox input[type="checkbox"]:disabled:focus + .checkbox-label,
-.fuelux .checkbox input[type="checkbox"]:disabled:hover + .checkbox-label,
-.fuelux .checkbox.disabled label:hover {
-  color: inherit;
-}
-.fuelux .form-horizontal .checkbox-inline {
-  padding-top: 0;
-}
-.fuelux .input-group-addon.checkbox-custom.checkbox-inline:before {
-  left: 11px;
-  top: 9px;
-}
-.fuelux .checkbox-custom {
-  position: relative;
-  /* for keyboard tabbing */
-  /* for keyboard tabbing */
-}
-.fuelux .checkbox-custom:before {
-  font-family: "Glyphicons Halflings" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  line-height: 1;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  border: 1px solid #aaaaaa;
-  border-radius: 4px;
-  color: #ffffff;
-  content: " ";
-  font-size: 9px;
-  height: 14px;
-  left: 0px;
-  padding: 1px 0 0 1px;
-  position: absolute;
-  top: 3px;
-  width: 14px;
-}
-.fuelux .checkbox-custom:active:before,
-.fuelux .checkbox-custom:focus:before {
-  color: #5b9dd9;
-  cursor: pointer;
-  box-shadow: inset 0px 0px 2px 1px #5b9dd9, 0px 0px 5px 0px #5b9dd9;
-}
-.fuelux .checkbox-custom.highlight:before {
-  left: 4px;
-  top: 6px;
-}
-.fuelux .checkbox-custom.checked:before {
-  background: #39b3d7;
-  border-color: #39b3d7;
-  content: "\e013";
-}
-.fuelux .checkbox-custom.disabled {
-  cursor: not-allowed;
-  opacity: .65;
-}
-.fuelux .checkbox-custom.disabled:before {
-  cursor: not-allowed;
-  opacity: .65;
-}
-.fuelux .checkbox-custom.checkbox-inline:before {
-  left: 0;
-  top: 3px;
-}
-.fuelux .checkbox-custom.checkbox-inline.highlight {
-  padding: 4px 4px 4px 24px;
-  left: -4px;
-}
-.fuelux .checkbox-custom.checkbox-inline.highlight:before {
-  left: 4px;
-  top: 7px;
-}
-.fuelux .checkbox-custom.checkbox-inline.highlight.checked {
-  background: #e6e6e6;
-  border-radius: 4px;
-}
-.fuelux .checkbox-custom input[type="checkbox"]:focus + .checkbox-label {
-  color: #999999;
-}
-.fuelux label.checkbox-custom.checkbox-inline {
-  padding-left: 20px;
-}
 .fuelux .radio-inline,
 .fuelux .checkbox-inline {
   padding-left: 0;
@@ -7903,6 +7800,109 @@ label.fuelux .checkbox-inline {
 .fuelux .radio.multiline ~ .control-label > label {
   font-weight: normal;
   cursor: pointer;
+}
+.fuelux .checkbox {
+  /* for keyboard tabbing */
+}
+.fuelux .checkbox.highlight + .checkbox.highlight {
+  margin-top: -5px;
+}
+.fuelux .checkbox.highlight label.checkbox-custom {
+  padding: 4px 4px 4px 24px;
+}
+.fuelux .checkbox.highlight.checked label.checkbox-custom,
+.fuelux .checkbox.highlight label.checked.checkbox-custom {
+  background: #e6e6e6;
+  border-radius: 4px;
+}
+.fuelux .checkbox input[type="checkbox"]:focus + .checkbox-label,
+.fuelux .checkbox input[type="checkbox"]:hover + .checkbox-label,
+.fuelux .checkbox .checkbox-label:hover {
+  color: #999999;
+}
+.fuelux .checkbox input[type="checkbox"]:disabled:focus + .checkbox-label,
+.fuelux .checkbox input[type="checkbox"]:disabled:hover + .checkbox-label,
+.fuelux .checkbox.disabled label:hover {
+  color: inherit;
+}
+.fuelux .form-horizontal .checkbox-inline {
+  padding-top: 0;
+}
+.fuelux .input-group-addon.checkbox-custom.checkbox-inline:before {
+  left: 11px;
+  top: 9px;
+}
+.fuelux .checkbox-custom {
+  position: relative;
+  /* for keyboard tabbing */
+  /* for keyboard tabbing */
+}
+.fuelux .checkbox-custom:before {
+  font-family: "Glyphicons Halflings" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  color: #ffffff;
+  content: " ";
+  font-size: 9px;
+  height: 14px;
+  left: 0px;
+  padding: 1px 0 0 1px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+}
+.fuelux .checkbox-custom:active:before,
+.fuelux .checkbox-custom:focus:before {
+  color: #5b9dd9;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 2px 1px #5b9dd9, 0px 0px 5px 0px #5b9dd9;
+}
+.fuelux .checkbox-custom.highlight:before {
+  left: 4px;
+  top: 6px;
+}
+.fuelux .checkbox-custom.checked:before {
+  background: #39b3d7;
+  border-color: #39b3d7;
+  content: "\e013";
+}
+.fuelux .checkbox-custom.disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+.fuelux .checkbox-custom.disabled:before {
+  cursor: not-allowed;
+  opacity: .65;
+}
+.fuelux .checkbox-custom.checkbox-inline:before {
+  left: 0;
+  top: 3px;
+}
+.fuelux .checkbox-custom.checkbox-inline.highlight {
+  padding: 4px 4px 4px 24px;
+  left: -4px;
+}
+.fuelux .checkbox-custom.checkbox-inline.highlight:before {
+  left: 4px;
+  top: 7px;
+}
+.fuelux .checkbox-custom.checkbox-inline.highlight.checked {
+  background: #e6e6e6;
+  border-radius: 4px;
+}
+.fuelux .checkbox-custom input[type="checkbox"]:focus + .checkbox-label {
+  color: #999999;
+}
+.fuelux label.checkbox-custom.checkbox-inline {
+  padding-left: 20px;
 }
 .fuelux .checkbox input[type="checkbox"]:not(.sr-only) ~ label:before,
 .fuelux .checkbox-inline input[type="checkbox"]:not(.sr-only) ~ label:before {
@@ -12716,6 +12716,9 @@ ul.ui-nav-menu li {
   padding-top: 10px;
   max-width: 1400px;
 }
+.net54-dashboard .net54-widget-placeholder {
+  height: 160px;
+}
 .net54-dashboard .net54-widget .panel-footer {
   font-size: 18px;
   color: #ba4247;
@@ -12746,6 +12749,9 @@ ul.ui-nav-menu li {
   line-height: 22px;
   color: #555555;
 }
+.net54-dashboard .net54-system-messages .panel-body {
+  height: 100px;
+}
 .net54-dashboard .net54-system-messages .list-group-item {
   padding-left: 5px;
 }
@@ -12753,7 +12759,7 @@ ul.ui-nav-menu li {
   opacity: 0;
   animation: fadein 2s ease-in forwards;
 }
-.net54-dashboard .net54-system-messages div {
+.net54-dashboard .net54-system-messages ul div {
   display: inline-block;
 }
 .net54-dashboard .net54-system-messages .net54-system-message-level {
@@ -12794,6 +12800,9 @@ ul.ui-nav-menu li {
 }
 .net54-dashboard .net54-recording .net54-dashboard-loader {
   width: 100%;
+}
+.net54-dashboard .net54-current-calls .panel-body {
+  height: 100px;
 }
 .net54-dashboard .net54-invalid-licence a {
   paddding: 6px;
@@ -12843,6 +12852,25 @@ ul.ui-nav-menu li {
   border-top-color: #ba4247;
   border-bottom-color: #f0ad4e;
   animation: spinner 1.5s ease infinite;
+}
+@media (max-width: 991px) {
+  .net54-dashboard .net54-system-messages .spinner {
+    top: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .net54-dashboard .net54-widget .spinner {
+    bottom: 20px;
+  }
+  .net54-dashboard .net54-spinpanel .spinner {
+    bottom: 20px;
+  }
+  .net54-dashboard .net54-system-messages .spinner {
+    top: 20px;
+  }
+  .net54-dashboard .net54-current-calls .spinner {
+    bottom: 15px;
+  }
 }
 .bootstrap-dialog .modal-header {
   border-radius: 0;
