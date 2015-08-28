@@ -1,12 +1,20 @@
 /* BEGIN FOOTER */
-.net54-footer {
-  width: 100%;
-  background-color: @panel-footer-bg;
-  padding: 5px 0;
-  border-top: 1px solid @panel-inner-border;
-  text-align: center;
-  color: #000;
-  font-weight: bold;
+footer {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+
+	&.net54-footer {
+		background-color: @brand-secondary-light;
+		padding: 5px 0;
+		border-top: 1px solid @panel-inner-border;
+
+		.container-fluid {
+			color: black;
+			font-weight: bold;
+			text-align: center;
+		}
+	}
 }
 
 /** END FOOTER */

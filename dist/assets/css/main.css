@@ -10529,44 +10529,15 @@ label.fuelux .checkbox-inline {
 /*                 Layout Styles                         */
 /*********************************************************/
 /*********************************************************/
-/*                 Sticky footer styles                  */
-/*********************************************************/
-.wrapper {
-  min-height: 100%;
-  margin: 0 auto -30px;
-  /* the bottom margin is the negative value of the footer's height */
-}
-footer,
-.push {
-  height: 30px;
-  /* '.push' must be the same height as 'footer' */
-}
-@media (min-width: 768px) {
-  html,
-  body {
-    height: 100%;
-    /* The html and body elements cannot have any padding or margin. */
-  }
-  .wrapper {
-    /* Wrapper for page content to push down footer */
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /* Negative indent footer by its height */
-    margin: 0 auto -30px;
-    /* Pad bottom by footer height */
-  }
-}
-/* -------- END Sticky footer styles ------------------ */
-/*********************************************************/
 /*                 Template Layout                       */
 /*********************************************************/
-html,
-body {
+html {
   position: relative;
   min-height: 100%;
 }
 body {
+  position: static;
+  min-height: 100%;
   background: url(../img/bg.png) fixed repeat-x;
   padding-top: 10px;
   margin-bottom: 60px;
@@ -10588,14 +10559,20 @@ body {
   margin-top: 15px;
 }
 /* BEGIN FOOTER */
-.net54-footer {
+footer {
+  bottom: 0;
+  position: absolute;
   width: 100%;
-  background-color: #ffe9c9;
+}
+footer.net54-footer {
+  background-color: #fef7ec;
   padding: 5px 0;
   border-top: 1px solid #eeeeee;
-  text-align: center;
-  color: #000;
+}
+footer.net54-footer .container-fluid {
+  color: black;
   font-weight: bold;
+  text-align: center;
 }
 /** END FOOTER */
 /*********************************************************/
