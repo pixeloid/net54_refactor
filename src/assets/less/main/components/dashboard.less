@@ -2,18 +2,26 @@
 	margin-top: 40px;
 	padding-top: 10px;
 	max-width: 1400px;
-	.net54-widget .panel-footer {
-		font-size: 18px;
-		color: @brand-primary;
-		b {
-			font-size: 20px;
-			color: black;
+
+	.net54-widget {
+		&-placeholder {
+			height: 160px;
+		}
+
+		.panel-footer {
+			font-size: 18px;
+			color: @brand-primary;
+			b {
+				font-size: 20px;
+				color: black;
+			}
 		}
 	}
 
 	.net54-time-widget {
 		overflow: hidden;
 		padding: 0;
+
 		.net54-clock {
 			font-size: 34px;
 			text-align: center;
@@ -36,15 +44,20 @@
 	}
 
 	.net54-system-messages {
+		.panel-body {
+			height: 100px;
+		}
+
 		.list-group-item {
 			padding-left: 5px;
+
 			&.added {
 				opacity: 0;
 				animation: fadein 2s ease-in forwards;
 			}
 		}
 
-		div {
+		ul div {
 			display: inline-block;
 		}
 
@@ -80,6 +93,7 @@
 		font-size: 18px;
 		padding: 1px 0 0 5px;
 		color: @brand-primary;
+
 		.pending {
 			opacity: 0.4;
 		}
@@ -94,6 +108,12 @@
 
 		.net54-dashboard-loader {
 			width: 100%;
+		}
+	}
+
+	.net54-current-calls {
+		.panel-body {
+			height: 100px;
 		}
 	}
 
@@ -113,7 +133,8 @@
 	
 	.net54-licence-information {
 		padding: 5px;
-		.full-width{
+
+		.full-width {
 			width: 100%;
 			padding: 1px 2px 1px 2px;
 		}
@@ -151,6 +172,30 @@
 			border-top-color: @brand-primary;
 			border-bottom-color: @brand-warning;
 			animation: spinner 1.5s ease infinite;
+		}
+	}
+
+	@media (max-width: 991px) {
+		.net54-system-messages .spinner {
+			top: 40px;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.net54-widget .spinner {
+			bottom: 20px;
+		}
+
+		.net54-spinpanel .spinner {
+			bottom: 20px;
+		}
+
+		.net54-system-messages .spinner {
+			top: 20px;
+		}
+
+		.net54-current-calls .spinner {
+			bottom: 15px;
 		}
 	}
 }

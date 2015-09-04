@@ -10529,44 +10529,15 @@ label.fuelux .checkbox-inline {
 /*                 Layout Styles                         */
 /*********************************************************/
 /*********************************************************/
-/*                 Sticky footer styles                  */
-/*********************************************************/
-.wrapper {
-  min-height: 100%;
-  margin: 0 auto -30px;
-  /* the bottom margin is the negative value of the footer's height */
-}
-footer,
-.push {
-  height: 30px;
-  /* '.push' must be the same height as 'footer' */
-}
-@media (min-width: 768px) {
-  html,
-  body {
-    height: 100%;
-    /* The html and body elements cannot have any padding or margin. */
-  }
-  .wrapper {
-    /* Wrapper for page content to push down footer */
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /* Negative indent footer by its height */
-    margin: 0 auto -30px;
-    /* Pad bottom by footer height */
-  }
-}
-/* -------- END Sticky footer styles ------------------ */
-/*********************************************************/
 /*                 Template Layout                       */
 /*********************************************************/
-html,
-body {
+html {
   position: relative;
   min-height: 100%;
 }
 body {
+  position: static;
+  min-height: 100%;
   background: url(../img/bg.png) fixed repeat-x;
   padding-top: 10px;
   margin-bottom: 60px;
@@ -10588,14 +10559,19 @@ body {
   margin-top: 15px;
 }
 /* BEGIN FOOTER */
-.net54-footer {
+footer {
+  bottom: 0;
+  position: absolute;
   width: 100%;
-  background-color: #ffe9c9;
+}
+footer.net54-footer {
+  background-color: #fef7ec;
   padding: 5px 0;
   border-top: 1px solid #eeeeee;
+}
+footer.net54-footer .container-fluid {
+  color: black;
   text-align: center;
-  color: #000;
-  font-weight: bold;
 }
 /** END FOOTER */
 /*********************************************************/
@@ -12716,6 +12692,9 @@ ul.ui-nav-menu li {
   padding-top: 10px;
   max-width: 1400px;
 }
+.net54-dashboard .net54-widget-placeholder {
+  height: 160px;
+}
 .net54-dashboard .net54-widget .panel-footer {
   font-size: 18px;
   color: #ba4247;
@@ -12746,6 +12725,9 @@ ul.ui-nav-menu li {
   line-height: 22px;
   color: #555555;
 }
+.net54-dashboard .net54-system-messages .panel-body {
+  height: 100px;
+}
 .net54-dashboard .net54-system-messages .list-group-item {
   padding-left: 5px;
 }
@@ -12753,7 +12735,7 @@ ul.ui-nav-menu li {
   opacity: 0;
   animation: fadein 2s ease-in forwards;
 }
-.net54-dashboard .net54-system-messages div {
+.net54-dashboard .net54-system-messages ul div {
   display: inline-block;
 }
 .net54-dashboard .net54-system-messages .net54-system-message-level {
@@ -12794,6 +12776,9 @@ ul.ui-nav-menu li {
 }
 .net54-dashboard .net54-recording .net54-dashboard-loader {
   width: 100%;
+}
+.net54-dashboard .net54-current-calls .panel-body {
+  height: 100px;
 }
 .net54-dashboard .net54-invalid-licence a {
   paddding: 6px;
@@ -12843,6 +12828,25 @@ ul.ui-nav-menu li {
   border-top-color: #ba4247;
   border-bottom-color: #f0ad4e;
   animation: spinner 1.5s ease infinite;
+}
+@media (max-width: 991px) {
+  .net54-dashboard .net54-system-messages .spinner {
+    top: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .net54-dashboard .net54-widget .spinner {
+    bottom: 20px;
+  }
+  .net54-dashboard .net54-spinpanel .spinner {
+    bottom: 20px;
+  }
+  .net54-dashboard .net54-system-messages .spinner {
+    top: 20px;
+  }
+  .net54-dashboard .net54-current-calls .spinner {
+    bottom: 15px;
+  }
 }
 .bootstrap-dialog .modal-header {
   border-radius: 0;
