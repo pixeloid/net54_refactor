@@ -261,6 +261,12 @@ module.exports = function (grunt) {
                     src: ['./**/*'],
                     dest: 'dist/assets/lib/jqgrid'
                 },
+                {
+                    expand: true,
+                    cwd: 'bower_components/jscrollpane/script',
+                    src: ['./**/*'],
+                    dest: 'dist/assets/lib/jscrollpane'
+                },
         		// {
         		// 	expand: true,
         		// 	cwd: 'src/assets/less',

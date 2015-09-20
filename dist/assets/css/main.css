@@ -12080,10 +12080,6 @@ footer.net54-footer .container-fluid {
 /*Grid*/
 .ui-jqgrid {
   position: relative;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 .ui-jqgrid .ui-jqgrid-view {
   position: relative;
@@ -12128,7 +12124,6 @@ footer.net54-footer .container-fluid {
 }
 .ui-jqgrid .ui-jqgrid-hbox {
   float: left;
-  padding-right: 20px;
 }
 .ui-jqgrid .ui-jqgrid-htable {
   margin-bottom: 0;
@@ -12549,9 +12544,9 @@ div.tablediv > .table-bordered {
   width: 220px;
   text-align: center;
   background-color: #fff;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
 }
 /* end Modal window*/
 /* Form edit */
@@ -12782,7 +12777,7 @@ a.clearsearchclass {
   background-color: #ddd;
 }
 .ui-jqgrid-corner {
-  border-radius: 5px;
+  border-radius: 0;
 }
 .ui-resizable-handle {
   display: block;
@@ -12803,12 +12798,12 @@ a.clearsearchclass {
   bottom: 1px;
 }
 .ui-top-corner {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .ui-bottom-corner {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .ui-search-table {
   margin-bottom: 0;
@@ -12891,3 +12886,86 @@ ul.ui-nav-menu li {
     text-shadow: 0 1px 0 #fff;
 }
 */
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+.jspPane {
+  position: absolute;
+}
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: red;
+}
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+.jspCap {
+  display: none;
+}
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+.jspTrack {
+  background: #ffe9c9;
+  position: relative;
+}
+.jspDrag {
+  background: #d98939;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
