@@ -36,8 +36,8 @@
 			float: right;
 			font-size: 20px;
 			text-align: center;
-			width: 75px;
-			padding: 7px 10px 0 7px;
+			width: 125px;
+			padding: 18px 0;
 			line-height: 22px;
 			color: @gray;
 		}
@@ -50,6 +50,7 @@
 
 		.list-group-item {
 			padding-left: 5px;
+			word-break: break-word;
 
 			&.added {
 				opacity: 0;
@@ -84,7 +85,7 @@
 		}
 
 		.net54-system-message {
-			width: calc(100% - 30px);
+			width: ~"calc(100% - 30px)";
 		}
 	}
 
