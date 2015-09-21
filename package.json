@@ -29,6 +29,9 @@
     "grunt-contrib-qunit": "~0.4.0",
     "grunt-contrib-uglify": "~0.3.2",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-ftp": "^2.0.0",
+    "grunt-ftpsync": "^0.1.1",
+    "grunt-ftpush": "^0.3.3",
     "grunt-open": "^0.2.3",
     "pretty": "~0.1.2"
   },
