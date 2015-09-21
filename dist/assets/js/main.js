@@ -257,6 +257,7 @@ function metisChart() {
     "use strict";
 
 
+    var tooltipBox = $('#tooltipBox');
 
 
 
@@ -308,35 +309,41 @@ function metisChart() {
     );
 
     var previousPoint = null;
+    var flag  = true;
+    var gx, gy;
 
 
 
-    //$('#w1').tooltip({title: 'tooltip'});
-
-    $("#w1").bind("plothover", function(event, pos, item) {
-
+    $("#w1").bind("plothover", function (event, pos, item) {
         if (item) {
-            if (!previousPoint || previousPoint[0] != item.datapoint[0]) {
-                previousPoint = item.datapoint;
-                var x = item.datapoint[0].toFixed(2),
-                    y = item.datapoint[1].toFixed(2);
-                showTooltip(item.pageX, item.pageY, item.datapoint[1]);
+            console.log(item);            
+            var x = item.datapoint[0].toFixed(2),
+                y = item.datapoint[1].toFixed(2),
+                value = (y - item.datapoint[2]).toFixed(2);
+
+            if (gx != x || gy != y || flag) {
+                tooltipBox.css({
+                    position: 'absolute',
+                    top: item.pageY + 2,
+                    left: item.pageX
+                })
+                .tooltip({
+                    title:  value,
+                    placement: 'top',
+                    html: true
+                }).attr('data-original-title', value)
+                .tooltip('fixTitle')
+                .tooltip('show');
+                gx = x;
+                gy = y;
+                flag = false;
             }
         } else {
-
-            $('#w1').tooltip('destroy');
-            previousPoint = null;
+            tooltipBox.tooltip('destroy');
+            flag = true;
         }
 
     });
-
-    // show the tooltip
-    function showTooltip(x, y, contents) {
-        $('#w1').tooltip({
-                title: contents
-            })
-            .tooltip('show')
-    }
 
 
 
@@ -463,35 +470,51 @@ function metisChart() {
 
 
 }
-$.jgrid.defaults.autowidth = true;
-$.jgrid.defaults.responsive = true;
-$.jgrid.defaults.styleUI = 'Bootstrap';
 
-// $.jgrid.styleUI.Bootstrap.base.headerTable = "table  table-condensed";
-// $.jgrid.styleUI.Bootstrap.base.rowTable = "table  table-condensed";
-// $.jgrid.styleUI.Bootstrap.base.footerTable = "table table-bordered table-condensed";
-// $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
+$(function () {
 
-$("#jqGrid").jqGrid({
-    url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
-    mtype: "GET",
-    datatype: "jsonp",
-    colModel: [
-        { label: 'OrderID', name: 'OrderID', key: true, sorttype:'number'},
-        { label: 'Customer ID', name: 'CustomerID' },
-        { label: 'Order Date', name: 'OrderDate' },
-        { label: 'Freight', name: 'Freight' },
-        { label:'Ship Name', name: 'ShipName' }
-    ],
-    multiselect: true,
-    height: 200,
-	viewrecords: true,
-    rowNum: 10,
-    pager: "#jqGridPager",
-
-    gridComplete: function () {
-        formGeneral();
-    }
+    $.extend($.jgrid.defaults, {
+        autowidth :true,
+        responsive: true,
+        styleUI: 'Bootstrap'
+    });
 
 
+    $.jgrid.styleUI.Bootstrap.base.headerTable = "table  table-condensed";
+    $.jgrid.styleUI.Bootstrap.base.rowTable = "table  table-condensed table-striped table-hover";
+    $.jgrid.styleUI.Bootstrap.base.footerTable = "table ";
+    $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
+
+    $("#jqGrid").jqGrid({
+        url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+        mtype: "GET",
+        datatype: "jsonp",
+        colModel: [
+            { label: 'OrderID', name: 'OrderID', key: true, sorttype:'number'},
+            { label: 'Customer ID', name: 'CustomerID' },
+            { label: 'Order Date', name: 'OrderDate' },
+            { label: 'Freight', name: 'Freight' },
+            { label:'Ship Name', name: 'ShipName' }
+        ],
+        multiselect: true,
+        height: 500,
+    	viewrecords: true,
+        rowNum: 10,
+        pager: "#jqGridPager",
+        gridComplete:function(){
+            var table_header = $('#container').find('.ui-jqgrid-hbox').css("position","relative");
+
+            $('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function(event, scrollPositionX, isAtLeft, isAtRight) {
+                table_header.css('right', scrollPositionX);
+            }).jScrollPane({
+                showArrows: false, 
+                autoReinitialise: true,
+                horizontalDragMaxWidth: 20,
+                verticalDragMaxHeight: 20           
+            });
+
+            formGeneral();
+         }
+
+    });
 });

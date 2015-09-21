@@ -9929,6 +9929,145 @@ label.fuelux .checkbox-inline {
 .fuelux .selectlist-sizer .selected-label {
   width: auto !important;
 }
+.fuelux .picker {
+  display: inline-block;
+  position: relative;
+}
+.fuelux .picker[data-ellipsis="true"].showing input.picker-field {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+.fuelux .picker[data-ellipsis="true"] input.picker-field {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fuelux .picker[data-ellipsis="true"] input.picker-field::-ms-clear {
+  display: none;
+}
+.fuelux .picker[data-ellipsis="true"] textarea.picker-field[readonly] {
+  overflow: hidden;
+}
+.fuelux .picker.showing .picker-footer,
+.fuelux .picker.showing .picker-header,
+.fuelux .picker.showing .picker-popup {
+  display: block;
+  z-index: 1;
+}
+.fuelux .picker.showing input.picker-field,
+.fuelux .picker.showing textarea.picker-field {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+.fuelux .picker input.picker-field,
+.fuelux .picker textarea.picker-field {
+  resize: none;
+}
+.fuelux .picker input.picker-field[readonly],
+.fuelux .picker textarea.picker-field[readonly] {
+  background: #ffffff;
+  cursor: auto;
+}
+.fuelux .picker input.picker-field[readonly].glass,
+.fuelux .picker textarea.picker-field[readonly].glass {
+  background: none;
+}
+.fuelux .picker input.picker-field[readonly].glass:hover,
+.fuelux .picker textarea.picker-field[readonly].glass:hover {
+  background: #d9edf7;
+  cursor: pointer;
+}
+.fuelux .picker input.picker-field:focus,
+.fuelux .picker textarea.picker-field:focus {
+  border: 1px solid #cccccc;
+  box-shadow: none;
+}
+.fuelux .picker-cancel {
+  font-size: 12px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.fuelux .picker-footer,
+.fuelux .picker-header {
+  display: none;
+  left: 0;
+  line-height: 1;
+  right: 0;
+}
+.fuelux .picker-footer {
+  padding: 8px 10px 8px 0;
+  text-align: right;
+  bottom: 0;
+  position: absolute;
+}
+.fuelux .picker-header {
+  height: 31px;
+  padding: 8px 0 0px 10px;
+}
+.fuelux .picker-header h1,
+.fuelux .picker-header h2,
+.fuelux .picker-header h3,
+.fuelux .picker-header h4,
+.fuelux .picker-header h5,
+.fuelux .picker-header h6 {
+  margin: 0;
+}
+.fuelux .picker-popup {
+  background: #d9edf7;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #ffffff inset;
+  display: none;
+  position: absolute;
+  padding-left: 6px;
+  padding-right: 6px;
+  height: 234px;
+  width: 350px;
+  margin: 4px 0;
+}
+.fuelux .picker .picker-body.well {
+  background-color: #fff;
+  overflow: scroll;
+  padding: 0;
+  height: 165px;
+}
+.fuelux .picker .tree {
+  border: none;
+}
+.fuelux .picker .glass {
+  background: transparent;
+  border: 1px solid #ffffff;
+  box-shadow: none;
+}
+.fuelux .picker .glass:hover {
+  background: #d9edf7;
+  border-color: #5b9dd9;
+  cursor: pointer;
+}
+.fuelux .picker .glass:hover[disabled] {
+  background: transparent;
+  border-color: #ffffff;
+  cursor: not-allowed;
+}
+.fuelux .picker .glass:focus {
+  background: #ffffff;
+  border-color: #5b9dd9;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75), 0 0 8px rgba(91, 157, 217, 0.6);
+  cursor: auto;
+}
+.fuelux .picker .glass:focus[disabled] {
+  background: transparent;
+  border-color: #ffffff;
+  cursor: not-allowed;
+}
+.fuelux .picker .glass[disabled] {
+  cursor: not-allowed;
+}
 .fuelux .tree {
   border: 1px solid #999999;
   border-radius: 4px 4px 4px 4px;
@@ -9999,7 +10138,8 @@ label.fuelux .checkbox-inline {
 .fuelux .tree .tree-branch .tree-branch-children {
   margin-left: 14px;
 }
-.fuelux .tree .tree-branch[haschildren='false'] .icon-caret {
+.fuelux .tree .tree-branch[haschildren='false'] .icon-caret,
+.fuelux .tree .tree-branch[data-has-children='false'] .icon-caret {
   visibility: hidden;
 }
 .fuelux .tree .tree-item {
@@ -10199,7 +10339,7 @@ label.fuelux .checkbox-inline {
 }
 .fuelux .wizard > ul.steps li:first-child,
 .fuelux .wizard > .steps-container > ul.steps li:first-child {
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 0;
   padding-left: 20px;
 }
 .fuelux .wizard.rtl {
@@ -11909,8 +12049,8 @@ footer.net54-footer .container-fluid {
   float: right;
   font-size: 20px;
   text-align: center;
-  width: 75px;
-  padding: 7px 10px 0 7px;
+  width: 125px;
+  padding: 18px 0;
   line-height: 22px;
   color: #555555;
 }
@@ -11919,6 +12059,7 @@ footer.net54-footer .container-fluid {
 }
 .net54-dashboard .net54-system-messages .list-group-item {
   padding-left: 5px;
+  word-break: break-word;
 }
 .net54-dashboard .net54-system-messages .list-group-item.added {
   opacity: 0;
@@ -11946,7 +12087,7 @@ footer.net54-footer .container-fluid {
   color: #555555;
 }
 .net54-dashboard .net54-system-messages .net54-system-message {
-  width: calc(70%);
+  width: calc(100% - 30px);
 }
 .net54-dashboard .net54-recording {
   text-align: center;
@@ -12080,10 +12221,6 @@ footer.net54-footer .container-fluid {
 /*Grid*/
 .ui-jqgrid {
   position: relative;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 .ui-jqgrid .ui-jqgrid-view {
   position: relative;
@@ -12128,7 +12265,6 @@ footer.net54-footer .container-fluid {
 }
 .ui-jqgrid .ui-jqgrid-hbox {
   float: left;
-  padding-right: 20px;
 }
 .ui-jqgrid .ui-jqgrid-htable {
   margin-bottom: 0;
@@ -12549,9 +12685,9 @@ div.tablediv > .table-bordered {
   width: 220px;
   text-align: center;
   background-color: #fff;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
 }
 /* end Modal window*/
 /* Form edit */
@@ -12782,7 +12918,7 @@ a.clearsearchclass {
   background-color: #ddd;
 }
 .ui-jqgrid-corner {
-  border-radius: 5px;
+  border-radius: 0;
 }
 .ui-resizable-handle {
   display: block;
@@ -12803,12 +12939,12 @@ a.clearsearchclass {
   bottom: 1px;
 }
 .ui-top-corner {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .ui-bottom-corner {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .ui-search-table {
   margin-bottom: 0;
@@ -12891,3 +13027,86 @@ ul.ui-nav-menu li {
     text-shadow: 0 1px 0 #fff;
 }
 */
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+.jspPane {
+  position: absolute;
+}
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: red;
+}
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+.jspCap {
+  display: none;
+}
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+.jspTrack {
+  background: #ffe9c9;
+  position: relative;
+}
+.jspDrag {
+  background: #d98939;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}

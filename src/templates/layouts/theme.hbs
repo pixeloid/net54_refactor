@@ -49,13 +49,14 @@
         {{js javascripts}}
         {{/if}}
 
+        <script src="{{assets}}/js/main.min.js"></script>
+
         {{#if scripts}}
         <script>
             {{scripts}}
         </script>
         {{/if}}
         
-        <script src="{{assets}}/js/main.min.js"></script>
 <script>document.write('<script src="http://'
     + location.host.split(':')[0]
     + ':35729/livereload.js"></'

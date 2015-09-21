@@ -261,6 +261,12 @@ module.exports = function (grunt) {
                     src: ['./**/*'],
                     dest: 'dist/assets/lib/jqgrid'
                 },
+                {
+                    expand: true,
+                    cwd: 'bower_components/jscrollpane/script',
+                    src: ['./**/*'],
+                    dest: 'dist/assets/lib/jscrollpane'
+                },
         		// {
         		// 	expand: true,
         		// 	cwd: 'src/assets/less',
@@ -314,11 +320,22 @@ module.exports = function (grunt) {
         open: {
         	all: {
         	    // Gets the port from the connect configuration
-        	    path: 'http://<%= connect.all.options.hostname%>:<%= connect.all.options.port%>/dist/elements.html'
+        	    path: 'http://<%= connect.all.options.hostname%>:<%= connect.all.options.port%>/dist/'
         	}
         },
 
+        ftpush: {
+            build: {
 
+                auth: {
+                    host: "pixeloid.hu",
+                    port: 21,
+                    authKey: 'key1'
+                },
+                src: 'dist',
+                dest: '/htdocs'
+            }
+        }
 	});
 
 
@@ -330,7 +347,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('assemble-less');
-    //grunt.loadNpmTasks('grunt-contrib-qunit');
+    grunt.loadNpmTasks('grunt-ftpush');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
@@ -349,7 +366,7 @@ module.exports = function (grunt) {
 
     
     // Full distribution task.
-    grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js', 'assemble:theme']);
+    grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js', 'assemble:theme', 'ftpush']);
 
     // Default task.
     //grunt.registerTask('default', ['test', 'dist']);

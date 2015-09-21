@@ -104,7 +104,7 @@
                 <div class="panel panel-default net54-spinpanel storage-spinpanel" id="storagePanel">
                   <div class="panel-body">
                     <div class="left-part">
-                      <div class="content">
+                      <div class="content" id="w4">
                         <div class="spinner" style="bottom: 15px;"></div>
                       </div>
                       <div class="percentage" id="storagePercentage"></div>
@@ -124,7 +124,7 @@
                 <div class="panel panel-default net54-spinpanel storage-spinpanel" id="storagePanel">
                   <div class="panel-body">
                     <div class="left-part">
-                      <div class="content">
+                      <div class="content" id="w3">
                         <div class="spinner" style="bottom: 15px;"></div>
                       </div>
                       <div class="percentage" id="storagePercentage"></div>
@@ -223,6 +223,7 @@
           </div>
         </div>
       </div>
+      <div id="tooltipBox"></div>
     </div>
     <footer class="net54-footer">
       <div class="container-fluid">
@@ -233,18 +234,24 @@
     </footer>
     <script src="assets/lib/jquery/jquery.min.js"></script>
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/lib/jqgrid/i18n/grid.locale-hu.js"></script>
+    <script src="assets/lib/jqgrid/jquery.jqGrid.min.js"></script>
+    <script src="assets/lib/icheck/icheck.min.js"></script>
+    <script src="assets/lib/jscrollpane/jquery.jscrollpane.min.js"></script>
+    <script src="assets/lib/jscrollpane/jquery.mousewheel.js"></script>
+    <script src="assets/lib/jscrollpane/mwheelintent.js"></script>
     <script src="assets/lib/flot/jquery.flot.js"></script>
     <script src="assets/lib/flot/jquery.flot.pie.js"></script>
     <script src="assets/lib/flot/jquery.flot.threshold.js"></script>
     <script src="assets/lib/flot/jquery.flot.selection.js"></script>
     <script src="assets/lib/flot/jquery.flot.resize.js"></script>
     <script src="assets/lib/flot/jquery.flot.stack.js"></script>
+    <script src="assets/js/main.min.js"></script>
     <script>
       $(function() {
         metisChart();
       });
     </script>
-    <script src="assets/js/main.min.js"></script>
     <script>
       document.write('<script src="http://' + location.host.split(':')[0] + ':35729/livereload.js"></' + 'script>')
     </script>

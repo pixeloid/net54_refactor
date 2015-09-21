@@ -2,6 +2,7 @@ function metisChart() {
     "use strict";
 
 
+    var tooltipBox = $('#tooltipBox');
 
 
 
@@ -53,35 +54,41 @@ function metisChart() {
     );
 
     var previousPoint = null;
+    var flag  = true;
+    var gx, gy;
 
 
 
-    //$('#w1').tooltip({title: 'tooltip'});
-
-    $("#w1").bind("plothover", function(event, pos, item) {
-
+    $("#w1").bind("plothover", function (event, pos, item) {
         if (item) {
-            if (!previousPoint || previousPoint[0] != item.datapoint[0]) {
-                previousPoint = item.datapoint;
-                var x = item.datapoint[0].toFixed(2),
-                    y = item.datapoint[1].toFixed(2);
-                showTooltip(item.pageX, item.pageY, item.datapoint[1]);
+            console.log(item);            
+            var x = item.datapoint[0].toFixed(2),
+                y = item.datapoint[1].toFixed(2),
+                value = (y - item.datapoint[2]).toFixed(2);
+
+            if (gx != x || gy != y || flag) {
+                tooltipBox.css({
+                    position: 'absolute',
+                    top: item.pageY + 2,
+                    left: item.pageX
+                })
+                .tooltip({
+                    title:  value,
+                    placement: 'top',
+                    html: true
+                }).attr('data-original-title', value)
+                .tooltip('fixTitle')
+                .tooltip('show');
+                gx = x;
+                gy = y;
+                flag = false;
             }
         } else {
-
-            $('#w1').tooltip('destroy');
-            previousPoint = null;
+            tooltipBox.tooltip('destroy');
+            flag = true;
         }
 
     });
-
-    // show the tooltip
-    function showTooltip(x, y, contents) {
-        $('#w1').tooltip({
-                title: contents
-            })
-            .tooltip('show')
-    }
 
 
 
