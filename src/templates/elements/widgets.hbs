@@ -4,6 +4,12 @@ icon: fa fa-font
 stylesheets:
 - lib/icheck/skins/minimal/_all.css
 javascripts:
+- lib/jqgrid/i18n/grid.locale-hu.js
+- lib/jqgrid/jquery.jqGrid.min.js
+- lib/icheck/icheck.min.js
+- lib/jscrollpane/jquery.jscrollpane.min.js
+- lib/jscrollpane/jquery.mousewheel.js
+- lib/jscrollpane/mwheelintent.js
 - lib/flot/jquery.flot.js
 - lib/flot/jquery.flot.pie.js
 - lib/flot/jquery.flot.threshold.js
@@ -47,7 +53,7 @@ scripts: $(function() { metisChart(); });
                               <div class="panel panel-default net54-spinpanel storage-spinpanel" id="storagePanel">
                                     <div class="panel-body">
                                           <div class="left-part">
-                                                <div class="content">
+                                                <div class="content" id="w4">
                                                       <div class="spinner" style="bottom: 15px;"></div>
                                                 </div>
                                                 <div class="percentage" id="storagePercentage"></div>
@@ -67,7 +73,7 @@ scripts: $(function() { metisChart(); });
                               <div class="panel panel-default net54-spinpanel storage-spinpanel" id="storagePanel">
                                     <div class="panel-body">
                                           <div class="left-part">
-                                                <div class="content">
+                                                <div class="content" id="w3">
                                                       <div class="spinner" style="bottom: 15px;"></div>
                                                 </div>
                                                 <div class="percentage" id="storagePercentage"></div>
@@ -96,3 +102,5 @@ scripts: $(function() { metisChart(); });
             </div>
       </div>
 </div>
+
+<div id="tooltipBox"></div>
