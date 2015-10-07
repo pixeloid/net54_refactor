@@ -11869,12 +11869,13 @@ footer.net54-footer .container-fluid {
   font-size: 18px;
 }
 /* BEGIN animated checkbox styles */
-.radio .iradio_minimal,
-.radio-inline .iradio_minimal,
-.checkbox .icheckbox_minimal,
-.checkbox-inline .icheckbox_minimal {
+.iradio_minimal,
+.iradio_minimal,
+.icheckbox_minimal,
+.icheckbox_minimal {
   float: left;
   margin-left: -20px;
+  background-color: #fff !important;
 }
 /* END animated checkbox styles */
 .has-net54-spinner .net54-spinner {
@@ -12053,6 +12054,9 @@ footer.net54-footer .container-fluid {
   padding: 18px 0;
   line-height: 22px;
   color: #555555;
+}
+.net54-dashboard .net54-system-messages {
+  height: 400px;
 }
 .net54-dashboard .net54-system-messages .panel-body {
   height: 100px;
@@ -12442,10 +12446,13 @@ div.tablediv > .table-bordered {
 .ui-jqgrid .ui-jqgrid-pager,
 .ui-jqgrid .ui-jqgrid-toppager {
   border-left-width: 0px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ffe9c9;
+  padding: 4px 0px;
   position: relative;
+  height: auto;
   white-space: nowrap;
   overflow: hidden;
+  background: #ffe9c9;
 }
 .ui-jqgrid .ui-jqgrid-toppager {
   border-top-width: 0;
@@ -12607,9 +12614,9 @@ div.tablediv > .table-bordered {
   margin: 5px;
   text-align: center;
   display: none;
-  border: 1px solid #ddd;
+  border: none;
   font-size: 14px;
-  background-color: #d9edf7;
+  background-color: #ffe9c9;
 }
 .ui-jqgrid .jqgrid-overlay {
   display: none;
@@ -13011,22 +13018,13 @@ ul.ui-nav-menu li {
 .frozen-bdiv {
   background-color: #fff;
 }
-/*
-.ui-jqgrid .ui-jqgrid-caption,
-.ui-jqgrid .ui-jqgrid-pager,
-.ui-jqgrid .ui-jqgrid-toppager,
-.ui-jqgrid .ui-jqgrid-htable thead th,
-.ui-jqgrid .ui-userdata-top,
-.ui-jqgrid .ui-userdata-bottom,
-.ui-jqgrid .ui-jqgrid-hdiv,
-.ui-jqdialog .ui-jqdialog-titlebar
-{
-    background-image: none, linear-gradient(to bottom, #fff 0px, #e0e0e0 100%);
-    background-repeat: repeat-x;
-    border-color: #ccc;
-    text-shadow: 0 1px 0 #fff;
+.highlight td,
+.highlight:hover td,
+.highlight tr,
+.highlight:hover tr {
+  background-color: #ba4247 !important;
+  color: #fff;
 }
-*/
 /*
  * CSS Styles that are needed by jScrollPane for it to operate correctly.
  *

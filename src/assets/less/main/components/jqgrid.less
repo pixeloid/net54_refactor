@@ -210,7 +210,6 @@ div.tablediv > .table-bordered {
 	display:none; 
 	border:0 none; 
 	z-index: 99999;
-
 }
 /* Footer */
 .ui-jqgrid .ui-jqgrid-sdiv {
@@ -246,12 +245,13 @@ div.tablediv > .table-bordered {
 .ui-jqgrid .ui-jqgrid-toppager
 { 
 	border-left-width: 0px;
-	border-top: 1px solid #ddd;  
-	//padding : 4px 0px;
+	border-top: 1px solid @brand-secondary;  
+	padding : 4px 0px;
 	position: relative; 
-	//height: auto; 
+	height: auto; 
 	white-space: nowrap;
 	overflow: hidden;
+	background: @brand-secondary; 
 }
 .ui-jqgrid .ui-jqgrid-toppager {
 	border-top-width :0;
@@ -423,9 +423,9 @@ div.tablediv > .table-bordered {
 	margin: 5px;
 	text-align: center;
 	display: none;
-	border: 1px solid #ddd;  //default
+	border: none;  //default
 	font-size: 14px;
-	background-color: #d9edf7;
+	background-color: @brand-secondary;
 }
 .ui-jqgrid .jqgrid-overlay { 
 	display:none;
@@ -844,19 +844,11 @@ ul.ui-search-menu li, ul.ui-nav-menu li {
 .frozen-div, .frozen-bdiv {
 	background-color: #fff;
 }
-/*
-.ui-jqgrid .ui-jqgrid-caption,
-.ui-jqgrid .ui-jqgrid-pager,
-.ui-jqgrid .ui-jqgrid-toppager,
-.ui-jqgrid .ui-jqgrid-htable thead th,
-.ui-jqgrid .ui-userdata-top,
-.ui-jqgrid .ui-userdata-bottom,
-.ui-jqgrid .ui-jqgrid-hdiv,
-.ui-jqdialog .ui-jqdialog-titlebar
-{
-    background-image: none, linear-gradient(to bottom, #fff 0px, #e0e0e0 100%);
-    background-repeat: repeat-x;
-    border-color: #ccc;
-    text-shadow: 0 1px 0 #fff;
+
+
+.highlight, .highlight:hover{
+	td, tr{
+		background-color:  @brand-primary !important;
+		color: #fff;
+	}
 }
-*/

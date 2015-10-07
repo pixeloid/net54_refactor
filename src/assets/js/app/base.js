@@ -75,6 +75,12 @@ $(function () {
         e.preventDefault();
     });
     
+
+
+    metisChart(); 
+    $(".scroll-pane").jScrollPane();
+    
+
 });
 
 
