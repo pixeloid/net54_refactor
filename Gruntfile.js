@@ -159,11 +159,17 @@ module.exports = function (grunt) {
         			src: ['./**/*.*'],
         			dest: 'dist/assets/fonts'
         		},
+                {
+                    expand: true,
+                    cwd: 'src/assets/img',
+                    src: ['./**/*.*'],
+                    dest: 'dist/assets/img'
+                },
         		{
         			expand: true,
-        			cwd: 'src/assets/img',
-        			src: ['./**/*.*'],
-        			dest: 'dist/assets/img'
+        			cwd: 'src',
+        			src: ['./.htaccess'],
+        			dest: 'dist'
         		},
         		// {
         		// 	expand: true,

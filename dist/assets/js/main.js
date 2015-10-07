@@ -81,6 +81,12 @@ $(function () {
         e.preventDefault();
     });
     
+
+
+    metisChart(); 
+    $(".scroll-pane").jScrollPane();
+    
+
 });
 
 
@@ -484,6 +490,7 @@ $(function () {
     $.jgrid.styleUI.Bootstrap.base.rowTable = "table  table-condensed table-striped table-hover";
     $.jgrid.styleUI.Bootstrap.base.footerTable = "table ";
     $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
+    $.jgrid.styleUI.Bootstrap.common.highlight = "highlight";
 
     $("#jqGrid").jqGrid({
         url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
@@ -499,7 +506,7 @@ $(function () {
         multiselect: true,
         height: 500,
     	viewrecords: true,
-        rowNum: 10,
+        rowNum: 20,
         pager: "#jqGridPager",
         gridComplete:function(){
             var table_header = $('#container').find('.ui-jqgrid-hbox').css("position","relative");
