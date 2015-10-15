@@ -2,6 +2,13 @@
 module.exports = function (grunt) {
 	"use strict";
 
+
+
+    require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('assemble');
+
+
     // Project configuration.
     grunt.initConfig({
         // Metadata
@@ -12,11 +19,19 @@ module.exports = function (grunt) {
         '* Copyright <%= grunt.template.today("yyyy") %>\n' +
         '* Licensed under <%= pkg.licenses %>\n' +
         '*/\n',
-        clean: {dist: ['dist']},
+
+        config: {
+          src: 'src',
+          tmp: 'tmp',
+          dist: 'dist'
+        },
+        clean: {
+            dev: ['<%= config.tmp %>'],
+            dist: ['<%= config.dist %>']
+        },
         less: {
         	options: {
         		banner: '<%= banner %>',
-        		metadata: 'src/*.{json,yml}',
 				paths: [
 					'bower_components/bootstrap/less', 
 					'bower_components/eonasdan-bootstrap-datetimepicker/src/less',
@@ -26,18 +41,18 @@ module.exports = function (grunt) {
 					reference: ['mixins.less', 'variables.less']
 				}
 			},
-			development: {
-				files: {
-					'dist/assets/css/main.css': ['src/assets/less/style.less']
-				}
+			dev: {
+                files:{
+                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
+                }
 			},
-			production: {
+			dist: {
 				options: {
 					compress: true
 				},
-				files: {
-					'dist/assets/css/main.min.css': ['src/assets/less/style.less']
-				}
+                files:{
+                    '<%= config.dist %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
+                }
 			}
 		},
 		concat: {
@@ -45,28 +60,40 @@ module.exports = function (grunt) {
 				banner: '<%= banner %>',
 				stripBanners: false
 			},
-			main: {
+            lib: {
+                src: [
+
+                    'bower_components/modernizr/modernizr.js',
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                    'bower_components/moment/moment.js',
+                    'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                    'bower_components/bootstrap-dialog/dist/js/bootstrap-dialog.min.js',
+                    'bower_components/fuelux/dist/js/fuelux.min.js',
+                    'bower_components/iCheck/icheck.min.js',
+                    'bower_components/jqgrid/js/minified/i18n/grid.locale-hu.js',
+                    'bower_components/jqgrid/js/minified/jquery.jqGrid.min.js',
+                    'bower_components/jscrollpane/script/jquery.jscrollpane.min.js',
+                    'bower_components/jscrollpane/script/jquery.mousewheel.js',
+                    'bower_components/jscrollpane/script/mwheelIntent.js',
+                    'bower_components/flot/jquery.flot.js',
+                    'bower_components/flot/jquery.flot.pie.js',
+                    'bower_components/flot/jquery.flot.threshold.js',
+                    'bower_components/flot/jquery.flot.selection.js',
+                    'bower_components/flot/jquery.flot.resize.js',
+                    'bower_components/flot/jquery.flot.stack.js'
+                ],
+                dest: '<%= config.tmp %>/assets/js/lib.js'
+            },
+			app: {
 				src: [
-					'src/assets/js/app/base.js', 
-					'src/assets/js/app/formGeneral.js',
-                    'src/assets/js/app/chart.js',
-                    'src/assets/js/app/jqGrid.js',
+					'<%= config.src %>/assets/js/app/formGeneral.js',
+                    '<%= config.src %>/assets/js/app/chart.js',
+                    '<%= config.src %>/assets/js/app/jqGrid.js',
+                    '<%= config.src %>/assets/js/app/base.js', 
 				],
-				dest: 'dist/assets/js/main.js'
-			}
-			//,
-			// countdown: {
-			// 	src: ['src/assets/js/countdown.js'],
-			// 	dest: 'dist/assets/js/countdown.js'
-			// },
-			// styleSwitcher: {
-			// 	src: ['src/assets/js/style-switcher.js'],
-			// 	dest: 'dist/assets/js/style-switcher.js'
-			// },
-			// emberApp: {
-			// 	src: ['src/assets/js/app.js'],
-			// 	dest: 'dist/assets/js/app.js'
-			// }
+				dest: '<%= config.tmp %>/assets/js/app.js'
+			},
 		},
 		uglify: {
 			options: {
@@ -90,244 +117,137 @@ module.exports = function (grunt) {
             options: {
             	flatten: true,
             	postprocess: require('pretty'),
-            	assets: 'dist/assets',
+            	//assets: 'dist/assets',
             	data: 'src/data/*.{json,yml}',
             	partials: ['src/templates/partials/**/*.hbs'],
             	helpers: 'src/helper/**/*.js',
-            	layoutdir: 'src/templates/layouts'
+            	layoutdir: 'src/templates/layouts',
+                layout: 'theme.hbs'
             },
-            pages: {
-                // Target-level options
-                options: {
-                	layout: 'default.hbs'
-                },
-                files: [
-                {expand: true, cwd: 'src/templates/pages', src: ['*.hbs'], dest: 'dist/'}
-                ]
-            },
-            theme: {
-            	options: {
-            		layout: 'theme.hbs'
-            	},
+            dev: {
             	files: [
-            	{expand: true, cwd: 'src/templates/elements', src: ['*.hbs'], dest: 'dist/'}
+            	{
+                    expand: true, 
+                    cwd: 'src/templates/elements', 
+                    src: ['*.hbs'], 
+                    dest: '<%= config.tmp %>/'
+                }
             	]
             },
-            login: {
-            	options: {
-            		layout: 'login.hbs'
-            	},
-            	files: [
-            	{expand: true, cwd: 'src/templates/login', src: ['login.hbs'], dest: 'dist/'}
-            	]
-            },
-            errors: {
-            	options: {
-            		layout: 'errors.hbs'
-            	},
-            	files: [
-            	{expand: true, cwd: 'src/templates/errors', src: ['*.hbs'], dest: 'dist/'}
-            	]
-            },
-            countdown: {
-            	options: {
-            		layout: 'countdown.hbs'
-            	},
-            	files: [
-            		{expand: true, cwd: 'src/templates/countdown', src: ['*.hbs'], dest: 'dist/'}
-            	]
-            }
         },
         copy: {
-        	main: {
+        	dev: {
         		files: [
-        		{
-        			expand: true,
-        			cwd: 'src/assets/css',
-        			src: ['./**/*.*'],
-        			dest: 'dist/assets/css'
-        		},
-        		{
-        			expand: true,
-        			cwd: 'src/assets/lib',
-        			src: ['./**/*.*'],
-        			dest: 'dist/assets/lib'
-        		},
-        		{
-        			expand: true,
-        			cwd: 'src/assets/fonts',
-        			src: ['./**/*.*'],
-        			dest: 'dist/assets/fonts'
-        		},
-                {
+                    {
+                        expand: true,
+                        cwd: '<%= config.src %>/assets/img/',
+                        src: ['**'],
+                        dest: '<%= config.tmp %>/assets/img'
+
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/assets/img',
+                        src: ['./**/*.*'],
+                        dest: 'tmp/assets/img'
+                    },
+            		{
+            			expand: true,
+            			cwd: 'src',
+            			src: ['./.htaccess'],
+            			dest: 'tmp'
+            		},
+
+                    {
+                        expand: true,
+                        cwd: 'bower_components/bootstrap/fonts/',
+                        src: ['./**/*.*'],
+                        dest: 'tmp/assets/fonts/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/font-awesome/',
+                        src: ['./css/*.*', './fonts/*.*'],
+                        dest: 'tmp/assets/fonts'
+                    },
+            		{
+            			expand: true,
+            			cwd: 'bower_components/entypo/font',
+            			src: ['entypo.*'],
+            			dest: 'tmp/assets/fonts'
+            		},
+            		{
+            			expand: true,
+            			cwd: 'bower_components/html5shiv/dist',
+            			src: ['./html5shiv.js'],
+            			dest: 'tmp/assets/js'
+            		},
+            		{
+            			expand: true,
+            			cwd: 'bower_components/respond/dest',
+            			src: ['./respond.min.js'],
+            			dest: 'tmp/assets/js'
+            		},
+                ]
+        	},
+
+            dist: {
+                files: [
+                  {
                     expand: true,
-                    cwd: 'src/assets/img',
-                    src: ['./**/*.*'],
-                    dest: 'dist/assets/img'
-                },
-        		{
-        			expand: true,
-        			cwd: 'src',
-        			src: ['./.htaccess'],
-        			dest: 'dist'
-        		},
-        		// {
-        		// 	expand: true,
-        		// 	cwd: 'src/assets/submodule',
-        		// 	src: ['./**/*.*'],
-        		// 	dest: 'dist/assets/lib'
-        		// },
-        		// {
-        		// 	expand: true,
-        		// 	cwd: 'src/ember',
-        		// 	src: ['*.html'],
-        		// 	dest: 'dist'
-        		// },
-        		// {
-        		// 	expand: true,
-        		// 	cwd: 'node_modules/assemble-less/node_modules/less/dist/',
-        		// 	src: ['less-1.7.0.min.js'],
-        		// 	dest: 'dist/assets/lib'
-        		// },
-        		{
-        			expand: true,
-        			cwd: 'bower_components/jquery/dist',
-        			src: ['./*.*'],
-        			dest: 'dist/assets/lib/jquery'
-        		},
-                {
-                    expand: true,
-                    cwd: 'bower_components/bootstrap/fonts/',
-                    src: ['./**/*.*'],
-                    dest: 'dist/assets/fonts'
-                },
-                {
-                    expand: true,
-                    cwd: 'bower_components/bootstrap/dist/',
-                    src: ['./**/*.*'],
-                    dest: 'dist/assets/lib/bootstrap'
-                },
-				{
-					expand: true,
-					cwd: 'bower_components/bootstrap-dialog/dist/js',
-					src: ['./**/*.*'],
-					dest: 'dist/assets/lib/bootstrap-dialog/'
-				},
-				{
-					expand: true,
-					cwd: 'bower_components/eonasdan-bootstrap-datetimepicker/build/js',
-					src: ['./**/*.*'],
-					dest: 'dist/assets/lib/eonasdan-bootstrap-datetimepicker'
-				},
-				{
-					expand: true,
-					cwd: 'bower_components/fuelux/dist',
-					src: ['./**/*.*'],
-					dest: 'dist/assets/lib/fuelux'
-				},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/font-awesome/',
-        			src: ['./css/*.*', './fonts/*.*'],
-        			dest: 'dist/assets/lib/Font-Awesome'
-        		},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/iCheck/',
-        			src: ['./**'],
-        			dest: 'dist/assets/lib/icheck'
-        		},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/flot/',
-        			src: ['./jquery.*.js'],
-        			dest: 'dist/assets/lib/flot'
-        		},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/html5shiv/dist',
-        			src: ['./html5shiv.js'],
-        			dest: 'dist/assets/lib/html5shiv'
-        		},
-        		{
-        			expand: true,
-        			cwd: 'bower_components/respond/dest',
-        			src: ['./respond.min.js'],
-        			dest: 'dist/assets/lib/respond'
-        		},
-                {
-                    expand: true,
-                    cwd: 'bower_components/modernizr',
-                    src: ['./modernizr.js'],
-                    dest: 'dist/assets/lib/modernizr'
-                },
-                {
-                    expand: true,
-                    cwd: 'bower_components/jqgrid/js/minified',
-                    src: ['./**/*'],
-                    dest: 'dist/assets/lib/jqgrid'
-                },
-                {
-                    expand: true,
-                    cwd: 'bower_components/jscrollpane/script',
-                    src: ['./**/*'],
-                    dest: 'dist/assets/lib/jscrollpane'
-                },
-        		// {
-        		// 	expand: true,
-        		// 	cwd: 'src/assets/less',
-        		// 	src: ['./**/theme.less'],
-        		// 	dest: 'dist/assets/less'
-        		// },
-        		// {
-        		// 	expand: true,
-        		// 	cwd: 'node_modules/epiceditor/epiceditor',
-        		// 	src: ['./**/*.*'],
-        		// 	dest: 'dist/assets/lib/epiceditor'
-        		// },
-        		// {
-        		// 	expand: true,
-        		// 	cwd: 'node_modules/screenfull/dist/',
-        		// 	src: ['./**/*.*'],
-        		// 	dest: 'dist/assets/lib/screenfull/'
-        		// }
-        		]
-        	}
+                    cwd: '<%= config.tmp %>',
+                    src: ['**'],
+                    dest: '<%= config.dist %>'
+                  }
+                ]
+
+            }
         },
 
         watch: {
-		   	options: { livereload: true },
 
-			scripts: {
+			concat: {
         		files: ['src/assets/**/*.js'],
-        		tasks: ['dist-js']
+        		tasks: ['concat']
         	},
         	less: {
 				files: ['src/assets/**/*.less'],
-        		tasks: ['less'],
+        		tasks: ['less:dev'],
 			},
         	assemble: {
         		files: ['src/templates/**/*.hbs'],
-        		tasks: ['assemble:theme']
-        	}
+        		tasks: ['assemble:dev']
+        	},
+
+            livereload: {
+              options: {
+                livereload: '<%= connect.options.livereload %>'
+              },
+              files: [
+                '<%= config.tmp %>/{,*/}*.html',
+                '<%= config.tmp %>/assets/css/{,*/}*.css',
+                '<%= config.tmp %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+              ]
+            }
+
         },
 
 
         connect: {
-        	all: {
-        		options:{
-        			port: 8001,
-        			hostname: "0.0.0.0",
-        			path: 'dist'
-        		}
-        	}
-        },
-
-        open: {
-        	all: {
-        	    // Gets the port from the connect configuration
-        	    path: 'http://<%= connect.all.options.hostname%>:<%= connect.all.options.port%>/dist/'
-        	}
+          options: {
+            port: 9000,
+            livereload: 35729,
+            // change this to '0.0.0.0' to access the server from outside
+            hostname: 'localhost'
+          },
+          livereload: {
+            options: {
+              open: true,
+              base: [
+                '<%= config.tmp %>'
+              ]
+            }
+          }
         },
 
         ftpush: {
@@ -347,39 +267,51 @@ module.exports = function (grunt) {
 
 
     // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('assemble-less');
-    grunt.loadNpmTasks('grunt-ftpush');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    // grunt.loadNpmTasks('grunt-contrib-copy');
+    // grunt.loadNpmTasks('grunt-contrib-clean');
+    // grunt.loadNpmTasks('grunt-contrib-concat');
+    // grunt.loadNpmTasks('grunt-contrib-jshint');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
+    // grunt.loadNpmTasks('assemble-less');
+    // grunt.loadNpmTasks('grunt-ftpush');
+    // grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-    //grunt.loadNpmTasks('grunt-recess');
-    // remove grunt-recess modules. because not supported my code
+    // //grunt.loadNpmTasks('grunt-recess');
+    // // remove grunt-recess modules. because not supported my code
 
-    grunt.loadNpmTasks('assemble');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-open');
+    // grunt.loadNpmTasks('assemble');
+    // grunt.loadNpmTasks('grunt-contrib-connect');
+    // grunt.loadNpmTasks('grunt-open');
 
     // Test task.
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
     // JS distribution task.
-    grunt.registerTask('dist-js', ['concat', 'jshint', 'uglify']);
+    grunt.registerTask('dev', ['clean:dev', 'copy:dev',  'less:dev', 'concat', 'assemble']);
+    grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
+   
+
+   grunt.registerTask('build', [
+     'dev',
+     'clean:dist',
+     'assemble',
+     'copy:dist',
+     'less:dist',
+     'ftpush'
+   ]);
+ // grunt.registerTask('dist-js', ['concat', 'jshint', 'uglify']);
 
     
-    // Full distribution task.
-    grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js', 'assemble:theme', 'ftpush']);
+    // // Full distribution task.
+    // grunt.registerTask('dist', ['clean', 'copy', 'less:development', 'less:production', 'dist-js', 'assemble:theme', 'ftpush']);
 
-    // Default task.
-    //grunt.registerTask('default', ['test', 'dist']);
+    // // Default task.
+    // //grunt.registerTask('default', ['test', 'dist']);
 
-    grunt.registerTask('default', ['dist']);
+    // grunt.registerTask('default', ['dist']);
 
-    grunt.registerTask('server',['connect','open', 'watch']);
+    // grunt.registerTask('server',['connect','open', 'watch']);
 
 
 };
