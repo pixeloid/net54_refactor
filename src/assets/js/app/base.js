@@ -77,9 +77,9 @@ $(function () {
     
 
 
-    metisChart(); 
     $(".scroll-pane").jScrollPane();
-    
+    metisChart(); 
+   
 
 });
 

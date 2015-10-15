@@ -35,7 +35,8 @@
     "prettify": "*",
     "iCheck": "~1.0.2",
     "fuelux": "~3.11.1",
-    "jscrollpane": "~2.0.22"
+    "jscrollpane": "~2.0.22",
+    "entypo": "*"
   },
   "resolutions": {
     "jqgrid": "~5.0.0"

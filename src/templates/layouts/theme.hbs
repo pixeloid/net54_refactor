@@ -8,7 +8,7 @@
 	<!--IE Compatibility modes-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <link rel="stylesheet" href="{{assets}}/css/main.min.css">
+        <link rel="stylesheet" href="assets/css/main.min.css">
 
         {{#if stylesheets}}
         {{css stylesheets}}
@@ -21,12 +21,11 @@
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-	  <script src="{{assets}}/lib/html5shiv/html5shiv.js"></script>
-	  <script src="{{assets}}/lib/html5shiv/respond.js"></script>
+	  <script src="assets/js/html5shiv.js"></script>
+	  <script src="assets/js/respond.js"></script>
 	<![endif]-->
 
 	<!--Modernizr 3.0-->
-        <script src="{{assets}}/lib/modernizr/modernizr.js"></script>
     </head>
     <body>
 		{{> nav }}
@@ -36,8 +35,6 @@
 
     	{{> footer}}
 
-        <script src="{{assets}}/lib/jquery/jquery.min.js"></script>
-        <script src="{{assets}}/lib/bootstrap/js/bootstrap.min.js"></script>
 
 
 
@@ -49,7 +46,8 @@
         {{js javascripts}}
         {{/if}}
 
-        <script src="{{assets}}/js/main.min.js"></script>
+        <script src="assets/js/lib.js"></script>
+        <script src="assets/js/app.js"></script>
 
         {{#if scripts}}
         <script>
@@ -57,10 +55,5 @@
         </script>
         {{/if}}
         
-<script>document.write('<script src="http://'
-    + location.host.split(':')[0]
-    + ':35729/livereload.js"></'
-    + 'script>')</script>
-
        </body>
 </html>
