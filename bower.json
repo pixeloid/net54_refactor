@@ -36,7 +36,8 @@
     "iCheck": "~1.0.2",
     "fuelux": "~3.11.1",
     "jscrollpane": "~2.0.22",
-    "entypo": "*"
+    "entypo": "*",
+    "flot.tooltip": "~0.8.5"
   },
   "resolutions": {
     "jqgrid": "~5.0.0"
