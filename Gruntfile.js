@@ -62,7 +62,6 @@ module.exports = function (grunt) {
 			},
             lib: {
                 src: [
-
                     'bower_components/modernizr/modernizr.js',
                     'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -86,15 +85,21 @@ module.exports = function (grunt) {
                 ],
                 dest: '<%= config.tmp %>/assets/js/lib.js'
             },
-			app: {
+			general: {
 				src: [
 					'<%= config.src %>/assets/js/app/formGeneral.js',
+					'<%= config.src %>/assets/js/app/jqGrid-config.js'
+				],
+				dest: '<%= config.tmp %>/assets/js/general.js'
+			},
+			app: {
+				src: [
                     '<%= config.src %>/assets/js/app/chart.js',
                     '<%= config.src %>/assets/js/app/jqGrid.js',
                     '<%= config.src %>/assets/js/app/base.js', 
 				],
 				dest: '<%= config.tmp %>/assets/js/app.js'
-			},
+			}
 		},
 		uglify: {
 			options: {
@@ -103,6 +108,18 @@ module.exports = function (grunt) {
 			main: {
 				src: ['<%= concat.main.dest %>'],
 				dest: 'dist/assets/js/main.min.js'
+			},
+			lib: {
+				src: ['<%= concat.lib.dest %>'],
+				dest: 'dist/assets/js/lib.min.js'
+			},
+			general: {
+				src: ['<%= concat.general.dest %>'],
+				dest: 'dist/assets/js/general.min.js'
+			},
+			app: {
+				src: ['<%= concat.app.dest %>'],
+				dest: 'dist/assets/js/app.min.js'
 			}
 		},
 		jshint: {
@@ -290,7 +307,8 @@ module.exports = function (grunt) {
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
     // JS distribution task.
-    grunt.registerTask('dev', ['clean:dev', 'copy:dev',  'less:dev', 'concat', 'assemble']);
+    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat', 'uglify:lib', 'uglify:general', 'uglify:app', 'assemble']);
+	grunt.registerTask('default', ['dev']);
     grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
    
 
