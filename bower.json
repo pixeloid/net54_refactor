@@ -22,21 +22,22 @@
   "dependencies": {
     "bootstrap": "~3.3.5",
     "bootstrap-dialog": "~1.34.6",
+    "entypo": "*",
     "eonasdan-bootstrap-datetimepicker": "~4.15.35",
+    "flot": "~0.8.3",
     "font-awesome": "~4.0.3",
+    "fuelux": "~3.11.1",
     "gmaps": "~0.4.9",
     "html5shiv": "~3.7.3",
-    "respond": "~1.4.2",
-    "flot": "~0.8.3",
-    "modernizr": "~2.7.2",
+    "iCheck": "~1.0.2",
+    "jqgrid": "~5.0.0",
     "jquery": "~2.1.4",
     "jquery-mousewheel": "~3.1.13",
-    "jqgrid": "~5.0.0",
-    "prettify": "*",
-    "iCheck": "~1.0.2",
-    "fuelux": "~3.11.1",
     "jscrollpane": "~2.0.22",
-    "entypo": "*"
+    "modernizr": "~2.7.2",
+    "prettify": "*",
+    "reconnectingWebsocket": "~1.0.0",
+    "respond": "~1.4.2"
   },
   "resolutions": {
     "jqgrid": "~5.0.0"
