@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 			},
 			dev: {
                 files:{
-                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
+                    '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less'
                 }
 			},
 			dist: {
@@ -68,7 +68,8 @@ module.exports = function (grunt) {
                     'bower_components/moment/moment.js',
                     'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
                     'bower_components/bootstrap-dialog/dist/js/bootstrap-dialog.min.js',
-                    'bower_components/fuelux/dist/js/fuelux.min.js',
+                    'bower_components/fuelux/js/dropdown-autoflip.js',
+                    'bower_components/fuelux/js/pillbox.js',
                     'bower_components/iCheck/icheck.min.js',
                     'bower_components/jqgrid/js/minified/i18n/grid.locale-hu.js',
                     'bower_components/jqgrid/js/minified/jquery.jqGrid.min.js',
@@ -81,6 +82,7 @@ module.exports = function (grunt) {
                     'bower_components/flot/jquery.flot.selection.js',
                     'bower_components/flot/jquery.flot.resize.js',
                     'bower_components/flot/jquery.flot.stack.js',
+					'bower_components/reconnectingWebsocket/reconnecting-websocket.min.js'
                     'bower_components/flot.tooltip/js/jquery.flot.tooltip.js'
                 ],
                 dest: '<%= config.tmp %>/assets/js/lib.js'
@@ -88,7 +90,10 @@ module.exports = function (grunt) {
 			general: {
 				src: [
 					'<%= config.src %>/assets/js/app/formGeneral.js',
-					'<%= config.src %>/assets/js/app/jqGrid-config.js'
+					'<%= config.src %>/assets/js/app/jqGrid-config.js',
+					'<%= config.src %>/assets/js/app/jqGrid-net54.js',
+					'<%= config.src %>/assets/js/app/dom-utils.js',
+					'<%= config.src %>/assets/js/app/bootstrap-utils.js'
 				],
 				dest: '<%= config.tmp %>/assets/js/general.js'
 			},
@@ -103,11 +108,8 @@ module.exports = function (grunt) {
 		},
 		uglify: {
 			options: {
-				banner: '<%= banner %>'
-			},
-			main: {
-				src: ['<%= concat.main.dest %>'],
-				dest: 'dist/assets/js/main.min.js'
+				banner: '<%= banner %>',
+				sourceMap: true
 			},
 			lib: {
 				src: ['<%= concat.lib.dest %>'],
@@ -197,7 +199,7 @@ module.exports = function (grunt) {
             		{
             			expand: true,
             			cwd: 'bower_components/html5shiv/dist',
-            			src: ['./html5shiv.js'],
+            			src: ['./html5shiv.min.js'],
             			dest: 'tmp/assets/js'
             		},
             		{
@@ -307,7 +309,7 @@ module.exports = function (grunt) {
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
     // JS distribution task.
-    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat', 'uglify:lib', 'uglify:general', 'uglify:app', 'assemble']);
+    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat', 'uglify', 'assemble', 'copy']);
 	grunt.registerTask('default', ['dev']);
     grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
    
