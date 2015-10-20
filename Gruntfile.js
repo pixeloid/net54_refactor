@@ -107,7 +107,8 @@ module.exports = function (grunt) {
 		},
 		uglify: {
 			options: {
-				banner: '<%= banner %>'
+				banner: '<%= banner %>',
+				sourceMap: true
 			},
 			lib: {
 				src: ['<%= concat.lib.dest %>'],
