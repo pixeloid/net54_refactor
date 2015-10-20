@@ -83,6 +83,7 @@ module.exports = function (grunt) {
                     'bower_components/flot/jquery.flot.resize.js',
                     'bower_components/flot/jquery.flot.stack.js',
 					'bower_components/reconnectingWebsocket/reconnecting-websocket.min.js'
+                    'bower_components/flot.tooltip/js/jquery.flot.tooltip.js'
                 ],
                 dest: '<%= config.tmp %>/assets/js/lib.js'
             },
@@ -245,6 +246,7 @@ module.exports = function (grunt) {
               files: [
                 '<%= config.tmp %>/{,*/}*.html',
                 '<%= config.tmp %>/assets/css/{,*/}*.css',
+                '<%= config.tmp %>/assets/js/{,*/}*.js',
                 '<%= config.tmp %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
               ]
             }

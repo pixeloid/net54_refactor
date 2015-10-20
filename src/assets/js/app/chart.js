@@ -38,7 +38,17 @@ function metisChart() {
 
             },
 
-            tooltip: true,
+            tooltip: {
+              show: true,
+              content: "%s | x: %x; y: %y",
+              shifts: {
+                x: 10,
+                y: 20
+              },
+              defaultTheme: false
+
+
+            },
 
             xaxis: {
                 show: false
@@ -53,42 +63,6 @@ function metisChart() {
 
     );
 
-    var previousPoint = null;
-    var flag  = true;
-    var gx, gy;
-
-
-
-    $("#w1").bind("plothover", function (event, pos, item) {
-        if (item) {
-            console.log(item);            
-            var x = item.datapoint[0].toFixed(2),
-                y = item.datapoint[1].toFixed(2),
-                value = (y - item.datapoint[2]).toFixed(2);
-
-            if (gx != x || gy != y || flag) {
-                tooltipBox.css({
-                    position: 'absolute',
-                    top: item.pageY + 2,
-                    left: item.pageX
-                })
-                .tooltip({
-                    title:  value,
-                    placement: 'top',
-                    html: true
-                }).attr('data-original-title', value)
-                .tooltip('fixTitle')
-                .tooltip('show');
-                gx = x;
-                gy = y;
-                flag = false;
-            }
-        } else {
-            tooltipBox.tooltip('destroy');
-            flag = true;
-        }
-
-    });
 
 
 

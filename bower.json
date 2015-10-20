@@ -38,6 +38,8 @@
     "prettify": "*",
     "reconnectingWebsocket": "~1.0.0",
     "respond": "~1.4.2"
+    "entypo": "*",
+    "flot.tooltip": "~0.8.5"
   },
   "resolutions": {
     "jqgrid": "~5.0.0"
