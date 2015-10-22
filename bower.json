@@ -37,7 +37,7 @@
     "modernizr": "~2.7.2",
     "prettify": "*",
     "reconnectingWebsocket": "~1.0.0",
-    "respond": "~1.4.2"
+    "respond": "~1.4.2",
     "entypo": "*",
     "flot.tooltip": "~0.8.5",
     "reconnectingWebsocket": "~1.0.0"
