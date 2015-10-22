@@ -37,7 +37,8 @@
     "fuelux": "~3.11.1",
     "jscrollpane": "~2.0.22",
     "entypo": "*",
-    "flot.tooltip": "~0.8.5"
+    "flot.tooltip": "~0.8.5",
+    "reconnectingWebsocket": "~1.0.0"
   },
   "resolutions": {
     "jqgrid": "~5.0.0"

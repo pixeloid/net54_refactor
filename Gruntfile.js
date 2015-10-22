@@ -81,7 +81,8 @@ module.exports = function (grunt) {
                     'bower_components/flot/jquery.flot.selection.js',
                     'bower_components/flot/jquery.flot.resize.js',
                     'bower_components/flot/jquery.flot.stack.js',
-                    'bower_components/flot.tooltip/js/jquery.flot.tooltip.js'
+                    'bower_components/flot.tooltip/js/jquery.flot.tooltip.js',
+                    'bower_components/reconnectingWebsocket/reconnecting-websocket.js'
                 ],
                 dest: '<%= config.tmp %>/assets/js/lib.js'
             },
