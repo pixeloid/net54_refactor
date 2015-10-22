@@ -64,6 +64,7 @@ module.exports = function (grunt) {
                 src: [
                     'bower_components/modernizr/modernizr.js',
                     'bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/bootstrap/dist/js/bootstrap.min.js',
                     'bower_components/moment/moment.js',
                     'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
@@ -82,7 +83,7 @@ module.exports = function (grunt) {
                     'bower_components/flot/jquery.flot.selection.js',
                     'bower_components/flot/jquery.flot.resize.js',
                     'bower_components/flot/jquery.flot.stack.js',
-					'bower_components/reconnectingWebsocket/reconnecting-websocket.min.js'
+					'bower_components/reconnectingWebsocket/reconnecting-websocket.min.js',
                     'bower_components/flot.tooltip/js/jquery.flot.tooltip.js'
                 ],
                 dest: '<%= config.tmp %>/assets/js/lib.js'
@@ -202,12 +203,18 @@ module.exports = function (grunt) {
             			src: ['./html5shiv.min.js'],
             			dest: 'tmp/assets/js'
             		},
+                    {
+                        expand: true,
+                        cwd: 'bower_components/respond/dest',
+                        src: ['./respond.min.js'],
+                        dest: 'tmp/assets/js'
+                    },
             		{
             			expand: true,
-            			cwd: 'bower_components/respond/dest',
-            			src: ['./respond.min.js'],
+            			cwd: 'bower_components/jquery/dist',
+            			src: ['./jquery.min.map'],
             			dest: 'tmp/assets/js'
-            		},
+            		}
                 ]
         	},
 
