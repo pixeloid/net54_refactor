@@ -1,4 +1,4 @@
-$(function () {
+(function ($) {
     $.extend($.jgrid.defaults, {
         autowidth :true,
         responsive: true,
@@ -11,4 +11,4 @@ $(function () {
     $.jgrid.styleUI.Bootstrap.base.footerTable = "table ";
     $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
     $.jgrid.styleUI.Bootstrap.common.highlight = "highlight";
-})
+})(jQuery);

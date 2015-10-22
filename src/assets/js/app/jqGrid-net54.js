@@ -1,36 +1,3 @@
-/**
-* NET54-Refactor-Template v1.0.0
-* Author : Gergely Olah 
-* Copyright 2015
-* Licensed under MIT
-*/
-function formGeneral() {
-    "use strict";
-
-
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_minimal',
-      radioClass: 'iradio_minimal',
-      // increaseArea: '20%' // optional
-    });
-
-    return;
-
-}
-(function ($) {
-    $.extend($.jgrid.defaults, {
-        autowidth :true,
-        responsive: true,
-        styleUI: 'Bootstrap'
-    });
-
-
-    $.jgrid.styleUI.Bootstrap.base.headerTable = "table  table-condensed";
-    $.jgrid.styleUI.Bootstrap.base.rowTable = "table  table-condensed table-striped table-hover";
-    $.jgrid.styleUI.Bootstrap.base.footerTable = "table ";
-    $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
-    $.jgrid.styleUI.Bootstrap.common.highlight = "highlight";
-})(jQuery);
 (function($) {
 	$.fn.net54Grid = function(options, pagerOptions) {
 		var settings = $.extend({
@@ -162,7 +129,7 @@ var getExportURL = function (gridId, exportType) {
 	return res;
 };
 
-// regul�ris kifejez�s, amely az RFC8601 d�tumra illeszkedik
+// regul�ris kifejez�s, amely az RFC8601 d�tumra illeszkedik
 var datePattern = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})$/;
 
 var RFCDateFormatter = function (cellValue, options, rowObject) {
@@ -218,121 +185,4 @@ var BooleanFormatter = function (cellValue, options, rowObject) {
 	} else {
 		return '';
 	}
-};
-Node.prototype.appendChildren = function (nodeArray) {
-	for (var i = 0; i < nodeArray.length; i++) {
-		this.appendChild(nodeArray[i]);
-	}
-	return this;
-}
-
-Node.prototype.empty = function () {
-	while (this.firstChild) {
-		this.removeChild(this.firstChild);
-	}
-}
-
-Node.prototype.hasChildElementNodes = function () {
-	if (this.hasChildNodes()) {
-		for (var i = 0; i < this.childNodes.length; i++) {
-			if (this.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-Node.prototype.countChildElementNodes = function () {
-	if (this.hasChildNodes()) {
-		var count = 0;
-		for (var i = 0; i < this.childNodes.length; i++) {
-			if (this.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-				count++;
-			}
-		}
-		return count;
-	}
-	return 0;
-}
-
-function createElementWithAttributes (elementName, attributes) {
-	var element = document.createElement(elementName);
-	for (var attribute in attributes) {
-		element.setAttribute(attribute, attributes[attribute]);
-	}
-	return element;
-}
-
-function createElementWithTextContent (elementName, text) {
-	var element = document.createElement(elementName);
-	element.textContent = text;
-	return element;
-}
-
-function createElementWithAttributesAndTextContent (elementName, attributes, text) {
-	var element = createElementWithAttributes(elementName, attributes);
-	element.textContent = text;
-	return element;
-}
-/**
- * net54/bootstrap-utils.js
- * 
- * Saját segédmetódusok a Bootstrap-hez
- * @author meb
- * @since 2014.10.15.
- */
-
-/**
- * Megjelöli a bootstap mezőt a megadott státusszal.
- * A következő státuszok adhatóak meg:
- * <ul>
- *  <li>error</li>
- *  <li>warning</li>
- *  <li>success</li>
- * </ul>
- */
-var markField = function (fieldName, status) {
-	if (status !== 'error' && status !== 'warning' && status !== 'success') {
-		console.log('markField() called with invalid status parameter!');
-	} else if (typeof fieldName !== "string" || fieldName === "") {
-		console.log('markField() called with invalid fieldName parameter!');
-	} else {
-		$('#' + fieldName).closest('.form-group').addClass('has-' + status);
-	}
-};
-
-/**
- * Eltávolítja a megadott bootstrap mezőről a megadott státuszhoz
- * tartozó jelölést.
- * A következő státuszok adhatóak meg:
- * <ul>
- *  <li>error</li>
- *  <li>warning</li>
- *  <li>success</li>
- * </ul>
- */
-var unmarkField = function (fieldName, status) {
-	if (status !== 'error' && status !== 'warning' && status !== 'success') {
-		console.log('markField() called with invalid status parameter!');
-	} else if (typeof fieldName !== "string" || fieldName === "") {
-		console.log('markField() called with invalid fieldName parameter!');
-	} else {
-		$('#' + fieldName).closest('.form-group').removeClass('has-' + status);
-	}
-};
-
-/**
- * Inaktívvá teszi, és üríti a megadott mezőt.
- */
-var disableAndClearField = function (fieldName) {
-	document.getElementById(fieldName).disabled = true;
-	document.getElementById(fieldName).value = '';
-};
-
-/**
- * Aktívvá teszi a megadott mezőt.
- */
-var enableField = function (fieldName) {
-	document.getElementById(fieldName).disabled = false;
 };
