@@ -43,10 +43,10 @@ function metisChart() {
 
                 tooltip: {
                   show: true,
-                  content: "%s",
+                  content: "x: %x; y: %y",
                   shifts: {
                     x: 10,
-                    y: 20
+                    y: -20
                   },
                   defaultTheme: false
 
