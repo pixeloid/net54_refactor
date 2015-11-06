@@ -1,6 +1,7 @@
 /*Grid*/
 .ui-jqgrid {
 	position: relative; 
+	overflow: hidden;
 }
 .ui-jqgrid .ui-jqgrid-view {
 	position: relative;
@@ -285,6 +286,12 @@ div.tablediv > .table-bordered {
 }
 .ui-jqgrid  .ui-paging-pager td {
 	padding : 0 5px;
+
+	&#input_jqGridPager{
+		white-space: nowrap;
+		min-width: 200px;
+		text-align: center;
+	}
 }
 .ui-jqgrid .ui-pg-button span { 
 	display: block; 
@@ -365,7 +372,14 @@ div.tablediv > .table-bordered {
 	height:auto; 
 	margin-top:3px;
 	margin-right:4px;
-	display: inline;
+	display: none;
+
+		@media (min-width: @screen-sm-min) {
+			display: inline;
+		}
+
+
+
 }
 .ui-jqgrid .ui-jqgrid-pager .ui-paging-pager,
 .ui-jqgrid .ui-jqgrid-toppager .ui-paging-pager
