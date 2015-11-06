@@ -95,7 +95,8 @@ module.exports = function (grunt) {
 					'<%= config.src %>/assets/js/app/jqGrid-config.js',
 					'<%= config.src %>/assets/js/app/jqGrid-net54.js',
 					'<%= config.src %>/assets/js/app/dom-utils.js',
-					'<%= config.src %>/assets/js/app/bootstrap-utils.js'
+					'<%= config.src %>/assets/js/app/bootstrap-utils.js',
+					'<%= config.src %>/assets/js/app/fuelux-net54.js'
 				],
 				dest: '<%= config.tmp %>/assets/js/general.js'
 			},
