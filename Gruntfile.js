@@ -43,7 +43,8 @@ module.exports = function (grunt) {
 			},
 			dev: {
                 files:{
-                    '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less'
+                    '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less',
+                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
                 }
 			},
 			dist: {
