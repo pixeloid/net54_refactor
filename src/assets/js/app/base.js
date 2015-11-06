@@ -77,7 +77,11 @@ $(function () {
     
 
 
-    $(".scroll-pane").jScrollPane();
+    $(".scroll-pane").jScrollPane({
+      autoReinitialise: true,
+      scrollbarWidth: 10, 
+      scrollbarMargin: 0
+    });
     metisChart(); 
    
 

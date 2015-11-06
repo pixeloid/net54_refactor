@@ -2,6 +2,7 @@ node_modules/
 nbproject/
 .idea/
 tmp/
+dist/
 bower_components/
 resources
 .ftppass
