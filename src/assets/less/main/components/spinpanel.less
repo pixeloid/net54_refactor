@@ -61,6 +61,27 @@
 			border-bottom: @spinbutton-border;
 		}
 	}
+	
+	&.chart-spinpanel {
+		@spacing: 15px; 
+		.content, .chart{
+			margin: @spacing @spacing @spacing 0;
+		}
+		.chart{
+			height: @widget-height - @spacing * 2 ;
+			width: @widget-height - @spacing * 2 ;
+			margin-left: @spacing;
+		}
+			
+		.content{
+
+			&.content-large{
+				font-size: @font-HUGE;
+				font-weight: 700;
+			}
+		}
+
+	}
 
 	&.storage-spinpanel {
 		.left-part {

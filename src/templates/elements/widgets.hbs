@@ -35,19 +35,38 @@ stylesheets:
                   </div>
                   <div class="row">
                         <div class="col-sm-6">
-                              <div class="panel panel-default net54-spinpanel storage-spinpanel" id="storagePanel">
+                              <div class="panel panel-default net54-spinpanel chart-spinpanel" id="storagePanel">
                               <div class="panel-heading">
                               <h3 class="panel-title">System Messages</h3>
                               </div>
 
                                     <div class="panel-body">
-<div class="left-part"><div class="content"><div class="description"><a href="recpaths;jsessionid=D4EAC8F3EEB79F219F6A6F52559086E6" title="Recording Paths">Local:</a> E:\Magnetofon\voices\records</div><div class="progress"><div class="progress-bar" style="width: 32.69193201797226%"></div></div><div class="free-space">13.78GB free / 20.48GB total</div></div><div class="percentage" id="w4">33%</div></div>                                          <div class="spin-buttons">
-                                                <button type="button" class="btn btn-xs btn-default" id="previousStorage">
-                                                <span class="glyphicon glyphicon-chevron-up"></span>
-                                                </button>
-                                                <button type="button" class="btn btn-xs btn-default" id="nextStorage">
-                                                <span class="glyphicon glyphicon-chevron-down"></span>
-                                                </button>
+                                                
+                                          <div class="row">
+                                                <div class="col-xs-3">
+                                                      <div class="chart" id="w4"></div>
+                                                </div>
+                                                <div class="col-xs-5">
+                                                      <div class="content">
+                                                            Storage usage <br>
+                                                            Total: <b>25 000 </b> hours
+                                                      </div>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                      <div class="content content-large">
+                                                            46%
+                                                      </div>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                      <div class="spin-buttons">
+                                                            <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                                                            <span class="glyphicon glyphicon-chevron-up"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                                            </button>
+                                                      </div>
+                                                </div>
                                           </div>
                                     </div>
 

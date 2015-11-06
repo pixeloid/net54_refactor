@@ -167,22 +167,19 @@ function metisChart() {
 
     if($('#w4').length){
 
-        var dataset = [{
-            data: [
-                [0, 12],
-                [1, 43],
-                [2, 105],
-                [3, 45]
-            ],
-            color: '#ba4247'
-        }];
+        var dataset = [
+                {"data": [[1,100]], "color":"#ba4247", bars: {fill: 0.1}},
+                {"data":[[1,50]], "color":"#ba4247"}
+            ];
 
         $.plot($("#w4"), dataset, {
             series: {
+                stackpercent : true,    // enable stackpercent
                 bars: {
                     fill: 1,
-                    barWidth: 0.7,
-                    show: true
+                    barWidth: 1,
+                    show: true,
+                    lineWidth: 0
                 }
             },
             xaxis: {
