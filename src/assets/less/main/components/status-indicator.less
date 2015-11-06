@@ -1,0 +1,31 @@
+.status-indicator{
+	display: inline-block;
+	position: relative;
+	width: 14px;
+	height: 14px;
+	border: 1px solid @brand-primary;
+	border-radius: 50%;
+	text-indent: -100000px;
+	overflow: hidden;
+	color: #fff;
+
+	&:after{
+		display: inline-block;
+		position: absolute;
+		content: " ";
+		top: 1px;
+		left: 1px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		border: 1px solid #fff;
+	}
+
+	&.status-indicator-on:after{
+		#gradient > .vertical(#359908, darken(#359908, 10%));  
+	}
+	&.status-indicator-off:after{
+		#gradient > .vertical(#f32f33, darken(#f32f33, 10%));  
+	}
+
+}
