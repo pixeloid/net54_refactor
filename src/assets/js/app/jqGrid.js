@@ -1,6 +1,19 @@
 
 $(function () {
+    (function ($) {
+        $.extend($.jgrid.defaults, {
+            autowidth :true,
+            responsive: true,
+            styleUI: 'Bootstrap'
+        });
 
+
+        $.jgrid.styleUI.Bootstrap.base.headerTable = "table  table-condensed";
+        $.jgrid.styleUI.Bootstrap.base.rowTable = "table  table-condensed table-striped table-hover";
+        $.jgrid.styleUI.Bootstrap.base.footerTable = "table ";
+        $.jgrid.styleUI.Bootstrap.base.pagerTable = "table table-condensed";
+        $.jgrid.styleUI.Bootstrap.common.highlight = "highlight";
+    })(jQuery);
     $("#jqGrid").jqGrid({
         url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
         mtype: "GET",
@@ -17,16 +30,12 @@ $(function () {
     	viewrecords: true,
         rowNum: 20,
         pager: "#jqGridPager",
-        gridComplete:function(){
-            var table_header = $('#container').find('.ui-jqgrid-hbox').css("position","relative");
-
-            $('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function(event, scrollPositionX, isAtLeft, isAtRight) {
+        loadComplete: function () {
+            var table_header = $(this).closest('.ui-jqgrid ').find('.ui-jqgrid-hbox').css("position", "relative");
+            $(this).closest('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function (event, scrollPositionX, isAtLeft, isAtRight) {
                 table_header.css('right', scrollPositionX);
-            }).jScrollPane({
-                showArrows: false, 
+            }).jScrollPane({ showArrows: false,
                 autoReinitialise: true,
-                horizontalDragMaxWidth: 20,
-                verticalDragMaxHeight: 20           
             });
 
             formGeneral();

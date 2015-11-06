@@ -211,9 +211,9 @@ module.exports = function (grunt) {
                         dest: 'tmp/assets/js'
                     },
             		{
-            			expand: true,
             			cwd: 'bower_components/jquery/dist',
             			src: ['./jquery.min.map'],
+                        expand:true,
             			dest: 'tmp/assets/js'
             		}
                 ]
@@ -317,7 +317,7 @@ module.exports = function (grunt) {
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
     // JS distribution task.
-    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat', 'uglify', 'assemble', 'copy']);
+    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat',  'assemble', 'copy:dev']);
 	grunt.registerTask('default', ['dev']);
     grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
    
@@ -328,6 +328,7 @@ module.exports = function (grunt) {
      'assemble',
      'copy:dist',
      'less:dist',
+     'uglify',
      'ftpush'
    ]);
  // grunt.registerTask('dist-js', ['concat', 'jshint', 'uglify']);

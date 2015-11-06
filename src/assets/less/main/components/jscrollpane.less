@@ -5,6 +5,9 @@
  * may not operate correctly without them.
  */
 
+
+@jspWidth: 10px;
+
 .jspContainer
 {
 	overflow: hidden;
@@ -21,7 +24,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 16px;
+	width: @jspWidth;
 	height: 100%;
 	background: red;
 }
@@ -32,7 +35,7 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 16px;
+	height: @jspWidth;
 	background: red;
 }
 
@@ -86,12 +89,12 @@
 
 .jspVerticalBar .jspArrow
 {
-	height: 16px;
+	height: @jspWidth;
 }
 
 .jspHorizontalBar .jspArrow
 {
-	width: 16px;
+	width: @jspWidth;
 	float: left;
 	height: 100%;
 }

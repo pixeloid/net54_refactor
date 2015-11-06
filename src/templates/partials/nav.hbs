@@ -1,50 +1,86 @@
-<div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">
-        <img src="assets/img/logo.png" alt="">
-      </a>
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      </button>
-    </div>
-
-    
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="#"><span class="icon-entypo-gauge"></span>Dashboard</a>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><span class="icon-entypo-cog"></span> Administration <span class="caret"></span></a>
-          <ul class="dropdown-menu" aria-labelledby="themes">
-            <li><a href="#"><span class="icon-entypo-chevron-small-right"></span> Extension</a></li>
-            <li><a href="#"><span class="icon-entypo-chevron-small-right"></span> Recording channels</a></li>
-            <li><a href="#"><span class="icon-entypo-chevron-small-right"></span> Users </a></li>
-            <li class="divider"></li>
-            <li><a href="#"><span class="icon-entypo-chevron-small-right"></span> Groups</a></li>
-            <li><a href="#"><span class="icon-entypo-chevron-small-right"></span> Recording programs</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#"><span class="icon-entypo-book"></span>Dictionaries</a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-entypo-search"></span>Search</a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-entypo-area-graph"></span>System</a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-entypo-numbered-list"></span>Settings</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="icon-entypo-user"></span>Kovács Béla</a></li>
-        <li><a href="#"><span class="icon-entypo-logout"></span>Exit</a></li>
-      </ul>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+                <a href="dashboard;jsessionid=4352EA4DE83A1789CF281F717B6E65E2" class="navbar-brand"><img src="assets/img/logo.png"></a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="dashboard;jsessionid=4352EA4DE83A1789CF281F717B6E65E2">
+              <i class="glyphicon glyphicon-dashboard"></i>
+              <span class="hidden-md hidden-sm"> Dashboard </span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="glyphicon glyphicon-cog"></i> 
+              <span class="hidden-sm">Administration</span>
+              <span class="caret"></span>
+            </a> 
+            <ul class="dropdown-menu" aria-labelledby="themes">
+              <li><a href="devices;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Extensions </a></li>
+              <li><a href="channels;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Recording Channels </a></li>
+              <li><a href="users;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Users </a></li>
+              <li class="divider"></li>
+              <li><a href="groups;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Groups </a></li>
+              <li><a href="programs;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Recording Programs </a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="dictionary;jsessionid=4352EA4DE83A1789CF281F717B6E65E2">
+              <i class="glyphicon glyphicon-book"></i> 
+              <span class="hidden-sm">Dictionary</span>
+            </a> 
+          </li>
+          <li>
+            <a href="/magnetofon-ui-old/search;jsessionid=4352EA4DE83A1789CF281F717B6E65E2">
+              <i class="glyphicon glyphicon-search"></i>
+              <span>Search</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="glyphicon glyphicon-stats"></i>
+              <span class="hidden-sm">System</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="themes">
+              <li><a href="/magnetofon-ui-old/device-statistics;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Device Statistics </a></li>
+              <li><a href="/magnetofon-ui-old/program-statistics;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Program Statistics </a></li>
+              <li><a href="/magnetofon-ui-old/channel-statistics;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Channel Monitoring </a></li>
+              <li class="divider"></li>
+              <li><a href="/magnetofon-ui-old/system-messages;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> System Messages </a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="glyphicon glyphicon-wrench"></i>
+              <span class="hidden-sm">Settings</span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="themes">
+              <li><a href="/magnetofon-ui-old/systemconfig;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> System Configuration </a></li>
+              <li><a href="/magnetofon-ui-old/licence;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Licence Information </a></li>
+              <li><a href="/magnetofon-ui-old/extparams;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> External Parameters </a></li>
+              <li><a href="/magnetofon-ui-old/recpaths;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Recording Paths </a></li>
+              <li><a href="/magnetofon-ui-old/archives;jsessionid=4352EA4DE83A1789CF281F717B6E65E2"> Archive Storages </a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="glyphicon glyphicon-user"></i> Gergő Oláh</a></li>
+          <li>
+            <a href="/magnetofon-ui-old/logout;jsessionid=4352EA4DE83A1789CF281F717B6E65E2">
+              <i class="glyphicon glyphicon-off"></i>
+              <span class="hidden-md hidden-sm">Exit</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
