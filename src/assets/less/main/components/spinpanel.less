@@ -19,6 +19,7 @@
 .net54-spinpanel {
 	.panel-body {
 		padding: 0;
+		position: relative;
 	}
 
 	.left-part {
@@ -34,12 +35,20 @@
 			width: 100%;
 		}
 	}
-
+	.row{
+		margin: 0 -6px;
+	}
+	.col{
+		padding: 0 6px;
+	}
 	.spin-buttons {
 		white-space: nowrap;
 		vertical-align: middle;
 		display: table-cell;
 		float: right;
+		position: absolute;
+		top:0;
+		right: 0;
 		width: @spinbuttons-width;
 		height: @widget-height;
 		> .btn {
@@ -65,11 +74,11 @@
 	&.chart-spinpanel {
 		@spacing: 15px; 
 		.content, .chart{
-			margin: @spacing @spacing @spacing 0;
+			margin: @spacing 0 @spacing 0;
 		}
 		.chart{
 			height: @widget-height - @spacing * 2 ;
-			width: @widget-height - @spacing * 2 ;
+			width: auto;
 			margin-left: @spacing;
 		}
 			
