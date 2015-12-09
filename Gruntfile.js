@@ -193,10 +193,16 @@ module.exports = function (grunt) {
                         src: ['./css/*.*', './fonts/*.*'],
                         dest: 'tmp/assets/fonts'
                     },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/entypo/font',
+                        src: ['entypo.*'],
+                        dest: 'tmp/assets/fonts'
+                    },
             		{
             			expand: true,
-            			cwd: 'bower_components/entypo/font',
-            			src: ['entypo.*'],
+            			cwd: 'src/assets/fonts',
+            			src: ['net54-icons.*'],
             			dest: 'tmp/assets/fonts'
             		},
             		{

@@ -34,30 +34,29 @@ stylesheets:
                         </div>
                   </div>
                   <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                               <div class="panel panel-default net54-spinpanel chart-spinpanel" id="storagePanel">
                               <div class="panel-heading">
-                              <h3 class="panel-title">System Messages</h3>
+                              <h3 class="panel-title">Recording Paths</h3>
                               </div>
 
                                     <div class="panel-body">
                                                 
                                           <div class="row">
-                                                <div class="col-xs-3">
+                                                <div class="col col-xs-2">
                                                       <div class="chart" id="w4"></div>
                                                 </div>
-                                                <div class="col-xs-5">
+                                                <div class="col col-xs-6">
                                                       <div class="content">
-                                                            Storage usage <br>
-                                                            Total: <b>25 000 </b> hours
+                                                            E:\Magnetofon\voices\temp <br>
+                                                            <b>9388MB / 20.48GB </b>
                                                       </div>
                                                 </div>
-                                                <div class="col-xs-2">
-                                                      <div class="content content-large">
+                                                <div class="col col-xs-3">
+                                                      <div class="content content-large text-center">
                                                             46%
                                                       </div>
                                                 </div>
-                                                <div class="col-xs-2">
                                                       <div class="spin-buttons">
                                                             <button type="button" class="btn btn-xs btn-default" id="previousStorage">
                                                             <span class="glyphicon glyphicon-chevron-up"></span>
@@ -66,27 +65,50 @@ stylesheets:
                                                             <span class="glyphicon glyphicon-chevron-down"></span>
                                                             </button>
                                                       </div>
-                                                </div>
                                           </div>
                                     </div>
 
                               </div>
                         </div>
-                        <div class="col-sm-6">
-                              <div class="panel panel-default panel panel-default net54-spinpanel longest-calls-spinpanel" id="storagePanel">
+                        <div class="col-md-6">
+                              <div class="panel panel-default net54-spinpanel chart-spinpanel" id="storagePanel">
+                                    <div class="panel-heading">
+                                          <h3 class="panel-title">Longest Calls Today</h3>
+                                    </div>
+
                                     <div class="panel-body">
-<div class="left-part"><div class="content"><div class="description"><a href="device-statistics;jsessionid=D4EAC8F3EEB79F219F6A6F52559086E6" title="Device Statistics">Longest calls today</a></div><div class="station">2087 - Soproni Dániel</div></div><div class="length">46s</div></div>                                          <div class="spin-buttons">
-                                                <button type="button" class="btn btn-xs btn-default" id="previousStorage">
-                                                <span class="glyphicon glyphicon-chevron-up"></span>
-                                                </button>
-                                                <button type="button" class="btn btn-xs btn-default" id="nextStorage">
-                                                <span class="glyphicon glyphicon-chevron-down"></span>
-                                                </button>
+
+                                          <div class="row">
+                                                <div class="col-xs-7">
+                                                      <div class="content">
+                                                            <b>2087</b><br>
+                                                            Soproni Dániel 
+                                                      </div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                      <div class="content content-large text-center">
+                                                            6m49s
+                                                      </div>
+                                                </div>
+                                                      <div class="spin-buttons">
+                                                            <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                                                            <span class="glyphicon glyphicon-chevron-up"></span>
+                                                            </button>
+                                                            <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                                            </button>
+                                                      </div>
                                           </div>
+
+
+
                                     </div>
                               </div>
                         </div>
-                  </div>
+                  </div>                  
+
+
+
             </div>
             <div class="col-sm-3">
                   <div id="systemMessagesPanel" class="panel panel-default net54-system-messages">
