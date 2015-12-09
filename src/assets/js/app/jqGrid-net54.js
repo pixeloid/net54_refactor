@@ -1,5 +1,6 @@
 (function($) {
 	$.fn.net54Grid = function(options, pagerOptions) {
+		var self = this;
 		var settings = $.extend({
 			// These are the defaults.
 			datatype : "json",
@@ -16,6 +17,16 @@
 			multiSort : true,
 			hidegrid : false,
 			beforeProcessing : function(data) {
+				if (options.countUrl) {
+					var ajax = new XMLHttpRequest();
+					ajax.open('GET', options.countUrl, false);
+					ajax.send(null);
+					if (ajax.status === 200) {
+						data.records = ajax.responseText;
+						data.total = Math.ceil(data.records / self.getGridParam('rowNum'));
+					}
+				}
+
 				var gridData = options.pagingDataVariableName;
 				if (gridData && gridData.length !== 0) {
 					data.total = data[gridData].total;
@@ -76,7 +87,7 @@
 			search : false
 		}, pagerOptions);
 
-		var myGrid = this.jqGrid(settings);
+		var myGrid = self.jqGrid(settings);
 
 		$(window).resize(function() {
 			var width = $('#gbox_' + myGrid[0].id).parent().width();
