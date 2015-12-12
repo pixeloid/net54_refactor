@@ -1,6 +1,9 @@
 (function($) {
 	$.fn.net54Grid = function(options, pagerOptions) {
 		var self = this;
+		// Save initial settings
+		self.options = options;
+
 		var settings = $.extend({
 			// These are the defaults.
 			datatype : "json",
@@ -16,6 +19,19 @@
 			multiselect : false,
 			multiSort : true,
 			hidegrid : false,
+			beforeRequest: function () {
+				if (self.options.rest) {
+					var data = self.getGridParam('postData');
+					self.setGridParam({
+						url: self.options.url + '/' + data.rows + '/' + data.page
+								+ (data.sidx ? '/' + data.sidx + '/' + data.sord : '')
+					});
+				}
+			},
+			serializeGridData: function (postData) {
+				// On REST request, drop post params
+				postData: self.options.rest ? '' : postData;
+			},
 			beforeProcessing : function(data) {
 				if (options.countUrl) {
 					var ajax = new XMLHttpRequest();
