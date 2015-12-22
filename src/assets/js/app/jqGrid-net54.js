@@ -22,10 +22,12 @@
 			beforeRequest: function () {
 				if (self.options.rest) {
 					var data = self.getGridParam('postData');
-					self.setGridParam({
-						url: self.options.url + '/' + data.rows + '/' + data.page
-								+ (data.sidx ? '/' + data.sidx + '/' + data.sord : '')
-					});
+					var newUrl = self.options.url + '/' + data.rows + '/' + data.page
+								+ (data.sidx ? '/' + data.sidx + '/' + data.sord : '');
+					if (self.options.filter) {
+						newUrl += '?' + $.param(self.options.filter());
+					}
+					self.setGridParam({url: newUrl});
 				}
 			},
 			serializeGridData: function (postData) {
@@ -34,8 +36,12 @@
 			},
 			beforeProcessing : function(data) {
 				if (options.countUrl) {
+					var url = options.countUrl;
+					if (self.options.filter) {
+						url += '?' + $.param(self.options.filter());
+					}
 					var ajax = new XMLHttpRequest();
-					ajax.open('GET', options.countUrl, false);
+					ajax.open('GET', url, false);
 					ajax.send(null);
 					if (ajax.status === 200) {
 						data.records = ajax.responseText;
