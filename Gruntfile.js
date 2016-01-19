@@ -43,8 +43,7 @@ module.exports = function (grunt) {
 			},
 			dev: {
                 files:{
-                    '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less',
-                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
+                    '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less'
                 }
 			},
 			dist: {
@@ -324,7 +323,7 @@ module.exports = function (grunt) {
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
     // JS distribution task.
-    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat',  'assemble', 'copy:dev']);
+    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'less:dist', 'concat', 'uglify', 'assemble', 'copy:dist']);
 	grunt.registerTask('default', ['dev']);
     grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
    
