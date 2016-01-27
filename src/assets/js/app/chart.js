@@ -2,7 +2,7 @@ function metisChart() {
     "use strict";
 
     var tooltipBox = $('#tooltipBox');
-
+    var chartColor = $('.net54-footer a').css('color');
 
 
 
@@ -23,7 +23,7 @@ function metisChart() {
 
 
         $.plot("#w1", [{
-                color: "#ba4247",
+                color: chartColor,
                 data: data
             }], {
                 series: {
@@ -84,13 +84,13 @@ function metisChart() {
         }
 
         var dataset = [{
-            color: "#ba4247",
+            color: chartColor,
             data: data1,
             bars: {
                 fill: 0.3
             }
         }, {
-            color: "#ba4247",
+            color: chartColor,
             data: data2,
             bars: {
                 fill: 1
@@ -168,8 +168,8 @@ function metisChart() {
     if($('#w4').length){
 
         var dataset = [
-                {"data": [[1,100]], "color":"#ba4247", bars: {fill: 0.1}},
-                {"data":[[1,50]], "color":"#ba4247"}
+                {"data": [[1,100]], "color":chartColor, bars: {fill: 0.1}},
+                {"data":[[1,50]], "color":chartColor}
             ];
 
         $.plot($("#w4"), dataset, {

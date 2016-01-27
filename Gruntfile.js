@@ -44,7 +44,10 @@ module.exports = function (grunt) {
 			dev: {
                 files:{
                     '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less',
-                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
+                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less',
+
+                    '<%= config.tmp %>/assets/css/net54-new.css': '<%= config.src %>/assets/less/net54-new.less',
+                    '<%= config.tmp %>/assets/css/net54-new.min.css': '<%= config.src %>/assets/less/net54-new.less'
                 }
 			},
 			dist: {
@@ -52,7 +55,8 @@ module.exports = function (grunt) {
 					compress: true
 				},
                 files:{
-                    '<%= config.dist %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less'
+                    '<%= config.dist %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less',
+                    '<%= config.dist %>/assets/css/net54.min.css': '<%= config.src %>/assets/less/net54-new.less',
                 }
 			}
 		},
@@ -85,7 +89,8 @@ module.exports = function (grunt) {
                     'bower_components/flot/jquery.flot.resize.js',
                     'bower_components/flot/jquery.flot.stack.js',
 					'bower_components/reconnectingWebsocket/reconnecting-websocket.min.js',
-                    'bower_components/flot.tooltip/js/jquery.flot.tooltip.js'
+                    'bower_components/flot.tooltip/js/jquery.flot.tooltip.js',
+                    'bower_components/jquery.cookie/jquery.cookie.js'
                 ],
                 dest: '<%= config.tmp %>/assets/js/lib.js'
             },
@@ -104,6 +109,7 @@ module.exports = function (grunt) {
                     '<%= config.src %>/assets/js/app/chart.js',
                     '<%= config.src %>/assets/js/app/jqGrid.js',
                     '<%= config.src %>/assets/js/app/base.js', 
+                    '<%= config.src %>/assets/js/style-switcher.js', 
 				],
 				dest: '<%= config.tmp %>/assets/js/app.js'
 			}
@@ -216,11 +222,17 @@ module.exports = function (grunt) {
                         src: ['./respond.min.js'],
                         dest: 'tmp/assets/js'
                     },
-            		{
-            			cwd: 'bower_components/jquery/dist',
-            			src: ['./jquery.min.map'],
+                    {
+                        cwd: 'bower_components/jquery/dist',
+                        src: ['./jquery.min.map'],
                         expand:true,
-            			dest: 'tmp/assets/js'
+                        dest: 'tmp/assets/js'
+                    },
+            		{
+            			cwd: 'src',
+                        expand:true,
+            			src: ['./style-switcher.php'],
+            			dest: 'tmp'
             		}
                 ]
         	},
