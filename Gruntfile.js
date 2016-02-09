@@ -69,7 +69,6 @@ module.exports = function (grunt) {
                 src: [
                     'bower_components/modernizr/modernizr.js',
                     'bower_components/jquery/dist/jquery.min.js',
-                    'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/bootstrap/dist/js/bootstrap.min.js',
                     'bower_components/moment/moment.js',
                     'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
@@ -78,7 +77,7 @@ module.exports = function (grunt) {
                     'bower_components/fuelux/js/pillbox.js',
                     'bower_components/iCheck/icheck.min.js',
                     'bower_components/jqgrid/js/minified/i18n/grid.locale-hu.js',
-                    'bower_components/jqgrid/js/minified/jquery.jqGrid.min.js',
+                    'bower_components/jqgrid/js/jquery.jqGrid.min.js',
                     'bower_components/jscrollpane/script/jquery.jscrollpane.min.js',
                     'bower_components/jscrollpane/script/jquery.mousewheel.js',
                     'bower_components/jscrollpane/script/mwheelIntent.js',
