@@ -6,7 +6,7 @@
  */
 
 
-@jspWidth: 10px;
+@jspWidth: 13px;
 
 .jspContainer
 {
@@ -58,6 +58,7 @@
 {
 	background: @jsp-track-bg;
 	position: relative;
+	.box-shadow(none, 1px 1px 3px rgba(0,0,0,.8););
 }
 
 .jspDrag
@@ -65,7 +66,8 @@
 	background: @jsp-drag-bg;
 	position: relative;
 	top: 0;
-	left: 0;
+	left: 1px;
+	right:1px;
 	cursor: pointer;
 }
 
