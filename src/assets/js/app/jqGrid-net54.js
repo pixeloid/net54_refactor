@@ -37,6 +37,7 @@
 			    });
 
 			    formGeneral();
+			    $(window).resize();
 			 },
 
 			exportxls : false,

@@ -39,6 +39,7 @@ $(function () {
             });
 
             formGeneral();
+            $(window).resize();
          }
 
     });
