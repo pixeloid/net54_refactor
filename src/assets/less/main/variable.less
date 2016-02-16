@@ -23,6 +23,11 @@
 @brand-danger:          #d9534f;
 
 
+
+@jsp-track-bg: lighten(@brand-secondary, 5%);
+@jsp-drag-bg: @brand-tertiary;
+
+
 //== Scaffolding
 //
 // ## Settings for some of the most global styles.
@@ -131,8 +136,8 @@
 @table-bg-active:               @table-bg-hover;
 
 //** Border color for table and cell borders.
-@table-border-color:            #ddd;
-
+@table-border-color:            lighten(@brand-secondary, 1%);
+@table-header-bg: @brand-secondary;
 
 //== Buttons
 //
@@ -140,9 +145,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              @gray-dark;
+@btn-default-bg:                 lighten(@brand-secondary, 8%);
+@btn-default-border:             darken(@brand-secondary, 5%);
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -286,9 +291,9 @@
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-hover-bg:           @brand-primary;
+@navbar-default-toggle-icon-bar-bg:        @brand-primary;
+@navbar-default-toggle-border-color:       @brand-primary;
 
 
 // Inverted navbar

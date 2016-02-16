@@ -8,7 +8,7 @@
 	<!--IE Compatibility modes-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css" id="stylesheet">
 
         {{#if stylesheets}}
         {{css stylesheets}}
@@ -28,7 +28,9 @@
 	<!--Modernizr 3.0-->
     </head>
     <body>
-		{{> nav }}
+        <div class="container">
+            {{> nav }}
+        </div>
 		<div class="container">
 			{{> body }}
 		</div>

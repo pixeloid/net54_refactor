@@ -246,13 +246,13 @@ div.tablediv > .table-bordered {
 .ui-jqgrid .ui-jqgrid-toppager
 { 
 	border-left-width: 0px;
-	border-top: 1px solid @brand-secondary;  
+	border-top: 1px solid @table-header-bg;  
 	padding : 4px 0px;
 	position: relative; 
 	height: auto; 
 	white-space: nowrap;
 	overflow: hidden;
-	background: @brand-secondary; 
+	background: @table-header-bg; 
 }
 .ui-jqgrid .ui-jqgrid-toppager {
 	border-top-width :0;
@@ -287,11 +287,12 @@ div.tablediv > .table-bordered {
 .ui-jqgrid  .ui-paging-pager td {
 	padding: 0 5px;
 	display: inline-flex;
+    white-space: nowrap;
 
 	&#input_jqGridPager{
-		white-space: nowrap;
-		min-width: 200px;
 		text-align: center;
+		display: inline;
+		float: left;
 	}
 }
 .ui-jqgrid .ui-pg-button span { 
@@ -440,7 +441,7 @@ div.tablediv > .table-bordered {
 	display: none;
 	border: none;  //default
 	font-size: 14px;
-	background-color: @brand-secondary;
+	background-color: @table-header-bg;
 }
 .ui-jqgrid .jqgrid-overlay { 
 	display:none;
@@ -766,7 +767,6 @@ a.g-menu-item, a.soptclass, a.clearsearchclass {
 .ui-jqgrid-pager .ui-pg-table .ui-pg-button:hover,
 .ui-jqgrid-toppager .ui-pg-table .ui-pg-button:hover
 {
-	background-color: #ddd;
 }
 .ui-jqgrid-corner  {
 	 border-radius: 0

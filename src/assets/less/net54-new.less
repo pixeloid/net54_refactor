@@ -1,0 +1,124 @@
+@import "style";
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext);
+
+@font-family-sans-serif:  Lato, Arial, sans-serif;
+@font-family-serif:       Lato, Arial, sans-serif;
+
+
+@brand-primary:         #d89a37;
+@brand-secondary:         #d87137;
+
+
+@gray:    #444;
+
+@border-radius-base:        3px;
+@border-radius-large:       5px;
+@border-radius-small:       2px;
+
+
+@text-color:            @gray;
+
+
+@jsp-track-bg: lighten(@gray-lighter,3%);
+@jsp-drag-bg: @gray-light;
+
+
+@navbar-default-color:             #777;
+@navbar-default-bg:                @brand-primary;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+
+// Navbar links
+@navbar-default-link-color:                #fff;
+@navbar-default-link-hover-color:          #fff;
+@navbar-default-link-hover-bg:             @brand-secondary;
+@navbar-default-link-active-color:         #fff;
+@navbar-default-link-active-bg:            @brand-secondary;
+@navbar-default-link-disabled-color:       @brand-primary;
+@navbar-default-link-disabled-bg:          transparent;
+
+
+@dropdown-bg:                    #fff;
+//** Dropdown menu `border-color`.
+@dropdown-border:                rgba(0,0,0,.15);
+//** Dropdown menu `border-color` **for IE8**.
+@dropdown-fallback-border:       @brand-secondary;
+//** Divider color for between dropdown items.
+@dropdown-divider-bg:            @brand-secondary;
+
+//** Dropdown link text color.
+@dropdown-link-color:            @gray;
+//** Hover color for dropdown links.
+@dropdown-link-hover-color:      #fff;
+//** Hover background for dropdown links.
+@dropdown-link-hover-bg:         @brand-primary;;
+
+//** Active dropdown menu item text color.
+@dropdown-link-active-color:     @component-active-color;
+//** Active dropdown menu item background color.
+@dropdown-link-active-bg:        @component-active-bg;
+
+//** Disabled dropdown menu item background color.
+@dropdown-link-disabled-color:   @gray-light;
+
+
+
+@panel-default-text:          @gray;
+@panel-default-border:        darken(@gray-lighter, 5%);
+@panel-default-heading-bg:    @gray-lighter;
+
+@panel-inner-border:          @gray-lighter;
+@panel-footer-bg:             @panel-default-heading-bg;
+
+
+
+@table-bg-accent:               @gray-lighter;
+//** Background color used for `.table-hover`.
+@table-bg-hover:                @gray-lighter;
+@table-bg-active:               @table-bg-hover;
+
+//** Border color for table and cell borders.
+@table-border-color:            #ddd;
+@table-header-bg:            darken(@gray-lighter,5%);
+
+
+
+body{
+  background: #fff;
+  padding-top: 120px;
+}
+
+.navbar-brand{
+  width: 194px;
+  height: 48px;
+  display: block;
+  background: url(../img/net54-uzleti-kommunikacio-logo.png) no-repeat 50% 50%;
+  background-size: 100% auto;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  margin-left: 30px !important;
+}
+
+.navbar-fixed-top{
+  top: 70px;
+  .container-fluid{
+    position: relative;
+  }
+  .navbar-header{
+
+  }
+}
+
+
+footer {
+
+  &.net54-footer {
+    background-color: black;
+    color: #fff;
+  }
+}
+
+
+
+
