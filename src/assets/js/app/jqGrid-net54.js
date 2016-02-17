@@ -30,10 +30,6 @@
 					self.setGridParam({url: newUrl});
 				}
 			},
-			serializeGridData: function (postData) {
-				// On REST request, drop post params
-				postData: self.options.rest ? '' : postData;
-			},
 			beforeProcessing : function(data) {
 				if (options.countUrl) {
 					var url = options.countUrl;
@@ -55,23 +51,18 @@
 					data.records = data[gridData].records;
 				}
 			},
-			loadError : function(xhr, st, err) {
-				$("#" + this.id).setGridParam({
-					emptyrecords : $.jgrid.errors.load + ': ' + xhr.status + " " + xhr.statusText
+            loadComplete: formGeneral,
+			/*loadComplete: function () {
+				var table_header = $(this).closest('.ui-jqgrid ').find('.ui-jqgrid-hbox').css("position", "relative");
+				$(this).closest('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function (event, scrollPositionX, isAtLeft, isAtRight) {
+					table_header.css('right', scrollPositionX);
+				}).jScrollPane({ showArrows: false,
+					autoReinitialise: true,
 				});
-				$("#" + this.id).jqGrid("clearGridData", true);
-			},
-			loadComplete: function () {
-			    var table_header = $(this).closest('.ui-jqgrid ').find('.ui-jqgrid-hbox').css("position", "relative");
-			    $(this).closest('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function (event, scrollPositionX, isAtLeft, isAtRight) {
-			        table_header.css('right', scrollPositionX);
-			    }).jScrollPane({ showArrows: false,
-			        autoReinitialise: true,
-			    });
 
-			    formGeneral();
-			    $(window).resize();
-			 },
+				formGeneral();
+				$(window).resize();
+			},*/
 			exportxls : false,
 			exportcsv : false
 		}, options);
