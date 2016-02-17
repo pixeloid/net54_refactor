@@ -51,18 +51,6 @@
 					data.records = data[gridData].records;
 				}
 			},
-            loadComplete: formGeneral,
-			/*loadComplete: function () {
-				var table_header = $(this).closest('.ui-jqgrid ').find('.ui-jqgrid-hbox').css("position", "relative");
-				$(this).closest('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function (event, scrollPositionX, isAtLeft, isAtRight) {
-					table_header.css('right', scrollPositionX);
-				}).jScrollPane({ showArrows: false,
-					autoReinitialise: true,
-				});
-
-				formGeneral();
-				$(window).resize();
-			},*/
 			exportxls : false,
 			exportcsv : false
 		}, options);
