@@ -41,6 +41,5 @@ $(function () {
             formGeneral();
             $(window).resize();
          }
-
     });
 });

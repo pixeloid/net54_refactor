@@ -91,6 +91,7 @@
 		.net54-system-message {
 			width: ~"calc(100% - 30px)";
 		}
+
 	}
 
 	.net54-recording {
@@ -136,21 +137,21 @@
 		}
 	}
 	
-	.net54-licence-information {
-		padding: 5px;
-
-		.full-width {
-			width: 100%;
-			padding: 1px 2px 1px 2px;
+	.net54-licence-information,
+	.net54-healthcheck {
+		td, th {
+			padding: 2px 5px;
+		}
+	}
+	
+	.net54-healthcheck {
+		tr.healthCheckToggle:hover td, tr.healthCheckToggle:hover th {
+			background-color: @brand-secondary-light;
+			cursor: pointer;
 		}
 
-		div > span:first-child {
-			font-weight:bold
-		}
-
-		div > span:last-child {
-			float: right;
-			text-align: right
+		.panel-body {
+			height: 60px;
 		}
 	}
 	
@@ -184,15 +185,28 @@
 		.net54-system-messages .spinner {
 			top: 40px;
 		}
+
+		.net54-widget .spinner {
+			bottom: 40px;
+		}
+
+		.net54-spinpanel .spinner {
+			top: 35px;
+		}
+
+		.net54-healthcheck .spinner {
+			top: 30px;
+		}
 	}
 
 	@media (min-width: 992px) {
 		.net54-widget .spinner {
-			bottom: 20px;
+			bottom: 50px;
 		}
 
 		.net54-spinpanel .spinner {
-			bottom: 20px;
+			bottom: 0;
+			top: 10px;
 		}
 
 		.net54-system-messages .spinner {
@@ -201,6 +215,10 @@
 
 		.net54-current-calls .spinner {
 			bottom: 15px;
+		}
+
+		.net54-healthcheck .spinner {
+			top: 12px;
 		}
 	}
 }
