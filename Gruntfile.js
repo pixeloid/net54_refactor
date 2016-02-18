@@ -99,7 +99,8 @@ module.exports = function (grunt) {
 					'<%= config.src %>/assets/js/app/jqGrid-config.js',
 					'<%= config.src %>/assets/js/app/jqGrid-net54.js',
 					'<%= config.src %>/assets/js/app/dom-utils.js',
-					'<%= config.src %>/assets/js/app/bootstrap-utils.js'
+					'<%= config.src %>/assets/js/app/bootstrap-utils.js',
+					'<%= config.src %>/assets/js/app/fuelux-net54.js'
 				],
 				dest: '<%= config.tmp %>/assets/js/general.js'
 			},
@@ -334,7 +335,7 @@ module.exports = function (grunt) {
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
     // JS distribution task.
-    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'concat',  'assemble', 'copy:dev']);
+    grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'less:dist', 'concat', 'uglify', 'assemble', 'copy:dist']);
 	grunt.registerTask('default', ['dev']);
     grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
    

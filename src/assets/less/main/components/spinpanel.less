@@ -144,9 +144,19 @@
 				padding: 6px;
 				height: @widget-height;
 
-				.station {
+				.stationName,
+				.stationNumber {
 					.oneliner ();
 					font-size: @font-huge;
+					padding-left: 5px;
+				}
+
+				.station {
+					.oneliner ();
+					display: inline-block;
+					font-size: @font-HUGE;
+					line-height: @font-HUGE;
+					padding: ((@widget-height - @font-HUGE) / 2 - 3px) 5px 0;
 				}
 
 				.description {

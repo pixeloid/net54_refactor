@@ -1,5 +1,9 @@
 (function($) {
 	$.fn.net54Grid = function(options, pagerOptions) {
+		var self = this;
+		// Save initial settings
+		self.options = options;
+
 		var settings = $.extend({
 			// These are the defaults.
 			datatype : "json",
@@ -15,31 +19,38 @@
 			multiselect : false,
 			multiSort : true,
 			hidegrid : false,
+			beforeRequest: function () {
+				if (self.options.rest) {
+					var data = self.getGridParam('postData');
+					var newUrl = self.options.url + '/' + data.rows + '/' + data.page
+								+ (data.sidx ? '/' + data.sidx + '/' + data.sord : '');
+					if (self.options.filter) {
+						newUrl += '?' + $.param(self.options.filter());
+					}
+					self.setGridParam({url: newUrl});
+				}
+			},
 			beforeProcessing : function(data) {
+				if (options.countUrl) {
+					var url = options.countUrl;
+					if (self.options.filter) {
+						url += '?' + $.param(self.options.filter());
+					}
+					var ajax = new XMLHttpRequest();
+					ajax.open('GET', url, false);
+					ajax.send(null);
+					if (ajax.status === 200) {
+						data.records = ajax.responseText;
+						data.total = Math.ceil(data.records / self.getGridParam('rowNum'));
+					}
+				}
+
 				var gridData = options.pagingDataVariableName;
 				if (gridData && gridData.length !== 0) {
 					data.total = data[gridData].total;
 					data.records = data[gridData].records;
 				}
 			},
-			loadError : function(xhr, st, err) {
-				$("#" + this.id).setGridParam({
-					emptyrecords : $.jgrid.errors.load + ': ' + xhr.status + " " + xhr.statusText
-				});
-				$("#" + this.id).jqGrid("clearGridData", true);
-			},
-			loadComplete: function () {
-			    var table_header = $(this).closest('.ui-jqgrid ').find('.ui-jqgrid-hbox').css("position", "relative");
-			    $(this).closest('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function (event, scrollPositionX, isAtLeft, isAtRight) {
-			        table_header.css('right', scrollPositionX);
-			    }).jScrollPane({ showArrows: false,
-			        autoReinitialise: true,
-			    });
-
-			    formGeneral();
-			    $(window).resize();
-			 },
-
 			exportxls : false,
 			exportcsv : false
 		}, options);
@@ -77,7 +88,7 @@
 			search : false
 		}, pagerOptions);
 
-		var myGrid = this.jqGrid(settings);
+		var myGrid = self.jqGrid(settings);
 
 		$(window).resize(function() {
 			var width = $('#gbox_' + myGrid[0].id).parent().width();

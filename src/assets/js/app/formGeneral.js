@@ -1,13 +1,8 @@
-function formGeneral() {
-    "use strict";
-
-
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_minimal',
-      radioClass: 'iradio_minimal',
-      // increaseArea: '20%' // optional
-    });
-
-    return;
-
+function formGeneral(root) {
+	var $root = root ? $(root + ' input') : $('input');
+	$root.iCheck({
+		checkboxClass: 'icheckbox_minimal',
+		radioClass: 'iradio_minimal',
+		// increaseArea: '20%' // optional
+	});
 }
