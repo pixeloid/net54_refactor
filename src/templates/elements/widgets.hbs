@@ -33,12 +33,11 @@ stylesheets:
                   <div class="row">
                         <div class="col-md-6">
                               <div class="panel panel-default net54-spinpanel chart-spinpanel" id="storagePanel">
-                              <div class="panel-heading">
-                              <h3 class="panel-title">Recording Paths</h3>
-                              </div>
-
+                                    <div class="panel-heading">
+                                          <h3 class="panel-title">Recording Paths</h3>
+                                    </div>
                                     <div class="panel-body">
-                                                
+                                          
                                           <div class="row">
                                                 <div class="col col-xs-2">
                                                       <div class="chart" id="w4"></div>
@@ -54,17 +53,16 @@ stylesheets:
                                                             46%
                                                       </div>
                                                 </div>
-                                                      <div class="spin-buttons">
-                                                            <button type="button" class="btn btn-xs btn-default" id="previousStorage">
-                                                            <span class="glyphicon glyphicon-chevron-up"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-xs btn-default" id="nextStorage">
-                                                            <span class="glyphicon glyphicon-chevron-down"></span>
-                                                            </button>
-                                                      </div>
+                                                <div class="spin-buttons">
+                                                      <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                                                      <span class="glyphicon glyphicon-chevron-up"></span>
+                                                      </button>
+                                                      <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                                                      <span class="glyphicon glyphicon-chevron-down"></span>
+                                                      </button>
+                                                </div>
                                           </div>
                                     </div>
-
                               </div>
                         </div>
                         <div class="col-md-6">
@@ -72,14 +70,12 @@ stylesheets:
                                     <div class="panel-heading">
                                           <h3 class="panel-title">Longest Calls Today</h3>
                                     </div>
-
                                     <div class="panel-body">
-
                                           <div class="row">
                                                 <div class="col-xs-7">
                                                       <div class="content">
                                                             <b>2087</b><br>
-                                                            Soproni Dániel 
+                                                            Soproni Dániel
                                                       </div>
                                                 </div>
                                                 <div class="col-xs-4">
@@ -87,104 +83,104 @@ stylesheets:
                                                             6m49s
                                                       </div>
                                                 </div>
-                                                      <div class="spin-buttons">
-                                                            <button type="button" class="btn btn-xs btn-default" id="previousStorage">
-                                                            <span class="glyphicon glyphicon-chevron-up"></span>
-                                                            </button>
-                                                            <button type="button" class="btn btn-xs btn-default" id="nextStorage">
-                                                            <span class="glyphicon glyphicon-chevron-down"></span>
-                                                            </button>
-                                                      </div>
+                                                <div class="spin-buttons">
+                                                      <button type="button" class="btn btn-xs btn-default" id="previousStorage">
+                                                      <span class="glyphicon glyphicon-chevron-up"></span>
+                                                      </button>
+                                                      <button type="button" class="btn btn-xs btn-default" id="nextStorage">
+                                                      <span class="glyphicon glyphicon-chevron-down"></span>
+                                                      </button>
+                                                </div>
                                           </div>
-
-
-
                                     </div>
                               </div>
                         </div>
-                  </div>                  
-
-
-
-            </div>
-            <div class="col-sm-3">
-
-                  <div id="healthCheckPanel" class="panel panel-default net54-healthcheck">
-                        <div class="panel-heading">
-                              <h3 class="panel-title">Health Check</h3>
-                        </div>
-                        
-                        <table id="healthCheckTable" class="table table-condensed table-borderless" style="border-collapse: separate;">
-                              
-                        <tbody id="core"><tr id="coreRow" onclick="net54.healthCheck.toggle('core')" class="healthCheckToggle"><td style="width: 24px"><span class="net54-healthcheck-dropdown glyphicon glyphicon-menu-down"></span></td><td><span>Recorder</span></td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-SystemConfigService" data-service="true" class="hidden"><td></td><td>System Configuration</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-SqlPoolService" data-service="true" class="hidden"><td></td><td>Database Connection</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-CoreService" data-service="true" class="hidden"><td></td><td>Core Module</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-RecLogService" data-service="true" class="hidden"><td></td><td>Recording Logic</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-TSAPIService" data-service="true" class="hidden"><td></td><td>Telephony Service</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-DMCCService" data-service="true" class="hidden"><td></td><td>Media Service</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-CallLoggerService" data-service="true" class="hidden"><td></td><td>Call Logger</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-MaintenanceService" data-service="true" class="hidden"><td></td><td>Maintenance</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr></tbody><tbody id="archiver"><tr id="archiverRow" onclick="net54.healthCheck.toggle('archiver')" class="healthCheckToggle"><td style="width: 24px"><span class="net54-healthcheck-dropdown glyphicon glyphicon-menu-down"></span></td><td><span>Archiver</span></td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-SystemConfigService" data-service="true" class="hidden"><td></td><td>System Configuration</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-SqlPoolService" data-service="true" class="hidden"><td></td><td>Database Connection</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-ArchiverService" data-service="true" class="hidden"><td></td><td>Archiver</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr></tbody></table>
                   </div>
 
-                  <div id="systemMessagesPanel" class="panel panel-default net54-system-messages">
-                                                <div class="panel-heading">
-                                                      <h3 class="panel-title">System Messages</h3>
-                                                </div>
-                                                <div class="panel-body scroll-pane" style="">
-                                                      <div class="spinner"></div>
-                                                <ul class="list-group">
-                                                <li class="list-group-item" data-id="990"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;888).</span><br><span class="net54-system-message-timestamp">2015.10.22 14:08:38</span></div></li><li class="list-group-item" data-id="989"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;887).</span><br><span class="net54-system-message-timestamp">2015.10.22 09:47:10</span></div></li><li class="list-group-item" data-id="988"><div class="net54-system-message-level net54-system-message-level-error"><span class="glyphicon glyphicon-minus-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, technikai hiba! Hívás azonosító (COID: 1&nbsp;026&nbsp;888).</span><br><span class="net54-system-message-timestamp">2015.10.22 09:47:04</span></div></li><li class="list-group-item" data-id="987"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;881).</span><br><span class="net54-system-message-timestamp">2015.10.21 15:16:56</span></div></li><li class="list-group-item" data-id="986"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;880).</span><br><span class="net54-system-message-timestamp">2015.10.21 15:16:15</span></div></li><li class="list-group-item" data-id="985"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;878).</span><br><span class="net54-system-message-timestamp">2015.10.21 15:07:09</span></div></li><li class="list-group-item" data-id="984"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;877).</span><br><span class="net54-system-message-timestamp">2015.10.21 15:05:38</span></div></li><li class="list-group-item" data-id="983"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;876).</span><br><span class="net54-system-message-timestamp">2015.10.21 15:04:47</span></div></li><li class="list-group-item" data-id="982"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;875).</span><br><span class="net54-system-message-timestamp">2015.10.21 15:04:07</span></div></li><li class="list-group-item" data-id="981"><div class="net54-system-message-level net54-system-message-level-warn"><span class="glyphicon glyphicon-exclamation-sign"></span></div><div class="net54-system-message"><span class="net54-system-message-text">Rögzítés sikertelen, hangfájl nem található a tárolón! Hívás azonosító (COID: 1&nbsp;026&nbsp;851).</span><br><span class="net54-system-message-timestamp">2015.10.21 10:01:48</span></div></li></ul>
-                                          </div>
-                                          </div>
-
-                                          <div id="licencePanel" class="panel panel-default">
-                                                                              <div class="panel-heading">
-                                                                                    <h3 class="panel-title">Licence Information</h3>
-                                                                              </div>
-                                                                              <div class="panel-body net54-licence-information">
-                                                                                    <div class="full-width">
-                                                                                          <span>Software Version:</span>
-                                                                                          <span style="font-weight: bold">magNETofon v1.0</span>
-                                                                                    </div>
-                                                                                    <div class="full-width ">
-                                                                                          <span>Total Recording</span>
-                                                                                          <span>
-                                                                                                <span class="status-indicator status-indicator-on">
-                                                                                                      on
-                                                                                                </span>
-
-                                                                                             </span>
-                                                                                    </div>
-                                                                                    <div class="full-width ">
-                                                                                          <span>Selective Recording</span>
-                                                                                          <span class="status-indicator status-indicator-off">
-                                                                                                on
-                                                                                          </span>
-                                                                                    </div>
-                                                                                    <div class="full-width ">
-                                                                                          <span>ROD Recording</span>
-                                                                                                <span class="status-indicator status-indicator-on">
-                                                                                                      on
-                                                                                                </span>
-                                                                                    </div>
-                                                                                    <!-- Számszerű licenc limitek -->
-                                                                                    <div class="full-width">
-                                                                                          <span>Standard Channels:</span>
-                                                                                          <span><span id="channels">0</span> / 10</span>
-                                                                                    </div>
-                                                                                    <div class="full-width ">
-                                                                                          <span>ROD Channels:</span>
-                                                                                          <span><span id="rodChannels">0</span> / 5</span>
-                                                                                    </div>
-                                                                                    <div class="full-width">
-                                                                                          <span>Standard Endpoints:</span>
-                                                                                          <span><span id="endpoints">7</span> / 5</span>
-                                                                                    </div>
-                                                                                    <div class="full-width ">
-                                                                                          <span>ROD Endpoints:</span>
-                                                                                          <span><span id="rodEndpoints">0</span> / 5</span>
-                                                                                    </div>
-                                                                              </div>
-                                                                        </div>
+                  <div class="row">
+                        <div class="col-md-12" id="currentCallsContainer">
+                              <div class="panel panel-default net54-current-calls">
+                                    <div class="panel-body">
+                                          <div class="spinner"></div>
+                                    </div>
+                                    <table class="table table-hover table-condensed hide">
+                                          <thead>
+                                                <tr>
+                                                      <th></th>
+                                                      <th>Channel</th>
+                                                      <th>Arrived</th>
+                                                      <th>Station</th>
+                                                      <th>State</th>
+                                                      <th>Recording</th>
+                                                      <th>Recording Program</th>
+                                                      <th></th>
+                                                </tr>
+                                          </thead>
+                                          <tbody id="currentCalls">
+                                          </tbody>
+                                    </table>
+                              </div>
+                        </div>
+                  </div>
             </div>
-
-
-      </div>
-</div>
-<div id="tooltipBox"></div>
-
-<script>
-</script>
+            <div class="col-sm-3">
+            <div id="healthCheckPanel" class="panel panel-default net54-healthcheck">
+                                                <div class="panel-heading">
+                                                      <h3 class="panel-title">Health Check</h3>
+                                                </div>
+                                                
+                                                <table id="healthCheckTable" class="table table-condensed table-borderless" style="border-collapse: separate;">
+                                                      
+                                                <tbody id="core"><tr id="coreRow" onclick="net54.healthCheck.toggle('core')" class="healthCheckToggle"><td style="width: 24px"><span class="net54-healthcheck-dropdown glyphicon glyphicon-menu-up"></span></td><td><span>Recorder</span></td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-SystemConfigService" data-service="true" class=""><td></td><td>System Configuration</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-SqlPoolService" data-service="true" class=""><td></td><td>Database Connection</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-CoreService" data-service="true" class=""><td></td><td>Core Module</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-RecLogService" data-service="true" class=""><td></td><td>Recording Logic</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-TSAPIService" data-service="true" class=""><td></td><td>Telephony Service</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-DMCCService" data-service="true" class=""><td></td><td>Media Service</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-CallLoggerService" data-service="true" class=""><td></td><td>Call Logger</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-MaintenanceService" data-service="true" class=""><td></td><td>Maintenance</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr></tbody><tbody id="archiver"><tr id="archiverRow" onclick="net54.healthCheck.toggle('archiver')" class="healthCheckToggle"><td style="width: 24px"><span class="net54-healthcheck-dropdown glyphicon glyphicon-menu-up"></span></td><td><span>Archiver</span></td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-SystemConfigService" data-service="true" class=""><td></td><td>System Configuration</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-SqlPoolService" data-service="true" class=""><td></td><td>Database Connection</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-ArchiverService" data-service="true" class=""><td></td><td>Archiver</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr></tbody></table>
+                                          </div>
+                              <div id="licencePanel" class="panel panel-default net54-licence-information">
+                                                                  <div class="panel-heading">
+                                                                        <h3 class="panel-title">Licence Information</h3>
+                                                                  </div>
+                                                                  <table class="table table-condensed table-borderless">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                              <td>Software Version</td>
+                                                                              <td class="text-right"><strong>v1.0</strong></td>
+                                                                        </tr>
+                                                                        <tr class="">
+                                                                              <td>Total Recording</td>
+                                                                              <td class="text-right">                                     <span class="glyphicon glyphicon-ok"></span>
+                              </td>
+                                                                        </tr>
+                                                                        <tr class="">
+                                                                              <td>Selective Recording</td>
+                                                                              <td class="text-right">                                     <span class="glyphicon glyphicon-ok"></span>
+                              </td>
+                                                                        </tr>
+                                                                        <tr class="">
+                                                                              <td>ROD Recording</td>
+                                                                              <td class="text-right">                                     <span class="glyphicon glyphicon-ok"></span>
+                              </td>
+                                                                        </tr>
+                                                                        <!-- Számszerű licenc limitek -->
+                                                                        <tr>
+                                                                              <td>Standard Channels</td>
+                                                                              <td class="text-right"><span id="channels">3</span> / 10</td>
+                                                                        </tr>
+                                                                        <tr class="">
+                                                                              <td>ROD Channels</td>
+                                                                              <td class="text-right"><span id="rodChannels">0</span> / 5</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                              <td>Standard Endpoints</td>
+                                                                              <td class="text-right"><span id="endpoints">4</span> / 5</td>
+                                                                        </tr>
+                                                                        <tr class="">
+                                                                              <td>ROD Endpoints</td>
+                                                                              <td class="text-right"><span id="rodEndpoints">0</span> / 5</td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                  </table>
+                                                            </div>
+                        </div>
+                  </div>
+            </div>
+            <div id="tooltipBox"></div>
+            <script>
+            </script>
