@@ -1,4 +1,4 @@
-/* jshint node: true */
+    /* jshint node: true */
 module.exports = function (grunt) {
 	"use strict";
 
@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
 
     // Project configuration.
@@ -263,39 +264,56 @@ module.exports = function (grunt) {
         	assemble: {
         		files: ['src/templates/**/*.hbs'],
         		tasks: ['assemble:dev']
-        	},
+        	}
 
-            livereload: {
-              options: {
-                livereload: '<%= connect.options.livereload %>'
-              },
-              files: [
-                '<%= config.tmp %>/{,*/}*.html',
-                '<%= config.tmp %>/assets/css/{,*/}*.css',
-                '<%= config.tmp %>/assets/js/{,*/}*.js',
-                '<%= config.tmp %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-              ]
-            }
+            // livereload: {
+            //   options: {
+            //     livereload: '<%= connect.options.livereload %>'
+            //   },
+            //   files: [
+            //     '<%= config.tmp %>/{,*/}*.html',
+            //     '<%= config.tmp %>/assets/css/{,*/}*.css',
+            //     '<%= config.tmp %>/assets/js/{,*/}*.js',
+            //     '<%= config.tmp %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+            //   ]
+            // }
 
         },
 
-
-        connect: {
-          options: {
-            port: 9000,
-            livereload: 35729,
-            // change this to '0.0.0.0' to access the server from outside
-            hostname: 'localhost'
-          },
-          livereload: {
-            options: {
-              open: true,
-              base: [
-                '<%= config.tmp %>'
-              ]
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        '<%= config.tmp %>/{,*/}*.html',
+                        '<%= config.tmp %>/assets/css/{,*/}*.css',
+                        '<%= config.tmp %>/assets/js/{,*/}*.js',
+                        '<%= config.tmp %>/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: '<%= config.tmp %>'
+                }
             }
-          }
         },
+
+
+        // connect: {
+        //   options: {
+        //     port: 9000,
+        //     livereload: 35729,
+        //     // change this to '0.0.0.0' to access the server from outside
+        //     hostname: 'localhost'
+        //   },
+        //   livereload: {
+        //     options: {
+        //       open: true,
+        //       base: [
+        //         '<%= config.tmp %>'
+        //       ]
+        //     }
+        //   }
+        // },
 
         ftpush: {
             build: {
@@ -337,7 +355,7 @@ module.exports = function (grunt) {
     // JS distribution task.
     grunt.registerTask('dev', ['clean:dev', 'copy:dev', 'less:dev', 'less:dist', 'concat', 'uglify', 'assemble', 'copy:dist']);
 	grunt.registerTask('default', ['dev']);
-    grunt.registerTask('server', ['dev', 'connect:livereload', 'watch']);
+    grunt.registerTask('server', ['dev', 'browserSync', 'watch']);
    
 
    grunt.registerTask('build', [
