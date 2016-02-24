@@ -99,44 +99,47 @@ stylesheets:
 
                   <div class="row">
                         <div class="col-md-12" id="currentCallsContainer">
-                              <div class="panel panel-default net54-current-calls">
-                                    <div class="panel-body">
-                                          <div class="spinner"></div>
-                                    </div>
-                                    <table class="table table-hover table-condensed hide">
-                                          <thead>
-                                                <tr>
-                                                      <th></th>
-                                                      <th>Channel</th>
-                                                      <th>Arrived</th>
-                                                      <th>Station</th>
-                                                      <th>State</th>
-                                                      <th>Recording</th>
-                                                      <th>Recording Program</th>
-                                                      <th></th>
-                                                </tr>
-                                          </thead>
-                                          <tbody id="currentCalls">
-                                          </tbody>
-                                    </table>
-                              </div>
-                        </div>
+                                                      <div class="panel panel-default net54-current-calls">
+                                                            
+                                                            <table class="table table-hover table-condensed">
+                                                                  <thead>
+                                                                        <tr>
+                                                                              <th></th>
+                                                                              <th>Channel</th>
+                                                                              <th>Arrived</th>
+                                                                              <th>Station</th>
+                                                                              <th>State</th>
+                                                                              <th>Recording</th>
+                                                                              <th>Recording Program</th>
+                                                                              <th></th>
+                                                                        </tr>
+                                                                  </thead>
+                                                                  <tbody id="currentCalls">
+                                                                  <tr><td id="recordingState2801" class="net54-recording"></td><td>2801</td><td id="arrived2801"></td><td id="state2801"></td><td id="station2801"></td><td id="recording2801"></td><td id="program2801"></td><td id="details2801" class="text-right"></td></tr><tr><td id="recordingState2802" class="net54-recording"><span class="glyphicon glyphicon-record" title="Recording..."></span></td><td>2802</td><td id="arrived2802">2016-02-24 11:42:51</td><td id="state2802">In Line</td><td id="station2802">2084</td><td id="recording2802"><div class="progress" style="margin-bottom: 0" id="progress23661" data-toggle="popover" data-html="true" data-content="&lt;div id=&quot;popoverId2802&quot;&gt;&lt;strong id=&quot;popoverDirection&quot; class=&quot;text-danger&quot;&gt;Incoming call&lt;/strong&gt;&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Other party:&lt;/strong&gt; &lt;span id=&quot;popoverOtherParty&quot;&gt;06709439436&lt;/span&gt;&lt;br/&gt;&lt;strong&gt;Start time:&lt;/strong&gt; &lt;span id=&quot;popoverArrived&quot;&gt;2016-02-24 11:42:51&lt;/span&gt;&lt;br&gt;&lt;strong&gt;Length:&lt;/strong&gt; &lt;span id=&quot;popoverRecLength&quot;&gt;00:01:02&lt;/span&gt;&lt;/div&gt;" data-original-title="" title=""><div class="progress-bar progress-bar-success" style="width: 5.2028333333333325%;"></div></div></td><td id="program2802">Teljes rögzítés</td><td id="details2802" class="text-right"><span class="btn btn-primary btn-xs" onclick="net54.call.showCallDetails(23661)">Details</span></td></tr><tr><td id="recordingState2803" class="net54-recording"></td><td>2803</td><td id="arrived2803"></td><td id="state2803"></td><td id="station2803"></td><td id="recording2803"></td><td id="program2803"></td><td id="details2803" class="text-right"></td></tr></tbody>
+                                                            </table>
+                                                      </div>
+                                                </div>
+
                   </div>
+
+
+
             </div>
             <div class="col-sm-3">
             <div id="healthCheckPanel" class="panel panel-default net54-healthcheck">
                                                 <div class="panel-heading">
                                                       <h3 class="panel-title">Health Check</h3>
                                                 </div>
-                                                
-                                                <table id="healthCheckTable" class="table table-condensed table-borderless" style="border-collapse: separate;">
-                                                      
-                                                <tbody id="core"><tr id="coreRow" onclick="net54.healthCheck.toggle('core')" class="healthCheckToggle"><td style="width: 24px"><span class="net54-healthcheck-dropdown glyphicon glyphicon-menu-up"></span></td><td><span>Recorder</span></td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-SystemConfigService" data-service="true" class=""><td></td><td>System Configuration</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-SqlPoolService" data-service="true" class=""><td></td><td>Database Connection</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-CoreService" data-service="true" class=""><td></td><td>Core Module</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-RecLogService" data-service="true" class=""><td></td><td>Recording Logic</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-TSAPIService" data-service="true" class=""><td></td><td>Telephony Service</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-DMCCService" data-service="true" class=""><td></td><td>Media Service</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-CallLoggerService" data-service="true" class=""><td></td><td>Call Logger</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="core-MaintenanceService" data-service="true" class=""><td></td><td>Maintenance</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr></tbody><tbody id="archiver"><tr id="archiverRow" onclick="net54.healthCheck.toggle('archiver')" class="healthCheckToggle"><td style="width: 24px"><span class="net54-healthcheck-dropdown glyphicon glyphicon-menu-up"></span></td><td><span>Archiver</span></td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-SystemConfigService" data-service="true" class=""><td></td><td>System Configuration</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-SqlPoolService" data-service="true" class=""><td></td><td>Database Connection</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr><tr id="archiver-ArchiverService" data-service="true" class=""><td></td><td>Archiver</td><td class="text-right"><span class="status-indicator status-indicator-on" title="Ok"></span></td></tr></tbody></table>
+                                                <div class="panel-body">
+
+                                                </div>
                                           </div>
                               <div id="licencePanel" class="panel panel-default net54-licence-information">
                                                                   <div class="panel-heading">
                                                                         <h3 class="panel-title">Licence Information</h3>
                                                                   </div>
+                                                                  <div class="panel-body">
+
                                                                   <table class="table table-condensed table-borderless">
                                                                         <tbody>
                                                                         <tr>
@@ -177,6 +180,7 @@ stylesheets:
                                                                         </tr>
                                                                         </tbody>
                                                                   </table>
+                                                                  </div>
                                                             </div>
                         </div>
                   </div>
