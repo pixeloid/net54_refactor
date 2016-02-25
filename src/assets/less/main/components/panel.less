@@ -10,11 +10,19 @@
   .btn-group{
   	display: block;
   	float: right;
-  	.btn{
+    height: 1em;
+  	a{
+      display: inline-block;
   		padding: 0 3px;
   		line-height: 0;
   		border: none; 
-  		background: none; 
+      font-size: 1.2em;
+      position: relative;
+      top: -1px;
+
+      &.net54-system-message-level{
+        width: auto;
+      }
   	}
   }
 
