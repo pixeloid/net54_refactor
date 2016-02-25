@@ -26,7 +26,7 @@ $(function () {
             { label:'Ship Name', name: 'ShipName' }
         ],
         multiselect: true,
-        height: 500,
+        // height: 500,
     	viewrecords: true,
         rowNum: 20,
         pager: "#jqGridPager",
@@ -34,7 +34,10 @@ $(function () {
             var table_header = $(this).closest('.ui-jqgrid ').find('.ui-jqgrid-hbox').css("position", "relative");
             $(this).closest('.ui-jqgrid-bdiv').bind('jsp-scroll-x', function (event, scrollPositionX, isAtLeft, isAtRight) {
                 table_header.css('right', scrollPositionX);
-            }).jScrollPane({ showArrows: false,
+            }).jScrollPane({ 
+                // horizontalDragMaxWidth: 30,
+                // verticalDragMaxHeight: 30  ,         
+                showArrows: false,
                 autoReinitialise: true,
             });
 

@@ -2,13 +2,29 @@
 .ui-jqgrid {
 	position: relative; 
 	overflow: hidden;
+
+	@media screen and (max-width: 767px) {
+	  .table-responsive {
+	    margin-bottom: 0;
+	  }
+	}
 }
+
+
+
 .ui-jqgrid .ui-jqgrid-view {
 	position: relative;
 	left:0; 
 	top: 0; 
 	padding: 0;
+	overflow: hidden;
+
+
 }
+
+
+
+
 .ui-jqgrid .ui-common-table {}
 
 /* Caption*/
