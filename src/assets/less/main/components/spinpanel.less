@@ -84,6 +84,14 @@
 			
 		.content{
 
+			.content-data{
+				line-height: ceil((@widget-height - @spacing * 2 ) / 3);
+
+				li{
+					text-overflow: ellipsis;
+					overflow:hidden; 
+				}
+			}
 			&.content-large{
 				font-size: @font-HUGE;
 				font-weight: 700;
