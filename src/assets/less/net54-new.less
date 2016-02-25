@@ -81,6 +81,9 @@
 @table-border-color:            #ddd;
 @table-header-bg:            darken(@gray-lighter,5%);
 
+@btn-default-color:              @gray-dark;
+@btn-default-bg:                 #ddd;
+@btn-default-border:             darken(@btn-default-bg, 5%);
 
 
 body{
@@ -88,27 +91,76 @@ body{
   padding-top: 120px;
 }
 
-.navbar-brand{
-  width: 194px;
-  height: 48px;
-  display: block;
-  background: url(../img/net54-uzleti-kommunikacio-logo.png) no-repeat 50% 50%;
-  background-size: 100% auto;
-  position: absolute;
-  top: -60px;
-  left: 0;
-  margin-left: 30px !important;
-}
 
-.navbar-fixed-top{
-  top: 70px;
+.navbar-default{
+
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+
+  
   .container-fluid{
-    position: relative;
-  }
-  .navbar-header{
+    max-width: none;
+    .navbar-brand{
+      margin: 0 20px;
 
+    }
+  }
+
+  .navbar-toggle{
+    border-color: rgba(255,255,255,0.75);
+    border: none;
+    background: darken(@brand-primary, 40%);
+    
+    .icon-bar{
+      background: #fff;
+    }
+
+    &:hover{
+      background: #000;
+
+      .icon-bar{
+        background: #fff;
+      }
+
+    }
+  }
+
+  .dropdown-menu{
+    background: rgba(0,0,0,0.8);
+    li{
+      &.divider{
+        background-color: rgba(255,255,255,0.3);
+      }
+    a{
+      color: #fff;
+      &:hover{
+        background: rgba(0,0,0,0.5);
+      }
+    }
+    }
+  }
+  .navbar-brand{
+    background: url(../img/net54-uzleti-kommunikacio-logo.png) no-repeat 50% 50%;
+    width: 194px;
+    height: 48px;
+    background-size: 100% auto;
+    display: block;
+    // position: absolute;
+    // top: -60px;
+    // left: 0;
+    // margin-left: 30px !important;
   }
 }
+
+
+// .navbar-fixed-top{
+//   top: 70px;
+//   .container-fluid{
+//     position: relative;
+//   }
+//   .navbar-header{
+
+//   }
+// }
 
 
 footer {
