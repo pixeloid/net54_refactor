@@ -45,10 +45,8 @@ module.exports = function (grunt) {
 			dev: {
                 files:{
                     '<%= config.tmp %>/assets/css/main.css': '<%= config.src %>/assets/less/style.less',
-                    '<%= config.tmp %>/assets/css/main.min.css': '<%= config.src %>/assets/less/style.less',
 
-                    '<%= config.tmp %>/assets/css/net54-new.css': '<%= config.src %>/assets/less/net54-new.less',
-                    '<%= config.tmp %>/assets/css/net54-new.min.css': '<%= config.src %>/assets/less/net54-new.less'
+                    '<%= config.tmp %>/assets/css/net54-new.css': '<%= config.src %>/assets/less/net54-new.less'
                 }
 			},
 			dist: {
@@ -100,6 +98,7 @@ module.exports = function (grunt) {
 					'<%= config.src %>/assets/js/app/jqGrid-config.js',
 					'<%= config.src %>/assets/js/app/jqGrid-net54.js',
 					'<%= config.src %>/assets/js/app/dom-utils.js',
+					'<%= config.src %>/assets/js/app/l10n-utils.js',
 					'<%= config.src %>/assets/js/app/bootstrap-utils.js',
 					'<%= config.src %>/assets/js/app/fuelux-net54.js'
 				],

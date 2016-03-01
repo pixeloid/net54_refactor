@@ -1,19 +1,12 @@
+@spinner-size: 48px;
+@messages-panel-height: 400px;
+
 .net54-dashboard {
 	padding-top: 10px;
-	max-width: 1400px;
 
 	.net54-widget {
 		&-placeholder {
 			height: 160px;
-		}
-
-		.panel-footer {
-			font-size: 18px;
-			color: @brand-primary;
-			b {
-				font-size: 20px;
-				color: black;
-			}
 		}
 	}
 
@@ -44,9 +37,13 @@
 
 	.net54-system-messages {
 		.panel-body {
-			height: 400px;
-			overflow: scroll;
-			padding:0;
+			height: @messages-panel-height;
+			padding: 0;
+		}
+
+		.spinner {
+			top: 0;
+			bottom: (@messages-panel-height + @spinner-size) / 2;
 		}
 
 		.list-group-item {
@@ -184,8 +181,8 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			width: 48px;
-			height: 48px;
+			width: @spinner-size;
+			height: @spinner-size;
 			margin-top: -24px;
 			margin-left: -24px;
 			border-radius: 50%;
