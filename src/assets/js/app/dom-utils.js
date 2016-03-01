@@ -11,6 +11,10 @@ Node.prototype.empty = function () {
 	}
 }
 
+Node.prototype.remove = function () {
+	this.parentNode.removeChild(this);
+}
+
 Node.prototype.hasChildElementNodes = function () {
 	if (this.hasChildNodes()) {
 		for (var i = 0; i < this.childNodes.length; i++) {
