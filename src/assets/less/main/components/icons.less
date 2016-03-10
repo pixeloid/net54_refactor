@@ -1,286 +1,76 @@
 @font-face {
-	font-family: 'net54';
-	src:url('../fonts/net54-icons.eot?ubup8g');
-	src:url('../fonts/net54-icons.eot?ubup8g#iefix') format('embedded-opentype'),
-		url('../fonts/net54-icons.ttf?ubup8g') format('truetype'),
-		url('../fonts/net54-icons.woff?ubup8g') format('woff'),
-		url('../fonts/net54-icons.svg?ubup8g#net54') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'net54-icon';
+    src:    url('../fonts/net54-icon.eot?sjp6om');
+    src:    url('../fonts/net54-icon.eot?sjp6om#iefix') format('embedded-opentype'),
+        url('../fonts/net54-icon.ttf?sjp6om') format('truetype'),
+        url('../fonts/net54-icon.woff?sjp6om') format('woff'),
+        url('../fonts/net54-icon.svg?sjp6om#net54-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-[class^="icon-net54-"], [class*=" icon-net54-"] {
-	font-family: 'net54';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	font-size: 1.5em;
+i[class*="net54-"]{
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'net54-icon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 3px;
 
-.icon-net54-call-conference:before {
-	content: "\e900";
-}
-.icon-net54-call-hang-up:before {
-	content: "\e901";
-}
-.icon-net54-call-hold-end:before {
-	content: "\e902";
-}
-.icon-net54-call-hold-start:before {
-	content: "\e903";
-}
-.icon-net54-call-receive:before {
-	content: "\e904";
-}
-.icon-net54-call-start:before {
-	content: "\e905";
-}
-.icon-net54-call-status-disconnected:before {
-	content: "\e906";
-}
-.icon-net54-call-status-in-progress:before {
-	content: "\e907";
-}
-.icon-net54-call-status-incoming:before {
-	content: "\e908";
-}
-.icon-net54-call-status-internal:before {
-	content: "\e909";
-}
-.icon-net54-call-status-on-hold:before {
-	content: "\e90a";
-}
-.icon-net54-call-transfer:before {
-	content: "\e90b";
-}
-.icon-net54-file-download:before {
-	content: "\e90c";
-}
-.icon-net54-file-export:before {
-	content: "\e90d";
-}
-.icon-net54-file-import:before {
-	content: "\e90e";
-}
-.icon-net54-file-open:before {
-	content: "\e90f";
-}
-.icon-net54-file-save:before {
-	content: "\e910";
-}
-.icon-net54-file-upload:before {
-	content: "\e911";
-}
-.icon-net54-filetype-csv:before {
-	content: "\e912";
-}
-.icon-net54-filetype-folder:before {
-	content: "\e913";
-}
-.icon-net54-filetype-log:before {
-	content: "\e914";
-}
-.icon-net54-filetype-pdf:before {
-	content: "\e915";
-}
-.icon-net54-filetype-xls:before {
-	content: "\e916";
-}
-.icon-net54-player-next:before {
-	content: "\e917";
-}
-.icon-net54-player-pause:before {
-	content: "\e918";
-}
-.icon-net54-player-play:before {
-	content: "\e919";
-}
-.icon-net54-player-prev:before {
-	content: "\e91a";
-}
-.icon-net54-player-record:before {
-	content: "\e91b";
-}
-.icon-net54-player-stop:before {
-	content: "\e91c";
-}
-.icon-net54-sign-alert:before {
-	content: "\e91d";
-}
-.icon-net54-status-archived:before {
-	content: "\e91e";
-}
-.icon-net54-status-processing:before {
-	content: "\e91f";
-}
-.icon-net54-status-recorded:before {
-	content: "\e920";
-}
-.icon-net54-status-recording:before {
-	content: "\e921";
-}
-.icon-net54-storage-disc:before {
-	content: "\e922";
-}
-.icon-net54-storage-ftp:before {
-	content: "\e923";
-}
-.icon-net54-storage-network:before {
-	content: "\e924";
+    &.rotate-90 {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
 }
 
-
-.net54-icon-preview{
-
-
-		padding: 0;
-		margin: 0;
-		font-size: 1em;
-		line-height: 1.5;
-		background: #fff;
-
-	small {
-		font-size: .66666667em;
-	}
-	a {
-		color: #e74c3c;
-		text-decoration: none;
-	}
-	a:hover, a:focus {
-		box-shadow: 0 1px #e74c3c;
-	}
-	.bshadow0, input {
-		box-shadow: inset 0 -2px #e7e7e7;
-	}
-	input:hover {
-		box-shadow: inset 0 -2px #ccc;
-	}
-	input, fieldset {
-		font-size: 1em;
-		margin: 0;
-		padding: 0;
-		border: 0;
-	}
-	input {
-		color: inherit;
-		line-height: 1.5;
-		height: 1.5em;
-		padding: .25em 0;
-	}
-	input:focus {
-		outline: none;
-		box-shadow: inset 0 -2px #449fdb;
-	}
-	.glyph {
-		font-size: 16px;
-		width: 15em;
-		padding-bottom: 1em;
-		margin-right: 4em;
-		margin-bottom: 1em;
-		float: left;
-		overflow: hidden;
-	}
-	.liga {
-		width: 80%;
-		width: calc(100% - 2.5em);
-	}
-	.talign-right {
-		text-align: right;
-	}
-	.talign-center {
-		text-align: center;
-	}
-	.bgc1 {
-		background: #f1f1f1;
-	}
-	.fgc1 {
-		color: #999;
-	}
-	.fgc0 {
-		color: #000;
-	}
-	p {
-		margin-top: 1em;
-		margin-bottom: 1em;
-	}
-	.mvm {
-		margin-top: .75em;
-		margin-bottom: .75em;
-	}
-	.mtn {
-		margin-top: 0;
-	}
-	.mtl, .mal {
-		margin-top: 1.5em;
-	}
-	.mbl, .mal {
-		margin-bottom: 1.5em;
-	}
-	.mal, .mhl {
-		margin-left: 1.5em;
-		margin-right: 1.5em;
-	}
-	.mhmm {
-		margin-left: 1em;
-		margin-right: 1em;
-	}
-	.mls {
-		margin-left: .25em;
-	}
-	.ptl {
-		padding-top: 1.5em;
-	}
-	.pbs, .pvs {
-		padding-bottom: .25em;
-	}
-	.pvs, .pts {
-		padding-top: .25em;
-	}
-	.unit {
-		float: left;
-	}
-	.unitRight {
-		float: right;
-	}
-	.size1of2 {
-		width: 50%;
-	}
-	.size1of1 {
-		width: 100%;
-	}
-	.clearfix:before, .clearfix:after {
-		content: " ";
-		display: table;
-	}
-	.clearfix:after {
-		clear: both;
-	}
-	.hidden-true {
-		display: none;
-	}
-	.textbox0 {
-		width: 3em;
-		background: #f1f1f1;
-		padding: .25em .5em;
-		line-height: 1.5;
-		height: 1.5em;
-	}
-	#testDrive {
-		display: block;
-		padding-top: 24px;
-		line-height: 1.5;
-	}
-	.fs0 {
-		font-size: 16px;
-	}
-	.fs1 {
-		font-size: 20px;
-	}
+.net54-icon-uniE0DB:before {
+    content: "\e0db";
 }
+.net54-icon-uniE0DC:before {
+    content: "\e0dc";
+}
+.net54-icon-uniE0DD:before {
+    content: "\e0dd";
+}
+.net54-icon-uniE0DE:before {
+    content: "\e0de";
+}
+.net54-icon-uniE0DF:before {
+    content: "\e0df";
+}
+.net54-icon-uniE0E0:before {
+    content: "\e0e0";
+}
+.net54-icon-uniE0E1:before {
+    content: "\e0e1";
+}
+.net54-icon-uniE0E2:before {
+    content: "\e0e2";
+}
+.net54-icon-uniE0E3:before {
+    content: "\e0e3";
+}
+.net54-icon-uniE0E4:before {
+    content: "\e0e4";
+}
+.net54-icon-uniE0E5:before {
+    content: "\e0e5";
+}
+.net54-icon-uniE0E6:before {
+    content: "\e0e6";
+}
+.net54-icon-uniE0E7:before {
+    content: "\e0e7";
+}
+

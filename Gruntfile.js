@@ -207,7 +207,7 @@ module.exports = function (grunt) {
             		{
             			expand: true,
             			cwd: 'src/assets/fonts',
-            			src: ['net54-icons.*'],
+            			src: ['net54-icon.*'],
             			dest: 'tmp/assets/fonts'
             		},
             		{
