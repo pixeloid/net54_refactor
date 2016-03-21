@@ -1,11 +1,20 @@
-.table  > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 1px solid @table-border-color;
-    background: @table-header-bg;
-  }
-.table.table-borderless {
-	& th,
-	& td {
-		border: none;
+.table {
+	&.table-borderless {
+		& th,
+		& td {
+			border: none;
+		}
+	}
+
+	& > thead > tr > th {
+		vertical-align: bottom;
+		border-bottom: 1px solid @table-border-color;
+		background: @table-header-bg;
+	}
+
+	& .table-column-ellipsis {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
