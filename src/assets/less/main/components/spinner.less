@@ -1,5 +1,9 @@
 @class-name: net54-spinner;
+@spinner-size: 48px;
 
+/**
+ * Gombra rakható spinner ikon
+ */
 .has-@{class-name} {
 	.@{class-name} {
 		display: inline-block;
@@ -28,5 +32,34 @@
 	}
 	&.btn-large.active .@{class-name} {
 		width: 19px;
+	}
+}
+
+/**
+ * Betöltésjelző, többek között a Dashboard használja
+ */
+.spinner {
+	min-width: 16px;
+	min-height: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: @spinner-size;
+		height: @spinner-size;
+		margin-top: -24px;
+		margin-left: -24px;
+		border-radius: 50%;
+		border: 4px solid transparent;
+		border-top-color: @brand-primary;
+		border-bottom-color: @brand-warning;
+		animation: spinner 1.5s ease infinite;
 	}
 }
