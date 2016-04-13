@@ -21,7 +21,7 @@
 
 
 @jsp-track-bg: lighten(@gray-lighter,3%);
-@jsp-drag-bg: @gray-light;
+@jsp-drag-bg:  darken(@gray-lighter, 5%);
 
 
 @navbar-default-color:             #777;
@@ -31,11 +31,19 @@
 // Navbar links
 @navbar-default-link-color:                #fff;
 @navbar-default-link-hover-color:          #fff;
-@navbar-default-link-hover-bg:             @brand-secondary;
+@navbar-default-link-hover-bg:             darken(@brand-primary, 5%);
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            @brand-secondary;
 @navbar-default-link-disabled-color:       @brand-primary;
 @navbar-default-link-disabled-bg:          transparent;
+
+
+@navbar-default-toggle-hover-bg:           @brand-primary;
+@navbar-default-toggle-icon-bar-bg:        @brand-primary;
+@navbar-default-toggle-border-color:       @brand-primary;
+
+
+
 
 
 @dropdown-bg:                    #fff;
@@ -65,7 +73,7 @@
 
 @panel-default-text:          @gray;
 @panel-default-border:        darken(@gray-lighter, 5%);
-@panel-default-heading-bg:    @gray-lighter;
+@panel-default-heading-bg:    lighten(@gray-lighter, 3%);
 
 @panel-inner-border:          @gray-lighter;
 @panel-footer-bg:             @panel-default-heading-bg;
@@ -79,10 +87,10 @@
 
 //** Border color for table and cell borders.
 @table-border-color:            #ddd;
-@table-header-bg:            darken(@gray-lighter,5%);
+@table-header-bg:            @panel-default-heading-bg;
 
 @btn-default-color:              @gray-dark;
-@btn-default-bg:                 #ddd;
+@btn-default-bg:                 @gray-lighter;
 @btn-default-border:             darken(@btn-default-bg, 5%);
 
 
@@ -104,17 +112,21 @@ body{
     }
   }
 
+  .navbar-collapse.in,
+  .navbar-collapse.collapsing{
+    background: rgba(0,0,0,0.9);
+  }
+
   .navbar-toggle{
-    border-color: rgba(255,255,255,0.75);
-    border: none;
-    background: darken(@brand-primary, 40%);
+    border: 1px solid rgba(255,255,255,0.3);
+    background: darken(@brand-primary, 4%);
     
     .icon-bar{
       background: #fff;
     }
 
     &:hover{
-      background: #000;
+      background: darken(@brand-primary, 7%);
 
       .icon-bar{
         background: #fff;
@@ -143,30 +155,23 @@ body{
     height: 48px;
     background-size: 100% auto;
     display: block;
-    // position: absolute;
-    // top: -60px;
-    // left: 0;
-    // margin-left: 30px !important;
   }
 }
 
-
-// .navbar-fixed-top{
-//   top: 70px;
-//   .container-fluid{
-//     position: relative;
-//   }
-//   .navbar-header{
-
-//   }
-// }
-
+.panel{
+  border-width: 1px;
+  .box-shadow(0 1px 1px rgba(0,0,0,.05)); // drop shadow
+  .panel-heading{
+    border-radius: 0;
+  }
+}
 
 footer {
 
   &.net54-footer {
-    background-color: black;
-    color: #fff;
+    background-color: @gray-lighter;
+    color: @gray;
+    border-top: 1px solid darken(@gray-lighter, 5%);
   }
 }
 
