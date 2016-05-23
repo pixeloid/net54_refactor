@@ -1,17 +1,26 @@
 
 
-.btn-circle {
+.btn.btn-circle {
+  border-width: 0;
   border-radius: 50%;
   text-align: center;
   padding: 0;
   position: relative;
   .square(36px);   
 
+
   .net54-icon{
-    font-size: 19px;
-    .square(18px);
-    margin: -10px 0 0 -9px;
+    .square(36px);   
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 1px;
     text-align: center;
+    padding: 7px 0 0 0;
+    font-size: 20px;
+    vertical-align: middle;
+   // background: rgba(0,0,0,0.2);
   }
 
   &.btn-lg {
@@ -19,8 +28,8 @@
 
     .net54-icon{
       font-size: 26px;
-      .square(26px);
-      margin: -13px 0 0 -12px;
+      padding-top: 12px;
+      .square(50px);
     }
 
   }
@@ -28,35 +37,28 @@
     .square(28px);   
 
     .net54-icon{
+      padding-top: 6px;
       font-size: 16px;
-      .square(16px);
-      margin: -8px 0 0 -8px;
+      .square(28px);
     }
 
   }
   &.btn-xs {
 
-    .square(19px);   
+    .square(20px);   
 
     .net54-icon{
       font-size: 11px;
-      .square(10px);
-      margin: -6px 0 0 -5px;
+      .square(19px);
+      padding-top: 4px;
     }
   }
 
-  .net54-icon{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    text-align: center;
-  }
 }
 
 
-.btn.btn-icon{
+.btn{
   .net54-icon{
-    padding: 0 0.2em;
+    padding: 0 2px;
   }
 }
